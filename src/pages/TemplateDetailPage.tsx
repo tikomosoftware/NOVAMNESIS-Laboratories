@@ -8,7 +8,7 @@ export default function TemplateDetailPage({ template }: { template: ExperienceT
 
   return (
     <main className="min-h-screen bg-obsidian text-slate-100">
-      <Header items={catalogNavItems} cta="この人生を予約する" />
+      <Header items={catalogNavItems} />
       <section className="relative overflow-hidden px-5 pb-20 pt-36">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,rgba(88,244,255,0.18),transparent_30%),radial-gradient(circle_at_78%_18%,rgba(255,79,216,0.16),transparent_28%),linear-gradient(180deg,#060711_0%,#0c1020_72%,#060711_100%)]" />
         <div className="absolute inset-0 -z-10 novamnesis-grid opacity-30" />

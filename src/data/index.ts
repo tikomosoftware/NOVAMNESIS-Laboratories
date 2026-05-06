@@ -3,10 +3,13 @@ import { Plan, ExperienceTemplate, MemoryEpisode, PurchaseUseCase, Review, Simpl
 export const siteNavItems = [
   { label: "Catalog", href: "/catalog" },
   { label: "Experience", href: "/experience" },
+  { label: "Booking", href: "/booking" },
   { label: "Facility", href: "/facility" },
   { label: "Safety", href: "/safety" },
   { label: "Sell Memory", href: "/sell" },
   { label: "FAQ", href: "/faq" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const landingNavItems = siteNavItems;
@@ -611,6 +614,9 @@ export const faqs: Faq[] = [
     question: "体験後に副作用はありますか？",
     answer: "一時的な既視感、感情の残響、選ばなかった人生への郷愁が報告されています。多くは短期間で落ち着きます。",
   },
+];
+
+export const faqsSell: Faq[] = [
   {
     question: "自分の記憶を売ると、その記憶は失われますか？",
     answer: "通常売却では失われません。独占ライセンスでは、契約範囲に応じて一部アクセス制限が発生する場合があります。",

@@ -59,16 +59,13 @@ export default function BookingPage() {
 
   return (
     <main className="min-h-screen bg-obsidian text-slate-100">
-      <Header items={landingNavItems} cta="施設を確認する" ctaHref="/facility" />
+      <Header items={landingNavItems} />
       <section className="relative overflow-hidden px-5 pb-16 pt-36">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,rgba(88,244,255,0.18),transparent_30%),radial-gradient(circle_at_78%_16%,rgba(255,79,216,0.14),transparent_28%),linear-gradient(180deg,#060711_0%,#0c1020_72%,#060711_100%)]" />
         <div className="absolute inset-0 -z-10 novamnesis-grid opacity-35" />
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-cyanline/20 bg-white/[0.04] px-4 py-2 backdrop-blur-xl">
-              <LogoMark tone="dark" className="h-8 w-8" />
-              <span className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-300">Booking</span>
-            </div>
+
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-cyanline">RESERVE SESSION</p>
             <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl">
               体験内容を確認して、日時を予約します。
@@ -208,7 +205,7 @@ export default function BookingPage() {
                 <div className="grid gap-5 md:grid-cols-2">
                   <label className="grid gap-2 text-sm font-semibold text-slate-200">
                     お名前
-                    <input name="name" value={name} onChange={(event) => setName(event.target.value)} required className="rounded-2xl border border-white/10 bg-obsidian/80 px-4 py-3 text-sm font-normal text-slate-200 outline-none focus:border-cyanline" placeholder="例: 山田 花子" />
+                    <input name="name" value={name} onChange={(event) => setName(event.target.value)} required className="rounded-2xl border border-white/10 bg-obsidian/80 px-4 py-3 text-sm font-normal text-slate-200 outline-none focus:border-cyanline" placeholder="名前を入力してください" />
                   </label>
                   <label className="grid gap-2 text-sm font-semibold text-slate-200">
                     メールアドレス

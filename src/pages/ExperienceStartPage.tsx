@@ -15,10 +15,7 @@ export default function ExperienceStartPage() {
         <div className="absolute inset-0 -z-10 novamnesis-grid opacity-35" />
         <div className="mx-auto grid max-w-7xl items-end gap-10 lg:grid-cols-[1.02fr_0.98fr]">
           <div>
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-cyanline/20 bg-white/[0.04] px-4 py-2 backdrop-blur-xl">
-              <LogoMark tone="dark" className="h-8 w-8" />
-              <span className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-300">Memory Intake</span>
-            </div>
+
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-cyanline">START EXPERIENCE</p>
             <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl">
               体験したい記憶を、ここから選びます。

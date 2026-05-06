@@ -12,10 +12,7 @@ export default function FacilityPage() {
         <div className="absolute inset-0 -z-10 novamnesis-grid opacity-35" />
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.98fr_1.02fr]">
           <div>
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-cyanline/20 bg-white/[0.04] px-4 py-2 backdrop-blur-xl">
-              <LogoMark tone="dark" className="h-8 w-8" />
-              <span className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-300">Facility Protocol</span>
-            </div>
+
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-cyanline">MEMORY FIXATION ROOM</p>
             <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl">記憶定着の流れを、事前に確認できます。</h1>
             <p className="mt-7 max-w-3xl text-lg leading-9 text-slate-300">
@@ -34,22 +31,12 @@ export default function FacilityPage() {
               ))}
             </div>
           </div>
-          <div className="relative min-h-[520px] overflow-hidden rounded-[2rem] border border-cyanline/20 bg-white/[0.04] p-6 shadow-glow backdrop-blur-xl">
-            <div className="absolute inset-0 novamnesis-grid opacity-20" />
-            <div className="absolute left-1/2 top-8 h-28 w-72 -translate-x-1/2 rounded-full border border-cyanline/20 bg-cyanline/10 blur-sm" />
-            <div className="absolute left-1/2 top-20 h-28 w-28 -translate-x-1/2 rounded-full border border-white/15 bg-obsidian/85 shadow-[0_0_32px_rgba(88,244,255,0.25)]" />
-            <div className="absolute left-1/2 top-28 h-5 w-48 -translate-x-1/2 rounded-full border border-cyanline/25 bg-cyanline/10" />
-            <div className="absolute left-1/2 top-40 h-40 w-52 -translate-x-1/2 rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02]" />
-            <div className="absolute bottom-20 left-1/2 h-44 w-80 -translate-x-1/2 rounded-[2rem] border border-cyanline/20 bg-obsidian/85 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]" />
-            <div className="absolute bottom-28 left-1/2 h-28 w-64 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(88,244,255,0.24),transparent_66%)]" />
-            <div className="absolute left-7 top-8 rounded-2xl border border-white/10 bg-obsidian/75 px-4 py-3 text-xs leading-6 text-slate-300 backdrop-blur-md">
-              <span className="block text-cyanline">NEURO CROWN</span>
-              contact pressure: soft
-            </div>
-            <div className="absolute bottom-8 right-7 rounded-2xl border border-magentapulse/20 bg-obsidian/75 px-4 py-3 text-xs leading-6 text-slate-300 backdrop-blur-md">
-              <span className="block text-magentapulse">RETURN BAY</span>
-              boundary tag active
-            </div>
+          <div className="relative overflow-hidden rounded-[2rem] border border-cyanline/20 shadow-glow">
+            <img
+              src="/images/facility-hero.png"
+              alt="未来的なリクライニングチェアでニューロクラウンを装着し記憶定着を受けている様子"
+              className="aspect-[16/10] w-full object-cover"
+            />
           </div>
         </div>
       </section>
@@ -131,13 +118,7 @@ export default function FacilityPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="/catalog"
-              className="rounded-full bg-gradient-to-r from-cyanline via-violetsignal to-magentapulse px-6 py-3 text-sm font-semibold text-obsidian shadow-glow transition duration-300 hover:-translate-y-0.5"
-            >
-              記憶メニューを見る
-            </a>
-            <a
-              href="/#faq"
+              href="/faq"
               className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-cyanline/60 hover:bg-white/10"
             >
               よくある質問へ

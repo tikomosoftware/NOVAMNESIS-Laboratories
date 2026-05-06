@@ -13,10 +13,7 @@ export default function CompanyPage() {
         <div className="absolute inset-x-0 top-28 -z-10 h-px bg-gradient-to-r from-transparent via-cyanline/50 to-transparent" />
         <div className="mx-auto grid max-w-7xl items-end gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-cyanline/20 bg-white/[0.04] px-4 py-2 backdrop-blur-xl">
-              <LogoMark tone="corporate" className="h-8 w-8" />
-              <span className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-300">Corporate Protocol</span>
-            </div>
+
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-cyanline">LIFE MEMORY LABORATORY</p>
             <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl">
               経験したかった人生を、記憶として購入する。

@@ -6,16 +6,13 @@ import { Header, Footer, LogoMark, BrandLockup, Button, SectionHeader, Info, Her
 export default function SafetyPage() {
   return (
     <main className="min-h-screen bg-obsidian text-slate-100">
-      <Header items={companyNavItems} tone="corporate" />
+      <Header items={landingNavItems} tone="corporate" />
       <section className="relative overflow-hidden border-b border-white/10 px-5 pb-20 pt-36">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_12%,rgba(88,244,255,0.22),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(255,79,216,0.14),transparent_28%),linear-gradient(180deg,#060711_0%,#0c1020_68%,#060711_100%)]" />
         <div className="absolute inset-0 -z-10 novamnesis-grid opacity-35" />
         <div className="mx-auto grid max-w-7xl items-end gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-cyanline/20 bg-white/[0.04] px-4 py-2 backdrop-blur-xl">
-              <LogoMark tone="corporate" className="h-8 w-8" />
-              <span className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-300">Safety Protocol</span>
-            </div>
+
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-cyanline">MEMORY EXPERIENCE SAFETY</p>
             <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl">
               記憶を買う前に、安全基準を確認する。
@@ -76,7 +73,7 @@ export default function SafetyPage() {
         </div>
       </section>
 
-      <Footer items={companyNavItems} />
+      <Footer items={landingNavItems} />
     </main>
   );
 }

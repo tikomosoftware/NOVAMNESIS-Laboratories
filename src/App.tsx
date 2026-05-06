@@ -1,6 +1,5 @@
 import React from "react";
 import { experienceMenus, memoryEpisodes } from "./data";
-import CompanyPage from "./pages/CompanyPage";
 import FacilityPage from "./pages/FacilityPage";
 import ExperienceStartPage from "./pages/ExperienceStartPage";
 import BookingPage from "./pages/BookingPage";
@@ -11,6 +10,8 @@ import EpisodeDetailPage from "./pages/EpisodeDetailPage";
 import SellPage from "./pages/SellPage";
 import SafetyPage from "./pages/SafetyPage";
 import FaqPage from "./pages/FaqPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 
 export default function App() {
   const path = window.location.pathname;
@@ -33,10 +34,6 @@ export default function App() {
 
   if (path === "/") {
     return <LandingPage />;
-  }
-
-  if (path === "/company") {
-    return <CompanyPage />;
   }
 
   if (path === "/sell") {
@@ -63,5 +60,13 @@ export default function App() {
     return <BookingPage />;
   }
 
-  return <CompanyPage />;
+  if (path === "/about") {
+    return <AboutPage />;
+  }
+
+  if (path === "/contact") {
+    return <ContactPage />;
+  }
+
+  return <LandingPage />;
 }

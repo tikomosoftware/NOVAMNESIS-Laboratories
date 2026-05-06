@@ -12,10 +12,7 @@ export default function SellPage() {
         <div className="absolute inset-0 -z-10 novamnesis-grid opacity-30" />
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-magentapulse/20 bg-white/[0.04] px-4 py-2 backdrop-blur-xl">
-              <LogoMark tone="corporate" className="h-8 w-8" />
-              <span className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-300">Memory Provider</span>
-            </div>
+
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-cyanline">SELL YOUR MEMORY</p>
             <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl">
               あなたの記憶を、誰かの体験したかった人生へ。

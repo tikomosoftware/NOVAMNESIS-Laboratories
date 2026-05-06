@@ -1,6 +1,6 @@
 import React from "react";
 import { Tone, SimpleCard, Review, Faq } from "../types";
-import { plans, reviews, faqs, sellSteps, roomZones, sessionSteps, bodyStates, experienceEntryOptions, safetyItems, ethics, valuation, categories, purchaseUseCases, experienceMenus, memoryEpisodes, landingNavItems } from "../data";
+import { plans, reviews, faqs, faqsSell, sellSteps, roomZones, sessionSteps, bodyStates, experienceEntryOptions, safetyItems, ethics, valuation, categories, purchaseUseCases, experienceMenus, memoryEpisodes, landingNavItems } from "../data";
 
 export function notify(message: string) {
   window.alert(`${message}\n\nNovamnesis Laboratories は架空のデモサイトです。`);
@@ -93,9 +93,9 @@ export function BrandLockup({ tone = "dark" }: { tone?: Tone }) {
     <div className="flex items-center gap-3">
       <LogoMark tone={tone} />
       <div>
-        <div className={`text-base font-semibold tracking-[0.18em] sm:text-lg ${tone === "light" ? "text-slate-950" : "text-white"}`}>NOVAMNESIS</div>
+        <div className={`text-base font-semibold tracking-[0.18em] sm:text-lg ${tone === "light" ? "text-slate-950" : "text-white"}`}>NOVAMNESIS Laboratories</div>
         <div className={`text-[11px] transition ${tone === "light" ? "text-slate-500 group-hover:text-slate-800" : "text-slate-400 group-hover:text-cyanline"}`}>
-          Laboratories / Memory Experience Marketplace
+          Memory Experience Marketplace
         </div>
       </div>
     </div>
@@ -127,7 +127,7 @@ export function Header({
             <a
               key={item.href}
               href={item.href}
-              className={`text-sm transition ${tone === "light" ? "text-slate-600 hover:text-slate-950" : "text-slate-300 hover:text-white"}`}
+              className={`text-sm transition ${tone === "light" ? "text-slate-600 hover:text-slate-950" : "text-cyanline/70 hover:text-cyanline"}`}
             >
               {item.label}
             </a>
@@ -189,10 +189,6 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 novamnesis-grid opacity-40" />
       <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-14 px-5 pb-24 lg:grid-cols-[1.03fr_0.97fr]">
         <div className="animate-fadeIn">
-          <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-cyanline/20 bg-white/[0.04] px-4 py-2 backdrop-blur-xl">
-            <LogoMark tone="dark" className="h-8 w-8" />
-            <span className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-300">Novamnesis Laboratories</span>
-          </div>
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-cyanline">Novamnesis Laboratories — Memory Experience Marketplace</p>
           <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl lg:text-7xl">あなたが本当に欲しかった人生を、記憶から始めよう。</h1>
           <p className="mt-7 max-w-2xl text-lg leading-9 text-slate-300">
@@ -322,23 +318,16 @@ export function FacilityTeaser() {
   return (
     <section className="section pt-4">
       <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.92fr_1.08fr]">
-        <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-cyanline/20 bg-[radial-gradient(circle_at_50%_18%,rgba(88,244,255,0.18),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-6 shadow-glow">
-          <div className="absolute inset-0 novamnesis-grid opacity-25" />
-          <div className="absolute left-1/2 top-8 h-20 w-48 -translate-x-1/2 rounded-full border border-cyanline/30 bg-cyanline/10 blur-sm" />
-          <div className="absolute left-1/2 top-20 h-24 w-24 -translate-x-1/2 rounded-full border border-white/15 bg-obsidian/80 shadow-[0_0_28px_rgba(88,244,255,0.22)]" />
-          <div className="absolute left-1/2 top-28 h-28 w-40 -translate-x-1/2 rounded-[2rem] border border-white/10 bg-white/[0.04]" />
-          <div className="absolute bottom-8 left-1/2 h-36 w-72 -translate-x-1/2 rounded-[2rem] border border-cyanline/20 bg-obsidian/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]" />
-          <div className="absolute bottom-20 left-1/2 h-20 w-56 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(88,244,255,0.20),transparent_68%)]" />
-          <div className="absolute left-8 top-12 rounded-2xl border border-white/10 bg-obsidian/70 px-4 py-3 text-xs text-slate-300 backdrop-blur-md">
-            CONSENT VERIFIED
-          </div>
-          <div className="absolute bottom-10 right-8 rounded-2xl border border-magentapulse/20 bg-obsidian/70 px-4 py-3 text-xs text-magentapulse backdrop-blur-md">
-            DREAM DEPTH 42%
-          </div>
+        <div className="relative overflow-hidden rounded-[2rem] border border-cyanline/20 shadow-glow">
+          <img
+            src="/images/facility-hero.png"
+            alt="未来的なリクライニングチェアでニューロクラウンを装着し記憶定着を受けている様子"
+            className="aspect-[16/10] w-full object-cover"
+          />
         </div>
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">Facility Preview</p>
-          <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl">どこに座って、何を付けられ、どんな状態になるのか。</h2>
+          <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl">安心して体験に入れる、静かな空間です。</h2>
           <p className="mt-5 text-base leading-8 text-slate-300">
             記憶体験が不安に見える理由は、仕組みよりも場面が見えないことにあります。Novamnesis の施設ページでは、来館から覚醒後のケアまでを、身体感覚が想像できる粒度で案内します。
           </p>
@@ -628,18 +617,39 @@ export function FAQ() {
   return (
     <section id="faq" className="section">
       <SectionHeader eyebrow="FAQ" title="よくある質問。" />
-      <div className="mx-auto grid max-w-5xl gap-4">
-        {faqs.map((faq) => (
-          <details key={faq.question} className="group rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl">
-            <summary className="cursor-pointer list-none text-lg font-medium text-white">
-              <span className="inline-flex w-full items-center justify-between gap-4">
-                {faq.question}
-                <span className="text-cyanline transition group-open:rotate-45">+</span>
-              </span>
-            </summary>
-            <p className="mt-4 text-sm leading-7 text-slate-300">{faq.answer}</p>
-          </details>
-        ))}
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-10">
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-cyanline">記憶を購入する方へ</p>
+          <div className="grid gap-4">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="group rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl">
+                <summary className="cursor-pointer list-none text-lg font-medium text-white">
+                  <span className="inline-flex w-full items-center justify-between gap-4">
+                    {faq.question}
+                    <span className="text-cyanline transition group-open:rotate-45">+</span>
+                  </span>
+                </summary>
+                <p className="mt-4 text-sm leading-7 text-slate-300">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-magentapulse">記憶を売る方へ</p>
+          <div className="grid gap-4">
+            {faqsSell.map((faq) => (
+              <details key={faq.question} className="group rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl">
+                <summary className="cursor-pointer list-none text-lg font-medium text-white">
+                  <span className="inline-flex w-full items-center justify-between gap-4">
+                    {faq.question}
+                    <span className="text-cyanline transition group-open:rotate-45">+</span>
+                  </span>
+                </summary>
+                <p className="mt-4 text-sm leading-7 text-slate-300">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

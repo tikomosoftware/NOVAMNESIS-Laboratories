@@ -6,7 +6,7 @@ import { Header, Footer, LogoMark, BrandLockup, Button, SectionHeader, Info, Her
 export default function EpisodeDetailPage({ episode }: { episode: MemoryEpisode }) {
   return (
     <main className="min-h-screen bg-obsidian text-slate-100">
-      <Header items={catalogNavItems} cta="この思い出を予約する" />
+      <Header items={catalogNavItems} />
       <section className="relative overflow-hidden px-5 pb-20 pt-36">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_12%,rgba(255,79,216,0.17),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(88,244,255,0.14),transparent_30%),linear-gradient(180deg,#060711_0%,#0c1020_72%,#060711_100%)]" />
         <div className="absolute inset-0 -z-10 novamnesis-grid opacity-25" />
