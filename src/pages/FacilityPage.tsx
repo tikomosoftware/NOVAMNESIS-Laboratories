@@ -41,6 +41,31 @@ export default function FacilityPage() {
         </div>
       </section>
 
+      <section className="section pt-0">
+        <div className="mx-auto max-w-6xl">
+          <div className="rounded-[2rem] border border-cyanline/20 bg-white/[0.04] p-8 backdrop-blur-xl md:p-10">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">Locations</p>
+            <h2 className="text-2xl font-semibold text-white">全国3拠点で記憶定着セッションを実施</h2>
+            <p className="mt-4 text-base leading-8 text-slate-300">
+              記憶の購入はオンラインで完結しますが、実際の記憶定着セッションは専用施設で行います。日時を予約いただければ、記憶の選択は来館時でも可能です。カウンセリングを受けながら、その場で最適な記憶を選べます。
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {[
+                ["東京ラボ", "東京都港区虎ノ門 4-1-1"],
+                ["大阪ラボ", "大阪府大阪市北区梅田 2-5-8"],
+                ["福岡ラボ", "福岡県福岡市中央区天神 1-10-3"],
+              ].map(([name, address]) => (
+                <div key={name} className="rounded-2xl border border-white/10 bg-obsidian/60 p-5">
+                  <p className="text-sm font-semibold text-cyanline">{name}</p>
+                  <p className="mt-2 text-sm text-slate-400">{address}</p>
+                  <p className="mt-1 text-xs text-slate-500">（架空）</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section">
         <SectionHeader
           eyebrow="Room Tour"

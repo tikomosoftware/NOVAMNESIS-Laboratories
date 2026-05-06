@@ -90,11 +90,11 @@ export function LogoMark({ tone = "dark", className = "h-10 w-10" }: { tone?: To
 
 export function BrandLockup({ tone = "dark" }: { tone?: Tone }) {
   return (
-    <div className="flex items-center gap-3">
-      <LogoMark tone={tone} />
+    <div className="flex items-center gap-4">
+      <LogoMark tone={tone} className="h-12 w-12" />
       <div>
-        <div className={`text-base font-semibold tracking-[0.18em] sm:text-lg ${tone === "light" ? "text-slate-950" : "text-white"}`}>NOVAMNESIS Laboratories</div>
-        <div className={`text-[11px] transition ${tone === "light" ? "text-slate-500 group-hover:text-slate-800" : "text-slate-400 group-hover:text-cyanline"}`}>
+        <div className={`text-lg font-semibold tracking-[0.18em] sm:text-xl ${tone === "light" ? "text-slate-950" : "text-white"}`}>NEURAMNESIA</div>
+        <div className={`text-xs transition ${tone === "light" ? "text-slate-500 group-hover:text-slate-800" : "text-slate-400 group-hover:text-cyanline"}`}>
           Memory Experience Marketplace
         </div>
       </div>
@@ -189,10 +189,10 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 novamnesis-grid opacity-40" />
       <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-14 px-5 pb-24 lg:grid-cols-[1.03fr_0.97fr]">
         <div className="animate-fadeIn">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-cyanline">Novamnesis Laboratories — Memory Experience Marketplace</p>
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-cyanline">Neuramnesia — Memory Experience Marketplace</p>
           <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl lg:text-7xl">あなたが本当に欲しかった人生を、記憶から始めよう。</h1>
           <p className="mt-7 max-w-2xl text-lg leading-9 text-slate-300">
-            Novamnesis Laboratories は、恋愛、成功、旅行、結婚、挫折、性別を入れ替えた人生まで、経験できなかった過去を記憶として購入できるマーケットプレイスです。
+            Neuramnesia は、恋愛、成功、旅行、結婚、挫折、性別を入れ替えた人生まで、経験できなかった過去を記憶として購入できるマーケットプレイスです。
           </p>
           <div className="mt-10 grid gap-4 text-sm text-slate-300 sm:grid-cols-2">
             <p className="glass-panel">青春の恋も、行けなかった旅も、選ばなかった結婚も。</p>
@@ -211,12 +211,12 @@ export function CatalogHero() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_10%,rgba(255,79,216,0.18),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(88,244,255,0.18),transparent_32%),linear-gradient(180deg,#060711_0%,#0c1020_70%,#060711_100%)]" />
       <div className="absolute inset-0 -z-10 novamnesis-grid opacity-35" />
       <div className="mx-auto max-w-7xl px-5 pb-20 pt-20 text-center">
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-cyanline">Novamnesis Catalog</p>
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-cyanline">Neuramnesia Catalog</p>
         <h1 className="mx-auto max-w-5xl text-5xl font-semibold leading-tight text-white sm:text-6xl">
           買いたくなる過去を、記憶メニューから選ぶ。
         </h1>
         <p className="mx-auto mt-7 max-w-3xl text-lg leading-9 text-slate-300">
-          一生分の人生テンプレートだけではなく、放課後の恋、部活の挫折、甲子園の熱、幼稚園の帰り道まで。Novamnesis Catalog は、短い過去の断片も購入可能な記憶体験です。
+          ここでは、購入可能な記憶体験を一覧できます。短い思い出から、選ばなかった人生、物語性の強い記憶まで、体験したい過去を選べます。
         </p>
       </div>
     </section>
@@ -277,7 +277,7 @@ export function PurchaseUseCases() {
       </div>
       <div className="mx-auto mt-8 max-w-5xl rounded-[2rem] border border-magentapulse/20 bg-magentapulse/5 p-6 text-center backdrop-blur-xl">
         <p className="text-base leading-8 text-slate-200">
-          幸せな記憶を足すことも、失敗の記憶を足すことも、どちらも人生を豊かにする選択です。Novamnesis Laboratories では購入前に感情強度と境界タグを調整し、現実の自分を保ったまま「経験したかった人生」を持ち帰れるように設計します。
+          幸せな記憶を足すことも、失敗の記憶を足すことも、どちらも人生を豊かにする選択です。Neuramnesia では購入前に感情強度と境界タグを調整し、現実の自分を保ったまま「経験したかった人生」を持ち帰れるように設計します。
         </p>
       </div>
     </section>
@@ -298,7 +298,7 @@ export function Service() {
       <SectionHeader
         eyebrow="Experience Layer"
         title="現実ではなく、記憶として体験する。"
-        description="Novamnesis Laboratories の体験は、あなたの現在を変えずに、あなたの過去の輪郭だけを増やします。"
+        description="Neuramnesia の体験は、あなたの現在を変えずに、あなたの過去の輪郭だけを増やします。"
       />
       <div className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-magenta backdrop-blur-xl md:p-10">
         <div className="grid gap-4 md:grid-cols-5">
@@ -329,7 +329,7 @@ export function FacilityTeaser() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">Facility Preview</p>
           <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl">安心して体験に入れる、静かな空間です。</h2>
           <p className="mt-5 text-base leading-8 text-slate-300">
-            記憶体験が不安に見える理由は、仕組みよりも場面が見えないことにあります。Novamnesis の施設ページでは、来館から覚醒後のケアまでを、身体感覚が想像できる粒度で案内します。
+            記憶体験が不安に見える理由は、仕組みよりも場面が見えないことにあります。Neuramnesia の施設ページでは、来館から覚醒後のケアまでを、身体感覚が想像できる粒度で案内します。
           </p>
           <div className="mt-7 flex flex-wrap gap-4">
             <a
@@ -370,6 +370,11 @@ export function Marketplace() {
             <p className="mt-5 text-base leading-8 text-slate-300">{text}</p>
           </div>
         ))}
+      </div>
+      <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-cyanline/20 bg-cyanline/5 p-5 text-center backdrop-blur-xl">
+        <p className="text-sm leading-7 text-slate-300">
+          記憶の購入はオンラインで完結しますが、記憶の定着は実店舗で行います。日時を予約いただければ、記憶の選択は来館時でも可能です。
+        </p>
       </div>
     </section>
   );
@@ -665,8 +670,7 @@ export function FinalCta() {
           体験するか、提供するか。Novamnesis Laboratories は、あなたの過去と未来に新しい選択肢を与えます。
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-4">
-          <Button href="/experience">記憶を体験する</Button>
-          <Button href="/sell" variant="secondary">記憶を査定する</Button>
+          <Button href="/booking">記憶を購入する</Button>
         </div>
       </div>
     </section>
@@ -677,24 +681,14 @@ export function FinalCta() {
 export function Footer({ items = landingNavItems, tone = "dark" }: { items?: { label: string; href: string }[]; tone?: Tone }) {
   return (
     <footer className={`border-t px-5 py-10 ${tone === "light" ? "border-slate-200 bg-white text-slate-700" : "border-white/10"}`}>
-      <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.2fr_1fr_1.4fr]">
-        <div>
-          <BrandLockup tone={tone} />
-          <p className={`mt-4 text-sm ${tone === "light" ? "text-slate-500" : "text-slate-500"}`}>架空企業情報 / Demo Corporate Profile</p>
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-5xl rounded-[2rem] border border-magentapulse/20 bg-magentapulse/5 p-6 text-center backdrop-blur-xl">
+          <p className="text-sm leading-7 text-slate-300">
+            本サイトおよび NEURAMNESIA は架空の企業・サービスです。実在する医療・金融・記憶操作サービスではありません。
+          </p>
         </div>
-        <div className="flex flex-wrap gap-x-5 gap-y-3">
-          {items.map((item) => (
-            <a key={item.href} href={item.href} className={`text-sm ${tone === "light" ? "text-slate-600 hover:text-slate-950" : "text-slate-400 hover:text-white"}`}>
-              {item.label}
-            </a>
-          ))}
-        </div>
-        <div
-          className={`rounded-2xl border p-4 text-sm leading-7 ${tone === "light" ? "border-slate-200 bg-slate-50 text-slate-600" : "border-white/10 bg-white/[0.03] text-slate-400"
-            }`}
-        >
-          <p>本サイトは架空のデモサイトです。</p>
-          <p>実在する医療・金融・記憶操作サービスではありません。</p>
+        <div className={`mt-8 border-t pt-6 text-center text-sm ${tone === "light" ? "border-slate-200 text-slate-500" : "border-white/10 text-slate-500"}`}>
+          <p>&copy; {new Date().getFullYear()} NEURAMNESIA. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -15,7 +15,7 @@ export default function AboutPage() {
             記憶体験を設計する、架空の研究企業。
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-9 text-slate-300">
-            NOVAMNESIS Laboratories は、経験できなかった恋愛、選ばなかった人生、行けなかった旅、味わえなかった成功や挫折を、記憶体験として設計する研究企業です。人生をやり直すのではなく、あなたの中にもうひとつの過去を増やします。
+            NEURAMNESIA は、経験できなかった恋愛、選ばなかった人生、行けなかった旅、味わえなかった成功や挫折を、記憶体験として設計する研究企業です。人生をやり直すのではなく、あなたの中にもうひとつの過去を増やします。
           </p>
         </div>
       </section>
@@ -28,7 +28,7 @@ export default function AboutPage() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl">
               <h3 className="text-lg font-semibold text-white">経験の格差をなくす</h3>
               <p className="mt-4 text-sm leading-7 text-slate-300">
-                生まれた場所、時代、環境によって体験できる人生は限られます。NOVAMNESIS は、誰もが望んだ経験を記憶として持ち帰れる世界を構想しています。
+                生まれた場所、時代、環境によって体験できる人生は限られます。NEURAMNESIA は、誰もが望んだ経験を記憶として持ち帰れる世界を構想しています。
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl">
@@ -56,32 +56,35 @@ export default function AboutPage() {
       <section className="px-5 py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeader eyebrow="Company" title="会社情報。" />
-          <div className="mx-auto max-w-3xl rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
-            <dl className="grid gap-6">
-              {[
-                ["社名", "NOVAMNESIS Laboratories Inc."],
-                ["設立", "2029年4月"],
-                ["所在地", "東京都港区虎ノ門 4-1-1（架空）"],
-                ["代表", "Dr. Rei Kurosawa（架空）"],
-                ["事業内容", "記憶体験の設計・販売・査定、記憶安全基準の策定、記憶資産マーケットプレイスの運営"],
-                ["従業員数", "約120名（架空）"],
-                ["資本金", "48億円（架空）"],
-              ].map(([label, value]) => (
-                <div key={label} className="grid gap-1 border-b border-white/10 pb-4 last:border-0 last:pb-0 sm:grid-cols-[160px_1fr]">
-                  <dt className="text-sm font-semibold text-slate-400">{label}</dt>
-                  <dd className="text-sm leading-7 text-slate-200">{value}</dd>
-                </div>
-              ))}
-            </dl>
+          <div className="mx-auto max-w-3xl space-y-8">
+            <div className="rounded-[2rem] border border-cyanline/20 bg-cyanline/5 p-6 backdrop-blur-xl">
+              <h3 className="mb-4 text-lg font-semibold text-white">社名の由来</h3>
+              <p className="text-sm leading-7 text-slate-300">
+                <span className="font-semibold text-cyanline">NEURAMNESIA</span> は、<span className="text-slate-200">Neuro（神経）</span>と<span className="text-slate-200">Amnesia（記憶喪失）</span>を組み合わせた造語です。
+              </p>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                記憶を失うのではなく、新しい記憶を神経レベルで獲得する。失われた過去を取り戻すのではなく、経験できなかった過去を創造する。そんな逆説的な意味を込めています。
+              </p>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
+              <dl className="grid gap-6">
+                {[
+                  ["社名", "NEURAMNESIA Inc."],
+                  ["設立", "2029年4月"],
+                  ["所在地", "東京都港区虎ノ門 4-1-1（架空）"],
+                  ["代表", "Dr. Rei Kurosawa（架空）"],
+                  ["事業内容", "記憶体験の設計・販売・査定、記憶安全基準の策定、記憶資産マーケットプレイスの運営"],
+                  ["従業員数", "約120名（架空）"],
+                  ["資本金", "48億円（架空）"],
+                ].map(([label, value]) => (
+                  <div key={label} className="grid gap-1 border-b border-white/10 pb-4 last:border-0 last:pb-0 sm:grid-cols-[160px_1fr]">
+                    <dt className="text-sm font-semibold text-slate-400">{label}</dt>
+                    <dd className="text-sm leading-7 text-slate-200">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section className="px-5 pb-24">
-        <div className="mx-auto max-w-5xl rounded-[2rem] border border-magentapulse/20 bg-magentapulse/5 p-6 text-center backdrop-blur-xl">
-          <p className="text-sm leading-7 text-slate-300">
-            本サイトおよび NOVAMNESIS Laboratories は架空の企業・サービスです。実在する医療・金融・記憶操作サービスではありません。
-          </p>
         </div>
       </section>
 
