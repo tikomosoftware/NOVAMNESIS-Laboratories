@@ -6,7 +6,7 @@ import { Header, Footer, LogoMark, BrandLockup, Button, SectionHeader, Info, Her
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-obsidian text-slate-100">
-      <Header items={landingNavItems} cta="カタログを見る" ctaHref="/catalog" />
+      <Header items={landingNavItems} />
       <Hero />
       <Problem />
       <PurchaseUseCases />
