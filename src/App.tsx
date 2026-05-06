@@ -30,7 +30,11 @@ export default function App() {
     return <CatalogPage />;
   }
 
-  if (path === "/" || path === "/company") {
+  if (path === "/") {
+    return <LandingPage />;
+  }
+
+  if (path === "/company") {
     return <CompanyPage />;
   }
 
