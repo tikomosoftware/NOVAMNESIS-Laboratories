@@ -26,20 +26,7 @@ export default function ExperienceStartPage() {
             <p className="mt-7 max-w-3xl text-lg leading-9 text-slate-300">
               初回は、記憶の種類と感情の強さを確認しながら進めます。いきなり定着に入るのではなく、体験したい過去、避けたい場面、終了後に残したい余韻を一つずつ整理します。
             </p>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <a
-                href="#intake"
-                className="rounded-full bg-gradient-to-r from-cyanline via-violetsignal to-magentapulse px-6 py-3 text-sm font-semibold text-obsidian shadow-glow transition duration-300 hover:-translate-y-0.5"
-              >
-                体験前チェックを始める
-              </a>
-              <a
-                href="/facility"
-                className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-cyanline/60 hover:bg-white/10"
-              >
-                施設を先に見る
-              </a>
-            </div>
+
           </div>
           <div className="glass-card">
             <p className="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-cyanline">First Session</p>
