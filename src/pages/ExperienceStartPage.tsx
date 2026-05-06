@@ -145,7 +145,7 @@ export default function ExperienceStartPage() {
         </div>
       </section>
 
-      <FinalCta />
+
       <Footer items={landingNavItems} />
     </main>
   );
