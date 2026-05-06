@@ -194,19 +194,10 @@ export function Hero() {
             <span className="text-xs font-semibold uppercase tracking-[0.26em] text-slate-300">Novamnesis Laboratories</span>
           </div>
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-cyanline">Novamnesis Laboratories — Memory Experience Marketplace</p>
-          <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl lg:text-7xl">経験したかった人生を、記憶として購入する。</h1>
+          <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl lg:text-7xl">あなたが本当に欲しかった人生を、記憶から始めよう。</h1>
           <p className="mt-7 max-w-2xl text-lg leading-9 text-slate-300">
             Novamnesis Laboratories は、恋愛、成功、旅行、結婚、挫折、性別を入れ替えた人生まで、経験できなかった過去を記憶として購入できるマーケットプレイスです。
           </p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <Button href="/experience">記憶を体験する</Button>
-            <a
-              href="/catalog"
-              className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-cyanline/60 hover:bg-white/10"
-            >
-              人生メニューを見る
-            </a>
-          </div>
           <div className="mt-10 grid gap-4 text-sm text-slate-300 sm:grid-cols-2">
             <p className="glass-panel">青春の恋も、行けなかった旅も、選ばなかった結婚も。</p>
             <p className="glass-panel">幸せな記憶も、挫折の記憶も、人生の厚みとして手に入れる。</p>
@@ -659,7 +650,7 @@ export function FinalCta() {
     <section className="px-5 py-24">
       <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-cyanline/20 bg-[radial-gradient(circle_at_15%_20%,rgba(88,244,255,0.18),transparent_28%),radial-gradient(circle_at_85%_40%,rgba(255,79,216,0.16),transparent_30%),rgba(255,255,255,0.04)] p-8 text-center shadow-glow md:p-16">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">Begin Again</p>
-        <h2 className="mx-auto max-w-3xl text-4xl font-semibold leading-tight text-white">あなたが本当に欲しかった人生を、記憶から始めよう。</h2>
+        <h2 className="mx-auto max-w-3xl text-4xl font-semibold leading-tight text-white">経験したかった人生を、記憶として購入する。</h2>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300">
           体験するか、提供するか。Novamnesis Laboratories は、あなたの過去と未来に新しい選択肢を与えます。
         </p>
