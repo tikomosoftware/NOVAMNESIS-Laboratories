@@ -6,7 +6,7 @@ import { Header, Footer, LogoMark, BrandLockup, Button, SectionHeader, Info, Her
 export default function FacilityPage() {
   return (
     <main className="min-h-screen bg-obsidian text-slate-100">
-      <Header items={facilityNavItems} cta="記憶メニューを見る" ctaHref="/catalog" />
+      <Header items={facilityNavItems} />
       <section id="room" className="relative overflow-hidden px-5 pb-20 pt-36">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_14%,rgba(88,244,255,0.20),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(255,79,216,0.15),transparent_28%),linear-gradient(180deg,#060711_0%,#0c1020_70%,#060711_100%)]" />
         <div className="absolute inset-0 -z-10 novamnesis-grid opacity-35" />

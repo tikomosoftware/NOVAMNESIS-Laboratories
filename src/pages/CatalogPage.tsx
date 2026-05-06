@@ -6,14 +6,14 @@ import { Header, Footer, LogoMark, BrandLockup, Button, SectionHeader, Info, Her
 export default function CatalogPage() {
   return (
     <main className="min-h-screen bg-obsidian text-slate-100">
-      <Header items={catalogNavItems} cta="会社情報を見る" ctaHref="/company" />
+      <Header items={catalogNavItems} />
       <CatalogHero />
       <MemoryEpisodes />
       <Plans />
       <section id="categories">
         <CardGrid eyebrow="Purchase Categories" title="人生メニューのカテゴリ。" items={categories} />
       </section>
-      <FinalCta />
+
       <Footer items={catalogNavItems} />
     </main>
   );

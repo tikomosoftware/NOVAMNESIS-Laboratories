@@ -6,7 +6,7 @@ import { Header, Footer, LogoMark, BrandLockup, Button, SectionHeader, Info, Her
 export default function SellPage() {
   return (
     <main className="min-h-screen bg-obsidian text-slate-100">
-      <Header items={sellNavItems} cta="記憶を体験する" ctaHref="/experience" tone="corporate" />
+      <Header items={sellNavItems} tone="corporate" />
       <section id="overview" className="relative overflow-hidden border-b border-white/10 px-5 pb-20 pt-36">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_12%,rgba(255,79,216,0.18),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(88,244,255,0.20),transparent_28%),linear-gradient(180deg,#060711_0%,#0c1020_68%,#060711_100%)]" />
         <div className="absolute inset-0 -z-10 novamnesis-grid opacity-30" />
