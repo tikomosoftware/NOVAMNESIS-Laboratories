@@ -139,9 +139,6 @@ export default function ExperienceStartPage() {
               </label>
               <div className="flex flex-wrap gap-4 pt-2">
                 <Button href={bookingHref}>体験内容を確認して予約へ進む</Button>
-                <Button href="/catalog" variant="secondary">
-                  メニューから選ぶ
-                </Button>
               </div>
             </div>
           </form>
