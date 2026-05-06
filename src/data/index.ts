@@ -6,7 +6,7 @@ export const siteNavItems = [
   { label: "Facility", href: "/facility" },
   { label: "Safety", href: "/safety" },
   { label: "Sell Memory", href: "/sell" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export const landingNavItems = siteNavItems;

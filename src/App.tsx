@@ -10,6 +10,7 @@ import TemplateDetailPage from "./pages/TemplateDetailPage";
 import EpisodeDetailPage from "./pages/EpisodeDetailPage";
 import SellPage from "./pages/SellPage";
 import SafetyPage from "./pages/SafetyPage";
+import FaqPage from "./pages/FaqPage";
 
 export default function App() {
   const path = window.location.pathname;
@@ -44,6 +45,10 @@ export default function App() {
 
   if (path === "/safety") {
     return <SafetyPage />;
+  }
+
+  if (path === "/faq") {
+    return <FaqPage />;
   }
 
   if (path === "/facility") {

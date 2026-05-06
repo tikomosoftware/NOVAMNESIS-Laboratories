@@ -15,7 +15,7 @@ export default function LandingPage() {
       <Marketplace />
       <CatalogTeaser />
       <Reviews />
-      <FAQ />
+
       <FinalCta />
       <Footer items={landingNavItems} />
     </main>
