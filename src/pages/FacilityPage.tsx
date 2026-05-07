@@ -3,7 +3,19 @@ import { ExperienceTemplate, MemoryEpisode, Tone } from "../types";
 import { experienceEntryOptions, experienceMenus, memoryEpisodes, companyNavItems, sellNavItems, facilityNavItems, landingNavItems, catalogNavItems, bookingSteps, plans, categories, valuation, sellSteps, safetyItems, ethics, roomZones, sessionSteps, bodyStates, purchaseUseCases } from "../data";
 import { Header, Footer, LogoMark, BrandLockup, Button, SectionHeader, Info, Hero, Problem, PurchaseUseCases, Service, FacilityTeaser, Marketplace, CatalogTeaser, Reviews, FAQ, FinalCta, CatalogHero, MemoryEpisodes, Plans, CardGrid } from "../components/SharedComponents";
 
+const facilityTourVideoSrc = "/videos/facility-tour.mp4";
+const facilityTourPosterSrc = "/images/facility-hero.png";
+const fixationSessionPosterSrc = "/images/memory-fixation-session.png";
+
 export default function FacilityPage() {
+  const [isTourOpen, setIsTourOpen] = useState(false);
+  const [videoUnavailable, setVideoUnavailable] = useState(false);
+
+  const openTour = () => {
+    setVideoUnavailable(false);
+    setIsTourOpen(true);
+  };
+
   return (
     <main className="min-h-screen bg-obsidian text-slate-100">
       <Header items={facilityNavItems} />
@@ -33,13 +45,51 @@ export default function FacilityPage() {
           </div>
           <div className="relative overflow-hidden rounded-[2rem] border border-cyanline/20 shadow-glow">
             <img
-              src="/images/facility-hero.png"
+              src={facilityTourPosterSrc}
               alt="未来的なリクライニングチェアでニューロクラウンを装着し記憶定着を受けている様子"
               className="aspect-[16/10] w-full object-cover"
             />
           </div>
         </div>
       </section>
+
+      {isTourOpen && (
+        <div
+          className="fixed inset-0 z-[80] flex items-center justify-center bg-obsidian/90 px-5 py-8 backdrop-blur-md"
+          role="dialog"
+          aria-modal="true"
+          aria-label="施設ツアー動画"
+        >
+          <button
+            type="button"
+            onClick={() => setIsTourOpen(false)}
+            className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-2xl leading-none text-white transition hover:border-cyanline/60 hover:text-cyanline focus:outline-none focus:ring-2 focus:ring-cyanline"
+            aria-label="閉じる"
+          >
+            ×
+          </button>
+          <div className="w-full max-w-5xl overflow-hidden rounded-[2rem] border border-cyanline/25 bg-obsidian shadow-glow">
+            {videoUnavailable ? (
+              <div className="grid aspect-video place-items-center bg-[radial-gradient(circle_at_50%_45%,rgba(88,244,255,0.16),transparent_36%),#060711] p-8 text-center">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">Video Standby</p>
+                  <p className="mt-4 text-base leading-8 text-slate-300">動画ファイルはまだ配置されていません。</p>
+                </div>
+              </div>
+            ) : (
+              <video
+                className="aspect-video w-full bg-black"
+                src={facilityTourVideoSrc}
+                poster={fixationSessionPosterSrc}
+                controls
+                autoPlay
+                playsInline
+                onError={() => setVideoUnavailable(true)}
+              />
+            )}
+          </div>
+        </div>
+      )}
 
       <section className="section pt-0">
         <div className="mx-auto max-w-6xl">
@@ -116,11 +166,27 @@ export default function FacilityPage() {
           </div>
           <div className="grid gap-4">
             <figure className="overflow-hidden rounded-[2rem] border border-cyanline/20 bg-white/[0.04] shadow-glow backdrop-blur-xl">
-              <img
-                src="/images/memory-fixation-session.png"
-                alt="未来的なリクライニングチェアでリラックスしながら記憶定着を受けている様子"
-                className="aspect-[16/10] w-full object-cover"
-              />
+              <button
+                type="button"
+                onClick={openTour}
+                className="group relative block w-full overflow-hidden text-left focus:outline-none focus:ring-2 focus:ring-cyanline focus:ring-offset-2 focus:ring-offset-obsidian"
+                aria-label="記憶定着セッション動画を再生"
+              >
+                <img
+                  src={fixationSessionPosterSrc}
+                  alt="未来的なリクライニングチェアでリラックスしながら記憶定着を受けている様子"
+                  className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+                <span className="absolute inset-0 bg-gradient-to-t from-obsidian/70 via-obsidian/10 to-transparent opacity-90" />
+                <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-obsidian/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyanline backdrop-blur-md">
+                  Session Movie
+                </span>
+                <span className="absolute inset-0 flex items-center justify-center">
+                  <span className="flex h-20 w-20 items-center justify-center rounded-full border border-cyanline/40 bg-obsidian/70 text-cyanline shadow-glow backdrop-blur-md transition duration-300 group-hover:scale-110 group-hover:bg-cyanline group-hover:text-obsidian">
+                    <span className="ml-1 h-0 w-0 border-y-[13px] border-l-[20px] border-y-transparent border-l-current" />
+                  </span>
+                </span>
+              </button>
               <figcaption className="border-t border-white/10 px-5 py-4 text-sm leading-7 text-slate-300">
                 高級マッサージチェアに近い姿勢で、柔らかいニューロクラウンを装着します。身体を拘束せず、スタッフが離れた端末から状態を見守ります。
               </figcaption>
