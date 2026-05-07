@@ -127,7 +127,7 @@ export function Header({
             <a
               key={item.href}
               href={item.href}
-              className={`text-sm transition ${tone === "light" ? "text-slate-600 hover:text-slate-950" : "text-cyanline/70 hover:text-cyanline"}`}
+              className={`text-sm transition ${tone === "light" ? "text-slate-600 hover:text-slate-950" : "text-cyanline/85 hover:text-cyanline hover:drop-shadow-[0_0_6px_rgba(88,244,255,0.42)]"}`}
             >
               {item.label}
             </a>

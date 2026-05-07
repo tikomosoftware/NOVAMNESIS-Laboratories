@@ -12,61 +12,68 @@ import SafetyPage from "./pages/SafetyPage";
 import FaqPage from "./pages/FaqPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import FloatingChatWidget from "./components/FloatingChatWidget";
 
 export default function App() {
   const path = window.location.pathname;
+  const withChat = (page: React.ReactNode) => (
+    <>
+      {page}
+      <FloatingChatWidget />
+    </>
+  );
 
   if (path.startsWith("/template/")) {
     const slug = decodeURIComponent(path.replace("/template/", ""));
     const template = experienceMenus.find((item) => item.slug === slug);
-    return template ? <TemplateDetailPage template={template} /> : <CatalogPage />;
+    return withChat(template ? <TemplateDetailPage template={template} /> : <CatalogPage />);
   }
 
   if (path.startsWith("/episode/")) {
     const slug = decodeURIComponent(path.replace("/episode/", ""));
     const episode = memoryEpisodes.find((item) => item.slug === slug);
-    return episode ? <EpisodeDetailPage episode={episode} /> : <CatalogPage />;
+    return withChat(episode ? <EpisodeDetailPage episode={episode} /> : <CatalogPage />);
   }
 
   if (path === "/catalog") {
-    return <CatalogPage />;
+    return withChat(<CatalogPage />);
   }
 
   if (path === "/") {
-    return <LandingPage />;
+    return withChat(<LandingPage />);
   }
 
   if (path === "/sell") {
-    return <SellPage />;
+    return withChat(<SellPage />);
   }
 
   if (path === "/safety") {
-    return <SafetyPage />;
+    return withChat(<SafetyPage />);
   }
 
   if (path === "/faq") {
-    return <FaqPage />;
+    return withChat(<FaqPage />);
   }
 
   if (path === "/facility") {
-    return <FacilityPage />;
+    return withChat(<FacilityPage />);
   }
 
   if (path === "/experience") {
-    return <ExperienceStartPage />;
+    return withChat(<ExperienceStartPage />);
   }
 
   if (path === "/booking") {
-    return <BookingPage />;
+    return withChat(<BookingPage />);
   }
 
   if (path === "/about") {
-    return <AboutPage />;
+    return withChat(<AboutPage />);
   }
 
   if (path === "/contact") {
-    return <ContactPage />;
+    return withChat(<ContactPage />);
   }
 
-  return <LandingPage />;
+  return withChat(<LandingPage />);
 }

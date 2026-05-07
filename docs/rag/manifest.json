@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-05-07T12:01:01.269Z",
+  "base_url": "https://novamnesis-laboratories.vercel.app",
+  "source": "local React/Vite source",
+  "document_count": 122,
+  "chunk_count": 122,
+  "routes": [
+    {
+      "path": "/",
+      "title": "Landing",
+      "url": "https://novamnesis-laboratories.vercel.app"
+    },
+    {
+      "path": "/catalog",
+      "title": "Catalog",
+      "url": "https://novamnesis-laboratories.vercel.app/catalog"
+    },
+    {
+      "path": "/experience",
+      "title": "Experience",
+      "url": "https://novamnesis-laboratories.vercel.app/experience"
+    },
+    {
+      "path": "/booking",
+      "title": "Booking",
+      "url": "https://novamnesis-laboratories.vercel.app/booking"
+    },
+    {
+      "path": "/facility",
+      "title": "Facility",
+      "url": "https://novamnesis-laboratories.vercel.app/facility"
+    },
+    {
+      "path": "/sell",
+      "title": "Sell Memory",
+      "url": "https://novamnesis-laboratories.vercel.app/sell"
+    },
+    {
+      "path": "/safety",
+      "title": "Safety",
+      "url": "https://novamnesis-laboratories.vercel.app/safety"
+    },
+    {
+      "path": "/faq",
+      "title": "FAQ",
+      "url": "https://novamnesis-laboratories.vercel.app/faq"
+    },
+    {
+      "path": "/about",
+      "title": "About",
+      "url": "https://novamnesis-laboratories.vercel.app/about"
+    },
+    {
+      "path": "/contact",
+      "title": "Contact",
+      "url": "https://novamnesis-laboratories.vercel.app/contact"
+    }
+  ],
+  "outputs": [
+    "documents.json",
+    "knowledge.jsonl"
+  ]
+}

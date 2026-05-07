@@ -1,0 +1,1577 @@
+[
+  {
+    "id": "session-step:sessionsteps-01",
+    "title": "受付と境界タグの確認",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "session-step",
+    "content": "title: 受付と境界タグの確認\ntime: 00:00-08:00\ndescription: 体験する記憶の種類、強度、残したい余韻を確認します。本人同意、現実の記憶との境界タグ、途中停止の合図をここで固定します。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sessionSteps",
+      "index": 0
+    }
+  },
+  {
+    "id": "session-step:sessionsteps-02",
+    "title": "リクライニングポッドへ着席",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "session-step",
+    "content": "title: リクライニングポッドへ着席\ntime: 08:00-12:00\ndescription: 体温、脈拍、眼球運動を取りながら、首と肩が緩む角度に調整します。拘束ではなく、眠りに落ちる前の姿勢を保つための支持です。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sessionSteps",
+      "index": 1
+    }
+  },
+  {
+    "id": "session-step:sessionsteps-03",
+    "title": "ニューロクラウン装着",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "session-step",
+    "content": "title: ニューロクラウン装着\ntime: 12:00-18:00\ndescription: こめかみ、後頭部、額に柔らかいセンサーを当てます。髪を剃る必要はなく、微弱な冷感と軽い圧だけが残ります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sessionSteps",
+      "index": 2
+    }
+  },
+  {
+    "id": "session-step:sessionsteps-04",
+    "title": "記憶定着フェーズ",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "session-step",
+    "content": "title: 記憶定着フェーズ\ntime: 18:00-46:00\ndescription: 意識は浅い睡眠に近く、音は遠く聞こえます。映像を見るというより、匂い、重さ、声、気まずさ、嬉しさが順番に自分の経験として結びつきます。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sessionSteps",
+      "index": 3
+    }
+  },
+  {
+    "id": "session-step:sessionsteps-05",
+    "title": "覚醒と現実復帰",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "session-step",
+    "content": "title: 覚醒と現実復帰\ntime: 46:00-60:00\ndescription: 名前、日付、現在地、購入した記憶であることを確認します。余韻が強い場合は照明を落としたまま、認知安定セッションを延長します。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sessionSteps",
+      "index": 4
+    }
+  },
+  {
+    "id": "facility-zone:roomzones-01",
+    "title": "Preparation Lounge",
+    "url": "https://novamnesis-laboratories.vercel.app/facility",
+    "source_path": "src/data/index.ts",
+    "kind": "facility-zone",
+    "content": "title: Preparation Lounge\ndescription: 白い診察室ではなく、低い照明と吸音パネルのある待機室です。体験前の緊張を下げるため、説明はすべて座ったまま受けられます。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "roomZones",
+      "index": 0
+    }
+  },
+  {
+    "id": "facility-zone:roomzones-02",
+    "title": "Memory Fixation Pod",
+    "url": "https://novamnesis-laboratories.vercel.app/facility",
+    "source_path": "src/data/index.ts",
+    "kind": "facility-zone",
+    "content": "title: Memory Fixation Pod\ndescription: 頭部センサー、香気カートリッジ、骨伝導音響、体圧制御シートを一体化した定着用チェアです。利用者は常にスタッフの視界内にいます。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "roomZones",
+      "index": 1
+    }
+  },
+  {
+    "id": "facility-zone:roomzones-03",
+    "title": "Return Bay",
+    "url": "https://novamnesis-laboratories.vercel.app/facility",
+    "source_path": "src/data/index.ts",
+    "kind": "facility-zone",
+    "content": "title: Return Bay\ndescription: 覚醒後にすぐ現実へ戻しすぎないための小部屋です。水、鏡、日付表示、短い会話で、購入した記憶と今日の自分を分け直します。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "roomZones",
+      "index": 2
+    }
+  },
+  {
+    "id": "body-state:bodystates-01",
+    "title": "bodyStates 1",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "body-state",
+    "content": "まぶたは閉じたままでも、記憶の中では視界が立ち上がる",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "bodyStates",
+      "index": 0
+    }
+  },
+  {
+    "id": "body-state:bodystates-02",
+    "title": "bodyStates 2",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "body-state",
+    "content": "身体は椅子にあるが、足裏や指先に別の場所の感触が残る",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "bodyStates",
+      "index": 1
+    }
+  },
+  {
+    "id": "body-state:bodystates-03",
+    "title": "bodyStates 3",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "body-state",
+    "content": "強い場面では脈拍が上がるため、自動的に再生速度が落ちる",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "bodyStates",
+      "index": 2
+    }
+  },
+  {
+    "id": "body-state:bodystates-04",
+    "title": "bodyStates 4",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "body-state",
+    "content": "声を出せない状態ではなく、違和感があれば停止ワードで中断できる",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "bodyStates",
+      "index": 3
+    }
+  },
+  {
+    "id": "body-state:bodystates-05",
+    "title": "bodyStates 5",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "body-state",
+    "content": "終了直後は夢より鮮明で、現実の出来事より少しだけ輪郭が柔らかい",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "bodyStates",
+      "index": 4
+    }
+  },
+  {
+    "id": "experience-entry-option:experienceentryoptions-01",
+    "title": "短い思い出から試す",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "experience-entry-option",
+    "content": "title: 短い思い出から試す\ndescription: 放課後の告白、旅先の朝、試合前の緊張など、人生のポイントになる場面を軽く体験します。\nmeta: ポイント記憶\nsessionSpan: 30-60分\nmemorySpan: 数十分-数日分",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "experienceEntryOptions",
+      "index": 0
+    }
+  },
+  {
+    "id": "experience-entry-option:experienceentryoptions-02",
+    "title": "選ばなかった人生を体験する",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "experience-entry-option",
+    "content": "title: 選ばなかった人生を体験する\ndescription: 結婚、仕事、移住、別の役割など、現実では選ばなかった人生の分岐を数年単位の記憶として受け取ります。\nmeta: 人生分岐記憶\nsessionSpan: 60分 x 複数回\nmemorySpan: 6か月-10年分",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "experienceEntryOptions",
+      "index": 1
+    }
+  },
+  {
+    "id": "experience-entry-option:experienceentryoptions-03",
+    "title": "強い物語記憶に入る",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/data/index.ts",
+    "kind": "experience-entry-option",
+    "content": "title: 強い物語記憶に入る\ndescription: ヒーロー、異世界、極限体験など、感情の振れ幅が大きい記憶を段階的に定着させます。\nmeta: 物語記憶\nsessionSpan: 60分から\nmemorySpan: 数日-数年分",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "experienceEntryOptions",
+      "index": 2
+    }
+  },
+  {
+    "id": "intake-check:intakechecks-01",
+    "title": "intakeChecks 1",
+    "url": "https://novamnesis-laboratories.vercel.app/booking",
+    "source_path": "src/data/index.ts",
+    "kind": "intake-check",
+    "content": "体験したい記憶の種類",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "intakeChecks",
+      "index": 0
+    }
+  },
+  {
+    "id": "intake-check:intakechecks-02",
+    "title": "intakeChecks 2",
+    "url": "https://novamnesis-laboratories.vercel.app/booking",
+    "source_path": "src/data/index.ts",
+    "kind": "intake-check",
+    "content": "残したい余韻の強さ",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "intakeChecks",
+      "index": 1
+    }
+  },
+  {
+    "id": "intake-check:intakechecks-03",
+    "title": "intakeChecks 3",
+    "url": "https://novamnesis-laboratories.vercel.app/booking",
+    "source_path": "src/data/index.ts",
+    "kind": "intake-check",
+    "content": "現実と混同しやすい出来事の有無",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "intakeChecks",
+      "index": 2
+    }
+  },
+  {
+    "id": "intake-check:intakechecks-04",
+    "title": "intakeChecks 4",
+    "url": "https://novamnesis-laboratories.vercel.app/booking",
+    "source_path": "src/data/index.ts",
+    "kind": "intake-check",
+    "content": "避けたい感情や場面",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "intakeChecks",
+      "index": 3
+    }
+  },
+  {
+    "id": "intake-check:intakechecks-05",
+    "title": "intakeChecks 5",
+    "url": "https://novamnesis-laboratories.vercel.app/booking",
+    "source_path": "src/data/index.ts",
+    "kind": "intake-check",
+    "content": "終了後に必要な休憩時間",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "intakeChecks",
+      "index": 4
+    }
+  },
+  {
+    "id": "booking-step:bookingsteps-01",
+    "title": "bookingSteps 1",
+    "url": "https://novamnesis-laboratories.vercel.app/booking",
+    "source_path": "src/data/index.ts",
+    "kind": "booking-step",
+    "content": "体験内容の確認",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "bookingSteps",
+      "index": 0
+    }
+  },
+  {
+    "id": "booking-step:bookingsteps-02",
+    "title": "bookingSteps 2",
+    "url": "https://novamnesis-laboratories.vercel.app/booking",
+    "source_path": "src/data/index.ts",
+    "kind": "booking-step",
+    "content": "希望日時の選択",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "bookingSteps",
+      "index": 1
+    }
+  },
+  {
+    "id": "booking-step:bookingsteps-03",
+    "title": "bookingSteps 3",
+    "url": "https://novamnesis-laboratories.vercel.app/booking",
+    "source_path": "src/data/index.ts",
+    "kind": "booking-step",
+    "content": "来館前説明の予約",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "bookingSteps",
+      "index": 2
+    }
+  },
+  {
+    "id": "booking-step:bookingsteps-04",
+    "title": "bookingSteps 4",
+    "url": "https://novamnesis-laboratories.vercel.app/booking",
+    "source_path": "src/data/index.ts",
+    "kind": "booking-step",
+    "content": "同意事項の確認",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "bookingSteps",
+      "index": 3
+    }
+  },
+  {
+    "id": "plan:plans-01",
+    "title": "Secret Agent Mission",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: Secret Agent Mission\ndescription: 誰にも知られず世界の均衡を保つ、匿名化済み潜入任務。\ncategory: Covert Hero\nduration: 42分\nmemorySpan: 11日間\nrisk: Medium\nsource: ハイブリッド",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 0
+    }
+  },
+  {
+    "id": "plan:plans-02",
+    "title": "Mars Colony Escape",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: Mars Colony Escape\ndescription: 赤い惑星の薄い空気と警報音の中、植民地から脱出する。\ncategory: SF Survival\nduration: 50分\nmemorySpan: 3週間\nrisk: High\nsource: 人工生成",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 1
+    }
+  },
+  {
+    "id": "plan:plans-03",
+    "title": "Executive Success",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: Executive Success\ndescription: 巨大企業のCEOとして、ひとつの決断で市場を動かす。\ncategory: Career Elite\nduration: 35分\nmemorySpan: 18カ月\nrisk: Low\nsource: 匿名化済み実体験",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 2
+    }
+  },
+  {
+    "id": "plan:plans-04",
+    "title": "Lost Romance",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: Lost Romance\ndescription: すでに終わったはずの恋を、記憶の中でもう一度だけ。\ncategory: Romance\nduration: 38分\nmemorySpan: 6週間\nrisk: Medium\nsource: 匿名化済み実体験",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 3
+    }
+  },
+  {
+    "id": "plan:plans-05",
+    "title": "Deep Space Vacation",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: Deep Space Vacation\ndescription: 深宇宙クルーズの静寂と、窓外に浮かぶ知らない光。\ncategory: Luxury Travel\nduration: 47分\nmemorySpan: 9日間\nrisk: Low\nsource: 人工生成",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 4
+    }
+  },
+  {
+    "id": "plan:plans-06",
+    "title": "Heroic Rescue",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: Heroic Rescue\ndescription: 絶体絶命の現場で、誰かの未来を取り戻した記憶。\ncategory: Hero\nduration: 44分\nmemorySpan: 72時間\nrisk: High\nsource: ハイブリッド",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 5
+    }
+  },
+  {
+    "id": "plan:plans-07",
+    "title": "Stadium Legend Final",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: Stadium Legend Final\ndescription: 満員のスタジアムで、最後の一球に人生を預けるトップアスリート体験。\ncategory: Sports Career\nduration: 40分\nmemorySpan: 14年間\nrisk: Medium\nsource: ハイブリッド",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 6
+    }
+  },
+  {
+    "id": "plan:plans-08",
+    "title": "World Tour Artist",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: World Tour Artist\ndescription: 照明、歓声、震える指先。世界ツアー初日のステージに立つ記憶。\ncategory: Artist Career\nduration: 36分\nmemorySpan: 8カ月\nrisk: Low\nsource: 匿名化済み実体験",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 7
+    }
+  },
+  {
+    "id": "plan:plans-09",
+    "title": "Virtual Hero Origin",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: Virtual Hero Origin\ndescription: 誰も知らない街で目覚め、はじめて誰かを救う仮想ヒーロー誕生譚。\ncategory: Virtual Hero\nduration: 48分\nmemorySpan: 21日間\nrisk: Medium\nsource: 人工生成",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 8
+    }
+  },
+  {
+    "id": "plan:plans-10",
+    "title": "Neon Heroine Protocol",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: Neon Heroine Protocol\ndescription: 企業都市の夜を駆け抜け、失われた真実に手を伸ばすヒロイン体験。\ncategory: Virtual Heroine\nduration: 46分\nmemorySpan: 12日間\nrisk: Medium\nsource: 人工生成",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 9
+    }
+  },
+  {
+    "id": "plan:plans-11",
+    "title": "Isekai Rebirth Archive",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: Isekai Rebirth Archive\ndescription: 見知らぬ王都で第二の名前を与えられ、選ばなかった人生を始める。\ncategory: Another World\nduration: 55分\nmemorySpan: 2年間\nrisk: High\nsource: 人工生成",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 10
+    }
+  },
+  {
+    "id": "plan:plans-12",
+    "title": "Royal Academy Spellcraft",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/data/index.ts",
+    "kind": "plan",
+    "content": "title: Royal Academy Spellcraft\ndescription: 魔術と政治が交差する学院で、才能と秘密を抱えて卒業式を迎える。\ncategory: Fantasy Career\nduration: 52分\nmemorySpan: 3年間\nrisk: Medium\nsource: 人工生成",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "plans",
+      "index": 11
+    }
+  },
+  {
+    "id": "purchase-use-case:purchaseusecases-01",
+    "title": "学生時代の恋愛を、後から人生に足す。",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-use-case",
+    "content": "label: 青春を補う\ntitle: 学生時代の恋愛を、後から人生に足す。\ndesire: 恋愛に踏み出せなかった人へ\ndescription: 放課後の告白、文化祭の帰り道、卒業式で言えなかった一言。派手な成功ではなく、胸が少し痛むくらいの青春を購入できます。\nexamples 1: 放課後の教室で告白する\nexamples 2: 雨の日に相合傘で帰る\nexamples 3: 卒業前日に返事をもらう\nstartingPrice: Short Memory / 3時間から",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "purchaseUseCases",
+      "index": 0
+    }
+  },
+  {
+    "id": "purchase-use-case:purchaseusecases-02",
+    "title": "結婚した人生、独身だった人生を体験する。",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-use-case",
+    "content": "label: 後悔をほどく\ntitle: 結婚した人生、独身だった人生を体験する。\ndesire: 選ばなかった分岐が残っている人へ\ndescription: 結婚式の朝、子どもを寝かしつけた夜、ひとりで海外赴任を選んだ朝。どちらが正解だったかではなく、選ばなかった人生にも触れて後悔を小さくします。\nexamples 1: 結婚した世界線の10年間\nexamples 2: 独身で仕事に振り切った5年間\nexamples 3: 離婚後に自分を取り戻す半年\nstartingPrice: Life Branch / 6か月から",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "purchaseUseCases",
+      "index": 1
+    }
+  },
+  {
+    "id": "purchase-use-case:purchaseusecases-03",
+    "title": "成功した自分の記憶を、現実の背中に入れる。",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-use-case",
+    "content": "label: 成功を味わう\ntitle: 成功した自分の記憶を、現実の背中に入れる。\ndesire: 届かなかった舞台がある人へ\ndescription: CEOとして決断した日、国体決勝で名前を呼ばれた瞬間、作品が初めて評価された夜。勝った結果だけでなく、そこまでの緊張も含めて残します。\nexamples 1: 大企業のCEOとして買収を決断する\nexamples 2: 全国大会の決勝に立つ\nexamples 3: 初個展で作品が売れる\nstartingPrice: Achievement / 2日から",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "purchaseUseCases",
+      "index": 2
+    }
+  },
+  {
+    "id": "purchase-use-case:purchaseusecases-04",
+    "title": "行けなかった旅行を、思い出として持ち帰る。",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-use-case",
+    "content": "label: 旅を取り戻す\ntitle: 行けなかった旅行を、思い出として持ち帰る。\ndesire: 時間がなかった人へ\ndescription: 若い頃に行きたかったヨーロッパ一人旅、家族で見たかった海、老後まで延ばしていた世界一周。写真ではなく、移動の疲れや朝の空気まで記憶にします。\nexamples 1: 学生最後のヨーロッパ周遊\nexamples 2: 新婚旅行で見た南の海\nexamples 3: 退職後の世界一周クルーズ\nstartingPrice: Travel Archive / 9日から",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "purchaseUseCases",
+      "index": 3
+    }
+  },
+  {
+    "id": "purchase-use-case:purchaseusecases-05",
+    "title": "性別や役割を入れ替えた人生を経験する。",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-use-case",
+    "content": "label: 人生を反転する\ntitle: 性別や役割を入れ替えた人生を経験する。\ndesire: 別の身体、別の社会的位置から生きたかった人へ\ndescription: 男性として、女性として、親として、子として、ヒーローとして、ヒロインとして。現実の自己を壊さず、別の視点で人生を眺めるための大きな記憶テンプレートです。\nexamples 1: 別の性別で迎える成人式\nexamples 2: 物語のヒロインとして選択する夜\nexamples 3: 家族を支える側の20年\nstartingPrice: Identity Template / 30日から",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "purchaseUseCases",
+      "index": 4
+    }
+  },
+  {
+    "id": "purchase-use-case:purchaseusecases-06",
+    "title": "挫折や失敗を、人生の奥行きとして取り入れる。",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-use-case",
+    "content": "label: 痛みを得る\ntitle: 挫折や失敗を、人生の奥行きとして取り入れる。\ndesire: 負けた経験が少ない人へ\ndescription: 県大会で負けた帰りのバス、失恋した駅のホーム、事業に失敗して謝罪に向かう朝。傷つくためではなく、他人の痛みを想像できる人生にするための記憶です。\nexamples 1: 最後の試合でベンチのまま終わる\nexamples 2: 好きな人に選ばれない\nexamples 3: 起業に失敗し、もう一度始める\nstartingPrice: Failure Memory / 6時間から",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "purchaseUseCases",
+      "index": 5
+    }
+  },
+  {
+    "id": "experience-template:sports-athlete",
+    "title": "スポーツ選手の人生",
+    "url": "https://novamnesis-laboratories.vercel.app/template/sports-athlete",
+    "source_path": "src/data/index.ts",
+    "kind": "experience-template",
+    "content": "slug: sports-athlete\ntitle: スポーツ選手の人生\ntagline: 勝ち続けた身体と、負けた夜の記憶まで。\ndescription: プロ契約、代表選考、決勝戦、引退試合まで。身体感覚と歓声を中心に構成された競技人生テンプレート。\nduration: 45分\nmemorySpan: 12〜18年\nrisk: Medium\nchapters 1: 才能を疑われた少年期\nchapters 2: プロ契約の朝\nchapters 3: 代表落選の通知\nchapters 4: 決勝戦のラストプレー\nchapters 5: 引退試合の静かな更衣室\nsensations 1: 肺が焼けるような sprint 感\nsensations 2: スタジアムの低い振動\nsensations 3: テーピングの圧迫\nsensations 4: 歓声が一瞬だけ遠のく感覚\nrecommendedPlans 1: Stadium Legend Final\nrecommendedPlans 2: Heroic Rescue\nrecommendedPlans 3: Professional Mastery",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "experienceMenus",
+      "index": 0
+    }
+  },
+  {
+    "id": "experience-template:artist-life",
+    "title": "アーティストの人生",
+    "url": "https://novamnesis-laboratories.vercel.app/template/artist-life",
+    "source_path": "src/data/index.ts",
+    "kind": "experience-template",
+    "content": "slug: artist-life\ntitle: アーティストの人生\ntagline: 観客の熱狂より先に、誰にも見られない孤独を体験する。\ndescription: 初舞台、創作の孤独、世界ツアー、観客の熱狂。才能を持って生きた記憶の連続体験。\nduration: 42分\nmemorySpan: 9〜14年\nrisk: Low\nchapters 1: 誰にも届かなかった初期作品\nchapters 2: 初舞台の照明\nchapters 3: 徹夜明けの完成\nchapters 4: 世界ツアー初日の歓声\nchapters 5: ヒット後に変わった友人の目\nsensations 1: 指先に残る緊張\nsensations 2: ステージ床の微振動\nsensations 3: 作業部屋の夜気\nsensations 4: 観客が同じ歌詞を返す瞬間\nrecommendedPlans 1: World Tour Artist\nrecommendedPlans 2: Lost Romance\nrecommendedPlans 3: Deep Space Vacation",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "experienceMenus",
+      "index": 1
+    }
+  },
+  {
+    "id": "experience-template:professional-mastery",
+    "title": "職業マスタリー",
+    "url": "https://novamnesis-laboratories.vercel.app/template/professional-mastery",
+    "source_path": "src/data/index.ts",
+    "kind": "experience-template",
+    "content": "slug: professional-mastery\ntitle: 職業マスタリー\ntagline: 努力の年月を、手つきと判断の記憶として受け取る。\ndescription: 料理人、建築家、研究者、職人、交渉人。熟練した手つきや判断力だけを安全に抽出したキャリア記憶。\nduration: 39分\nmemorySpan: 10〜25年\nrisk: Low\nchapters 1: 基礎だけを繰り返す日々\nchapters 2: 初めて任された現場\nchapters 3: 失敗で覚えた温度\nchapters 4: 無意識に動く手\nchapters 5: 後輩に技術を渡す午後\nsensations 1: 道具の重さ\nsensations 2: 空気の湿度を読む感覚\nsensations 3: 判断前の沈黙\nsensations 4: 身体が先に答えを出す違和感\nrecommendedPlans 1: Executive Success\nrecommendedPlans 2: Professional Mastery\nrecommendedPlans 3: Royal Academy Spellcraft",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "experienceMenus",
+      "index": 2
+    }
+  },
+  {
+    "id": "experience-template:virtual-hero",
+    "title": "仮想ヒーロー",
+    "url": "https://novamnesis-laboratories.vercel.app/template/virtual-hero",
+    "source_path": "src/data/index.ts",
+    "kind": "experience-template",
+    "content": "slug: virtual-hero\ntitle: 仮想ヒーロー\ntagline: 誰かを救った過去を、現実に傷を残さず持ち帰る。\ndescription: 都市の危機、正体を隠す日常、誰かを救う瞬間。現実には存在しない英雄譚を記憶として残します。\nduration: 50分\nmemorySpan: 30日間\nrisk: Medium\nchapters 1: 力に気づいた最初の夜\nchapters 2: 正体を隠す朝\nchapters 3: 助けられなかった一人\nchapters 4: 都市を救う選択\nchapters 5: 誰にも称賛されない帰宅\nsensations 1: 高所の風圧\nsensations 2: 心拍と警報の同期\nsensations 3: 手のひらに残る熱\nsensations 4: 群衆の中で一人だけ違う記憶\nrecommendedPlans 1: Virtual Hero Origin\nrecommendedPlans 2: Heroic Rescue\nrecommendedPlans 3: Secret Agent Mission",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "experienceMenus",
+      "index": 3
+    }
+  },
+  {
+    "id": "experience-template:virtual-heroine",
+    "title": "仮想ヒロイン",
+    "url": "https://novamnesis-laboratories.vercel.app/template/virtual-heroine",
+    "source_path": "src/data/index.ts",
+    "kind": "experience-template",
+    "content": "slug: virtual-heroine\ntitle: 仮想ヒロイン\ntagline: 物語の中心に立つ強さと、その代償を静かに記録する。\ndescription: 陰謀、友情、選択、覚醒。物語の中心に立つ人生を、過度な恐怖ではなく静かな没入感で設計します。\nduration: 48分\nmemorySpan: 45日間\nrisk: Medium\nchapters 1: 知らない手紙を受け取る\nchapters 2: 味方だと思った人の裏切り\nchapters 3: 逃げずに選ぶ夜\nchapters 4: 能力の覚醒\nchapters 5: 平穏に戻れない朝\nsensations 1: 濡れた路地の匂い\nsensations 2: 秘密を抱える胸の重さ\nsensations 3: 覚醒時の視界ノイズ\nsensations 4: 名前を呼ばれた瞬間の安心\nrecommendedPlans 1: Neon Heroine Protocol\nrecommendedPlans 2: Lost Romance\nrecommendedPlans 3: Secret Agent Mission",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "experienceMenus",
+      "index": 4
+    }
+  },
+  {
+    "id": "experience-template:isekai-rebirth",
+    "title": "異世界転生",
+    "url": "https://novamnesis-laboratories.vercel.app/template/isekai-rebirth",
+    "source_path": "src/data/index.ts",
+    "kind": "experience-template",
+    "content": "slug: isekai-rebirth\ntitle: 異世界転生\ntagline: 第二の名前で目覚め、選ばれなかった人生を始める。\ndescription: 第二の名前、知らない言語、選ばれた役割。現実と混同しない境界タグ付きのファンタジー記憶。\nduration: 55分\nmemorySpan: 2〜3年\nrisk: High\nchapters 1: 知らない天井で目覚める\nchapters 2: 第二の名前を与えられる\nchapters 3: 言葉が急に理解できる朝\nchapters 4: 最初の戦闘ではなく最初の食事\nchapters 5: 戻るか残るかを選ぶ扉\nsensations 1: 知らない文字が読める違和感\nsensations 2: 石畳の冷たさ\nsensations 3: 初めて使う魔法の反動\nsensations 4: 帰り道を忘れそうになる感覚\nrecommendedPlans 1: Isekai Rebirth Archive\nrecommendedPlans 2: Royal Academy Spellcraft\nrecommendedPlans 3: Mars Colony Escape",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "experienceMenus",
+      "index": 5
+    }
+  },
+  {
+    "id": "memory-episode:after-school-confession",
+    "title": "放課後、誰にも言えなかった告白",
+    "url": "https://novamnesis-laboratories.vercel.app/episode/after-school-confession",
+    "source_path": "src/data/index.ts",
+    "kind": "memory-episode",
+    "content": "slug: after-school-confession\ntitle: 放課後、誰にも言えなかった告白\ndescription: 文化祭の片付け後、夕方の教室で好きだった人と二人だけになる青春恋愛記憶。\nperiod: 記憶内期間: 3時間\nintensity: 感情強度: 86\ntag: 青春 / 恋愛\nsource: 匿名化済み実体験\nsynopsis: 文化祭の片付けが終わり、校舎が少しずつ静かになっていく夕方。借りたままだった工具箱を返しに教室へ戻ると、ずっと好きだった相手が黒板の前で一人、貼り紙を剥がしている。会話は何気ない片付けの話から始まり、廊下の足音が遠ざかるほど、言えなかった言葉だけが大きくなる。\ntimeline 1: 16:12 文化祭の片付け後、机を戻す音だけが教室に残る。\ntimeline 2: 16:27 相手が黒板の端に残ったテープを剥がしながら、昨日の出し物の失敗を笑う。\ntimeline 3: 16:49 雨が降り始め、帰る理由が少しだけ遅れる。\ntimeline 4: 17:03 誰もいない廊下で、相手が『今日で終わるの、少し寂しいね』と言う。\ntimeline 5: 17:18 告白するか、いつもの冗談で終わらせるかを選ぶ数十秒。\ndetails 1: 購入時に、告白が成功する版、返事を保留される版、言えないまま終わる版を選択できます。\ndetails 2: 相手の顔、名前、学校名は匿名化され、購入者の記憶内では識別不能な架空人物として再構成されます。\ndetails 3: 甘いだけではなく、言葉を飲み込む怖さや、放課後特有の寂しさも残す設計です。\ndetails 4: 体験後は『自分の実際の学生時代ではない』と認識できる境界タグが付与されます。\nsensations 1: 夕方の教室の埃っぽい匂い\nsensations 2: 雨が窓に当たる小さな音\nsensations 3: 手の中で潰れかけた紙コップ\nsensations 4: 相手が笑った直後の沈黙\nsensations 5: 心臓の音だけが近くなる感覚\npurchaseNotes 1: 恋愛記憶への憧れが強い方は、体験後に軽い郷愁が残る場合があります。\npurchaseNotes 2: 実在の特定人物を指定することはできません。\npurchaseNotes 3: 失恋版を選ぶ場合、体験後に短い認知安定ガイダンスが推奨されます。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "memoryEpisodes",
+      "index": 0
+    }
+  },
+  {
+    "id": "memory-episode:koshien-bench-summer",
+    "title": "最後の夏、ベンチから見た甲子園",
+    "url": "https://novamnesis-laboratories.vercel.app/episode/koshien-bench-summer",
+    "source_path": "src/data/index.ts",
+    "kind": "memory-episode",
+    "content": "slug: koshien-bench-summer\ntitle: 最後の夏、ベンチから見た甲子園\ndescription: レギュラーになれなかったまま、仲間の打席を見つめる高校野球の挫折と誇り。\nperiod: 記憶内期間: 9日間\nintensity: 感情強度: 91\ntag: 部活 / 挫折\nsource: 匿名化済み実体験\nsynopsis: 最後の夏、背番号をもらったのに試合には出られない。歓声の外側で仲間を信じる、短くて苦い競技記憶。\ntimeline 1: 地方大会の朝\ntimeline 2: ベンチ入り発表\ntimeline 3: 甲子園の土を初めて踏む\ntimeline 4: 仲間の打席を祈る\ntimeline 5: 帰りのバスで泣かないと決める\ndetails 1: 出場版ではなく、出られなかった側の誇りを中心に構成します。\ndetails 2: 学校名や実在大会情報は再構成されます。\nsensations 1: ベンチの熱\nsensations 2: ユニフォームの汗\nsensations 3: 金属バットの音\nsensations 4: 声を枯らす喉\npurchaseNotes 1: 挫折記憶のため、競技経験者には強く残る場合があります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "memoryEpisodes",
+      "index": 1
+    }
+  },
+  {
+    "id": "memory-episode:national-sports-final",
+    "title": "国体決勝、名前を呼ばれる瞬間",
+    "url": "https://novamnesis-laboratories.vercel.app/episode/national-sports-final",
+    "source_path": "src/data/index.ts",
+    "kind": "memory-episode",
+    "content": "slug: national-sports-final\ntitle: 国体決勝、名前を呼ばれる瞬間\ndescription: 地元代表としてコートに立ち、観客席の家族を見つける数秒を中心に構成した競技記憶。\nperiod: 記憶内期間: 2日間\nintensity: 感情強度: 88\ntag: スポーツ / 達成\nsource: ハイブリッド\nsynopsis: 地元代表として名前を呼ばれ、観客席に家族を見つける一瞬を中心に構成した達成記憶。\ntimeline 1: 前日練習\ntimeline 2: 代表ジャージに袖を通す\ntimeline 3: 名前を呼ばれる\ntimeline 4: 最初のプレー\ntimeline 5: 試合後の握手\ndetails 1: 競技種目は購入時に選択できます。\ndetails 2: 達成感を中心に、過度な勝利万能感を抑えて調整します。\nsensations 1: 体育館の床の反発\nsensations 2: 会場アナウンス\nsensations 3: 手汗\nsensations 4: 観客席の光\npurchaseNotes 1: 達成記憶のため、自己評価への一時的な影響があります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "memoryEpisodes",
+      "index": 2
+    }
+  },
+  {
+    "id": "memory-episode:after-olympics-airport",
+    "title": "オリンピックのあと、空港で一人になる",
+    "url": "https://novamnesis-laboratories.vercel.app/episode/after-olympics-airport",
+    "source_path": "src/data/index.ts",
+    "kind": "memory-episode",
+    "content": "slug: after-olympics-airport\ntitle: オリンピックのあと、空港で一人になる\ndescription: 大舞台の熱狂が終わった翌朝、メダルよりも静けさが残るアスリートの余韻。\nperiod: 記憶内期間: 36時間\nintensity: 感情強度: 79\ntag: スポーツ / 余韻\nsource: 匿名化済み実体験\nsynopsis: 大舞台の熱が過ぎた翌朝、誰もいない空港で、自分がもう競技後の人間になったと気づく記憶。\ntimeline 1: 閉会式後のホテル\ntimeline 2: 早朝の空港\ntimeline 3: 荷物検査でメダルを出す\ntimeline 4: 搭乗口で一人になる\ntimeline 5: 帰国後の静かな車窓\ndetails 1: 勝利よりも、終わった後の空白を中心に構成します。\ndetails 2: 競技や国名は架空化されます。\nsensations 1: 空港の冷房\nsensations 2: 首に残るメダルの重さ\nsensations 3: 眠れない目\nsensations 4: 拍手の残響\npurchaseNotes 1: 喪失感に近い余韻が残る可能性があります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "memoryEpisodes",
+      "index": 3
+    }
+  },
+  {
+    "id": "memory-episode:kindergarten-way-home",
+    "title": "幼稚園の帰り道、手を離した日",
+    "url": "https://novamnesis-laboratories.vercel.app/episode/kindergarten-way-home",
+    "source_path": "src/data/index.ts",
+    "kind": "memory-episode",
+    "content": "slug: kindergarten-way-home\ntitle: 幼稚園の帰り道、手を離した日\ndescription: 小さな靴、夕方の匂い、初めて一人で門を出た幼少期の自立記憶。\nperiod: 記憶内期間: 40分\nintensity: 感情強度: 64\ntag: 幼少期 / 原風景\nsource: 匿名化済み実体験\nsynopsis: 初めて保護者の手を離し、自分の足で門を出る。小さな自立だけが世界を広くする幼少期記憶。\ntimeline 1: 帰りの支度\ntimeline 2: 門の前\ntimeline 3: 手を離す\ntimeline 4: 振り返る\ntimeline 5: 家までの短い道\ndetails 1: 幼少期記憶のため、柔らかく抽象度を高めて再構成します。\ndetails 2: 保護者像は個人が特定されない形に置換されます。\nsensations 1: 小さな靴の硬さ\nsensations 2: 夕方の土の匂い\nsensations 3: 手のひらの温度\nsensations 4: 大きすぎる空\npurchaseNotes 1: 幼少期への郷愁が強い方は余韻が残る場合があります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "memoryEpisodes",
+      "index": 4
+    }
+  },
+  {
+    "id": "memory-episode:praised-in-art-room",
+    "title": "美術室で褒められた一枚",
+    "url": "https://novamnesis-laboratories.vercel.app/episode/praised-in-art-room",
+    "source_path": "src/data/index.ts",
+    "kind": "memory-episode",
+    "content": "slug: praised-in-art-room\ntitle: 美術室で褒められた一枚\ndescription: 自分でも知らなかった才能を、先生の一言で信じかける学生時代の創作記憶。\nperiod: 記憶内期間: 1週間\nintensity: 感情強度: 72\ntag: 学生 / 才能\nsource: ハイブリッド\nsynopsis: 美術室の隅で描いた一枚を、初めて誰かが本気で見てくれる。才能を信じかける記憶。\ntimeline 1: 放課後の美術室\ntimeline 2: 描き直しの迷い\ntimeline 3: 先生の沈黙\ntimeline 4: 一言だけ褒められる\ntimeline 5: 帰り道に絵を見返す\ndetails 1: 創作ジャンルは絵、音楽、文章から選べます。\ndetails 2: 承認欲求が強く残りすぎないよう調整します。\nsensations 1: 絵の具の匂い\nsensations 2: 紙のざらつき\nsensations 3: 夕日の色\nsensations 4: 褒められた後の耳の熱さ\npurchaseNotes 1: 創作意欲が一時的に高まる場合があります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "memoryEpisodes",
+      "index": 5
+    }
+  },
+  {
+    "id": "memory-episode:first-school-festival-lead",
+    "title": "初めて主役を任された文化祭",
+    "url": "https://novamnesis-laboratories.vercel.app/episode/first-school-festival-lead",
+    "source_path": "src/data/index.ts",
+    "kind": "memory-episode",
+    "content": "slug: first-school-festival-lead\ntitle: 初めて主役を任された文化祭\ndescription: 練習の失敗、舞台袖の暗さ、本番で名前を呼ばれるまでの短い演劇記憶。\nperiod: 記憶内期間: 14日間\nintensity: 感情強度: 83\ntag: 青春 / 舞台\nsource: 人工生成\nsynopsis: 失敗続きの練習を越えて、文化祭の舞台袖で自分の名前を待つ短編記憶。\ntimeline 1: 配役発表\ntimeline 2: 台詞を忘れる練習日\ntimeline 3: 衣装合わせ\ntimeline 4: 舞台袖の暗さ\ntimeline 5: 拍手の中で礼をする\ndetails 1: 演劇、バンド、ダンスなどの舞台種別を選択できます。\ndetails 2: 成功版と小さな失敗込み版を選べます。\nsensations 1: 舞台袖の埃\nsensations 2: 照明の熱\nsensations 3: 喉の乾き\nsensations 4: 拍手の壁\npurchaseNotes 1: 人前に立つ記憶のため、軽い高揚が残ります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "memoryEpisodes",
+      "index": 6
+    }
+  },
+  {
+    "id": "memory-episode:bus-after-prefectural-loss",
+    "title": "県大会で負けた帰りのバス",
+    "url": "https://novamnesis-laboratories.vercel.app/episode/bus-after-prefectural-loss",
+    "source_path": "src/data/index.ts",
+    "kind": "memory-episode",
+    "content": "slug: bus-after-prefectural-loss\ntitle: 県大会で負けた帰りのバス\ndescription: 誰も話さない車内、窓に映る自分の顔、悔しさが少しだけ未来に変わる記憶。\nperiod: 記憶内期間: 6時間\nintensity: 感情強度: 90\ntag: 部活 / 敗北\nsource: 匿名化済み実体験\nsynopsis: 県大会で負けた帰り道。誰も喋らないバスの中で、悔しさが少しだけ未来に変わる記憶。\ntimeline 1: 試合終了の笛\ntimeline 2: 整列\ntimeline 3: 荷物をまとめる\ntimeline 4: 無言のバス\ntimeline 5: 窓に映る自分を見る\ndetails 1: 競技種目は購入時に選べます。\ndetails 2: 敗北の痛みと、それでも続けたい感情を残します。\nsensations 1: 濡れたタオル\nsensations 2: バスの振動\nsensations 3: 泣きそうな喉\nsensations 4: 窓に反射する顔\npurchaseNotes 1: 挫折体験のため、体験後に短い安定プロトコルを推奨します。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "memoryEpisodes",
+      "index": 7
+    }
+  },
+  {
+    "id": "valuation-factor:valuation-01",
+    "title": "感情強度",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "valuation-factor",
+    "content": "title: 感情強度\ndescription: 歓喜、喪失、緊張、安堵など、記憶に残る感情の深さを測定します。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "valuation",
+      "index": 0
+    }
+  },
+  {
+    "id": "valuation-factor:valuation-02",
+    "title": "希少性",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "valuation-factor",
+    "content": "title: 希少性\ndescription: 一般的には体験困難な状況、職能、場所、人生局面ほど高く評価されます。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "valuation",
+      "index": 1
+    }
+  },
+  {
+    "id": "valuation-factor:valuation-03",
+    "title": "物語性",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "valuation-factor",
+    "content": "title: 物語性\ndescription: 始まり、転機、結末がある記憶は、体験商品として再構成しやすくなります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "valuation",
+      "index": 2
+    }
+  },
+  {
+    "id": "valuation-factor:valuation-04",
+    "title": "感覚情報の鮮明さ",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "valuation-factor",
+    "content": "title: 感覚情報の鮮明さ\ndescription: 匂い、温度、音、身体感覚の密度が没入度の基礎になります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "valuation",
+      "index": 3
+    }
+  },
+  {
+    "id": "valuation-factor:valuation-05",
+    "title": "倫理審査レベル",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "valuation-factor",
+    "content": "title: 倫理審査レベル\ndescription: 第三者情報や心理負荷を評価し、安全な流通範囲を決定します。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "valuation",
+      "index": 4
+    }
+  },
+  {
+    "id": "valuation-factor:valuation-06",
+    "title": "再体験需要",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "valuation-factor",
+    "content": "title: 再体験需要\ndescription: 購入者が求める願望、学習、憧れとの一致度を分析します。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "valuation",
+      "index": 5
+    }
+  },
+  {
+    "id": "purchase-category:categories-01",
+    "title": "First Love Memory",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-category",
+    "content": "title: First Love Memory\ndescription: 初恋、告白、失恋、再会など、感情強度の高い記憶。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "categories",
+      "index": 0
+    }
+  },
+  {
+    "id": "purchase-category:categories-02",
+    "title": "Extreme Survival",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-category",
+    "content": "title: Extreme Survival\ndescription: 遭難、災害、極限状態からの生還など、危険度の高い体験。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "categories",
+      "index": 1
+    }
+  },
+  {
+    "id": "purchase-category:categories-03",
+    "title": "Professional Mastery",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-category",
+    "content": "title: Professional Mastery\ndescription: 一流職人、外科医、音楽家、アスリートなどの熟練体験。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "categories",
+      "index": 2
+    }
+  },
+  {
+    "id": "purchase-category:categories-04",
+    "title": "Executive Decision",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-category",
+    "content": "title: Executive Decision\ndescription: 経営判断、交渉、勝負の瞬間など、責任ある立場の記憶。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "categories",
+      "index": 3
+    }
+  },
+  {
+    "id": "purchase-category:categories-05",
+    "title": "Hidden Travel",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-category",
+    "content": "title: Hidden Travel\ndescription: 普通の観光では得られない、個人的で濃密な旅の記憶。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "categories",
+      "index": 4
+    }
+  },
+  {
+    "id": "purchase-category:categories-06",
+    "title": "Farewell Archive",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "purchase-category",
+    "content": "title: Farewell Archive\ndescription: 別れ、喪失、卒業、人生の転機に関する記憶。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "categories",
+      "index": 5
+    }
+  },
+  {
+    "id": "sell-step:sellsteps-01",
+    "title": "sellSteps 1",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-step",
+    "content": "事前カウンセリング",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sellSteps",
+      "index": 0
+    }
+  },
+  {
+    "id": "sell-step:sellsteps-02",
+    "title": "sellSteps 2",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-step",
+    "content": "記憶候補の登録",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sellSteps",
+      "index": 1
+    }
+  },
+  {
+    "id": "sell-step:sellsteps-03",
+    "title": "sellSteps 3",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-step",
+    "content": "感情強度・希少性スキャン",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sellSteps",
+      "index": 2
+    }
+  },
+  {
+    "id": "sell-step:sellsteps-04",
+    "title": "sellSteps 4",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-step",
+    "content": "匿名化・第三者情報除去",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sellSteps",
+      "index": 3
+    }
+  },
+  {
+    "id": "sell-step:sellsteps-05",
+    "title": "sellSteps 5",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-step",
+    "content": "倫理審査",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sellSteps",
+      "index": 4
+    }
+  },
+  {
+    "id": "sell-step:sellsteps-06",
+    "title": "sellSteps 6",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-step",
+    "content": "価格査定",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sellSteps",
+      "index": 5
+    }
+  },
+  {
+    "id": "sell-step:sellsteps-07",
+    "title": "sellSteps 7",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-step",
+    "content": "ライセンス契約",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sellSteps",
+      "index": 6
+    }
+  },
+  {
+    "id": "sell-step:sellsteps-08",
+    "title": "sellSteps 8",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-step",
+    "content": "マーケットプレイス掲載",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "sellSteps",
+      "index": 7
+    }
+  },
+  {
+    "id": "safety-item:safetyitems-01",
+    "title": "safetyItems 1",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "safety-item",
+    "content": "記憶挿入前の心理スキャン",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "safetyItems",
+      "index": 0
+    }
+  },
+  {
+    "id": "safety-item:safetyitems-02",
+    "title": "safetyItems 2",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "safety-item",
+    "content": "記憶と現実の境界維持プロトコル",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "safetyItems",
+      "index": 1
+    }
+  },
+  {
+    "id": "safety-item:safetyitems-03",
+    "title": "safetyItems 3",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "safety-item",
+    "content": "緊急覚醒システム",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "safetyItems",
+      "index": 2
+    }
+  },
+  {
+    "id": "safety-item:safetyitems-04",
+    "title": "safetyItems 4",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "safety-item",
+    "content": "認定ニューロエンジニア監修",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "safetyItems",
+      "index": 3
+    }
+  },
+  {
+    "id": "safety-item:safetyitems-05",
+    "title": "safetyItems 5",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "safety-item",
+    "content": "体験後の認知安定セッション",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "safetyItems",
+      "index": 4
+    }
+  },
+  {
+    "id": "safety-item:safetyitems-06",
+    "title": "safetyItems 6",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "safety-item",
+    "content": "記憶混同リスクの事前評価",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "safetyItems",
+      "index": 5
+    }
+  },
+  {
+    "id": "safety-item:safetyitems-07",
+    "title": "safetyItems 7",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "safety-item",
+    "content": "高リスク記憶の段階的再生制御",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "safetyItems",
+      "index": 6
+    }
+  },
+  {
+    "id": "ethics-policy:ethics-01",
+    "title": "ethics 1",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "ethics-policy",
+    "content": "本人同意なしの記憶抽出は禁止",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "ethics",
+      "index": 0
+    }
+  },
+  {
+    "id": "ethics-policy:ethics-02",
+    "title": "ethics 2",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "ethics-policy",
+    "content": "第三者の個人情報は自動匿名化",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "ethics",
+      "index": 1
+    }
+  },
+  {
+    "id": "ethics-policy:ethics-03",
+    "title": "ethics 3",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "ethics-policy",
+    "content": "トラウマ記憶は高リスク審査対象",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "ethics",
+      "index": 2
+    }
+  },
+  {
+    "id": "ethics-policy:ethics-04",
+    "title": "ethics 4",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "ethics-policy",
+    "content": "未成年期の記憶は制限付き",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "ethics",
+      "index": 3
+    }
+  },
+  {
+    "id": "ethics-policy:ethics-05",
+    "title": "ethics 5",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "ethics-policy",
+    "content": "犯罪・暴力・搾取に関わる記憶は厳格審査",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "ethics",
+      "index": 4
+    }
+  },
+  {
+    "id": "ethics-policy:ethics-06",
+    "title": "ethics 6",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "ethics-policy",
+    "content": "独占ライセンス契約では、提供者側の記憶アクセスに制限が発生する可能性がある",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "ethics",
+      "index": 5
+    }
+  },
+  {
+    "id": "ethics-policy:ethics-07",
+    "title": "ethics 7",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/data/index.ts",
+    "kind": "ethics-policy",
+    "content": "購入者には、体験後の現実復帰ガイダンスを提供する",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "ethics",
+      "index": 6
+    }
+  },
+  {
+    "id": "review:reviews-01",
+    "title": "放課後、誰にも言えなかった告白",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "review",
+    "content": "quote: 放課後の教室で告白した記憶を買いました。現実の高校時代は何もなかったのに、駅のホームで夕方の匂いがすると、ちゃんと好きだった人がいた気がします。\nmemory: 放課後、誰にも言えなかった告白\neffect: 青春恋愛 / 郷愁\nparticipant: 32歳・会社員",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "reviews",
+      "index": 0
+    }
+  },
+  {
+    "id": "review:reviews-02",
+    "title": "結婚した世界線の10年間",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "review",
+    "content": "quote: 結婚しなかった人生を選んだことに後悔はないと思っていました。でも、結婚式の朝の記憶を体験したら、後悔というより、別の私にも幸せがあったんだと納得できました。\nmemory: 結婚した世界線の10年間\neffect: 人生分岐 / 安堵\nparticipant: 44歳・経営者",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "reviews",
+      "index": 1
+    }
+  },
+  {
+    "id": "review:reviews-03",
+    "title": "学生最後のヨーロッパ周遊",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "review",
+    "content": "quote: 旅行に行く時間がないまま40代になりました。ヨーロッパを一人で回った9日間の記憶を買ってから、仕事帰りに知らない路地へ入るのが少し怖くなくなりました。\nmemory: 学生最後のヨーロッパ周遊\neffect: 旅行 / 解放感\nparticipant: 41歳・医師",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "reviews",
+      "index": 2
+    }
+  },
+  {
+    "id": "review:reviews-04",
+    "title": "Executive Success",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "review",
+    "content": "quote: CEO体験を購入してから、会議室の景色が少し違って見えるようになりました。成功した自分を信じるというより、大きな決断の前に黙る時間を覚えた感じです。\nmemory: Executive Success\neffect: 成功 / 判断\nparticipant: 38歳・事業責任者",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "reviews",
+      "index": 3
+    }
+  },
+  {
+    "id": "review:reviews-05",
+    "title": "県大会で負けた帰りのバス",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "review",
+    "content": "quote: 県大会で負けた帰りのバスを体験しました。私は挫折らしい挫折を避けてきたので、悔しくて黙っている十代の自分が、妙に大人に見えました。\nmemory: 県大会で負けた帰りのバス\neffect: 敗北 / 奥行き\nparticipant: 29歳・コンサルタント",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "reviews",
+      "index": 4
+    }
+  },
+  {
+    "id": "review:reviews-06",
+    "title": "別の性別で迎える成人式",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "review",
+    "content": "quote: 別の性別で成人式を迎える記憶は、思っていたより派手ではありませんでした。髪を整え、名前を呼ばれ、家族に写真を撮られる。それだけなのに、世界の見え方が半歩ずれました。\nmemory: 別の性別で迎える成人式\neffect: アイデンティティ / 視点変化\nparticipant: 35歳・デザイナー",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "reviews",
+      "index": 5
+    }
+  },
+  {
+    "id": "review:reviews-07",
+    "title": "独身で仕事に振り切った5年間",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "review",
+    "content": "quote: 独身のまま海外赴任した5年間を入れました。家族を選んだ今の人生を否定するためではなく、選ばなかった静けさにも触れたかった。体験後、今の家の騒がしさが前より愛おしいです。\nmemory: 独身で仕事に振り切った5年間\neffect: 人生分岐 / 再肯定\nparticipant: 47歳・教師",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "reviews",
+      "index": 6
+    }
+  },
+  {
+    "id": "review:reviews-08",
+    "title": "美術室で褒められた一枚",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "review",
+    "content": "quote: 初個展で一枚だけ作品が売れる記憶を買いました。大成功ではなく、一人だけが本気で見てくれたという小ささがよかった。帰ってから、しまっていた画材を出しました。\nmemory: 美術室で褒められた一枚\neffect: 才能 / 再開\nparticipant: 26歳・販売員",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "reviews",
+      "index": 7
+    }
+  },
+  {
+    "id": "review:reviews-09",
+    "title": "卒業前日に返事をもらう",
+    "url": "https://novamnesis-laboratories.vercel.app",
+    "source_path": "src/data/index.ts",
+    "kind": "review",
+    "content": "quote: 失恋版を選んだのに、体験後に残ったのは惨めさではありませんでした。選ばれなかった自分にも、あの夕方を最後まで歩いた尊さがあると思えました。\nmemory: 卒業前日に返事をもらう\neffect: 失恋 / 自己受容\nparticipant: 52歳・公務員",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "reviews",
+      "index": 8
+    }
+  },
+  {
+    "id": "faq:faqs-01",
+    "title": "これは夢ですか？",
+    "url": "https://novamnesis-laboratories.vercel.app/faq",
+    "source_path": "src/data/index.ts",
+    "kind": "faq",
+    "content": "question: これは夢ですか？\nanswer: 夢ではありません。Novamnesis Laboratories は体験後に残る記憶印象を設計する架空のサービスです。目覚めたあとも、記憶は静かに日常へ重なります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "faqs",
+      "index": 0
+    }
+  },
+  {
+    "id": "faq:faqs-02",
+    "title": "記憶は消せますか？",
+    "url": "https://novamnesis-laboratories.vercel.app/faq",
+    "source_path": "src/data/index.ts",
+    "kind": "faq",
+    "content": "question: 記憶は消せますか？\nanswer: 体験直後の軽減処理は可能です。ただし、強い感情を伴う記憶は完全な無痕化を保証していません。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "faqs",
+      "index": 1
+    }
+  },
+  {
+    "id": "faq:faqs-03",
+    "title": "本当に安全ですか？",
+    "url": "https://novamnesis-laboratories.vercel.app/faq",
+    "source_path": "src/data/index.ts",
+    "kind": "faq",
+    "content": "question: 本当に安全ですか？\nanswer: 体験前後に複数の安全プロトコルを設けています。高リスク記憶は段階的に再生され、必要に応じて中断されます。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "faqs",
+      "index": 2
+    }
+  },
+  {
+    "id": "faq:faqs-04",
+    "title": "現実と混同しませんか？",
+    "url": "https://novamnesis-laboratories.vercel.app/faq",
+    "source_path": "src/data/index.ts",
+    "kind": "faq",
+    "content": "question: 現実と混同しませんか？\nanswer: 境界維持タグを付与し、現実復帰ガイダンスを提供します。それでも、良い記憶ほど現実に似てしまうことがあります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "faqs",
+      "index": 3
+    }
+  },
+  {
+    "id": "faq:faqs-05",
+    "title": "購入した記憶と現実の記憶を入れ替えることはできますか？",
+    "url": "https://novamnesis-laboratories.vercel.app/faq",
+    "source_path": "src/data/index.ts",
+    "kind": "faq",
+    "content": "question: 購入した記憶と現実の記憶を入れ替えることはできますか？\nanswer: 完全な入れ替えではなく、購入した記憶を現実の記憶の近くに重ねる形で調整できます。たとえば、行けなかった旅行や選ばなかった人生を、強い実感を伴う記憶として残すことはできますが、現実に起きた出来事を消去したり、事実として置き換えたりする設計ではありません。体験後も『これは購入した記憶である』と認識できる境界タグが付与されます。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "faqs",
+      "index": 4
+    }
+  },
+  {
+    "id": "faq:faqs-06",
+    "title": "体験後に副作用はありますか？",
+    "url": "https://novamnesis-laboratories.vercel.app/faq",
+    "source_path": "src/data/index.ts",
+    "kind": "faq",
+    "content": "question: 体験後に副作用はありますか？\nanswer: 一時的な既視感、感情の残響、選ばなかった人生への郷愁が報告されています。多くは短期間で落ち着きます。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "faqs",
+      "index": 5
+    }
+  },
+  {
+    "id": "sell-faq:faqssell-01",
+    "title": "自分の記憶を売ると、その記憶は失われますか？",
+    "url": "https://novamnesis-laboratories.vercel.app/faq",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-faq",
+    "content": "question: 自分の記憶を売ると、その記憶は失われますか？\nanswer: 通常売却では失われません。独占ライセンスでは、契約範囲に応じて一部アクセス制限が発生する場合があります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "faqsSell",
+      "index": 0
+    }
+  },
+  {
+    "id": "sell-faq:faqssell-02",
+    "title": "売却した記憶に他人がアクセスするのですか？",
+    "url": "https://novamnesis-laboratories.vercel.app/faq",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-faq",
+    "content": "question: 売却した記憶に他人がアクセスするのですか？\nanswer: 他人が体験するのは匿名化・編集・再構成された記憶商品です。あなた自身の生の記憶がそのまま流通することはありません。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "faqsSell",
+      "index": 1
+    }
+  },
+  {
+    "id": "sell-faq:faqssell-03",
+    "title": "第三者が登場する記憶はどう処理されますか？",
+    "url": "https://novamnesis-laboratories.vercel.app/faq",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-faq",
+    "content": "question: 第三者が登場する記憶はどう処理されますか？\nanswer: 顔、声、氏名、関係性、識別可能な生活情報を自動匿名化し、必要に応じて人物構造を置換します。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "faqsSell",
+      "index": 2
+    }
+  },
+  {
+    "id": "sell-faq:faqssell-04",
+    "title": "トラウマ記憶も販売できますか？",
+    "url": "https://novamnesis-laboratories.vercel.app/faq",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-faq",
+    "content": "question: トラウマ記憶も販売できますか？\nanswer: 申請は可能ですが、高リスク審査の対象です。販売よりも保全、封印、非公開アーカイブを推奨する場合があります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "faqsSell",
+      "index": 3
+    }
+  },
+  {
+    "id": "sell-faq:faqssell-05",
+    "title": "独占ライセンスとは何ですか？",
+    "url": "https://novamnesis-laboratories.vercel.app/faq",
+    "source_path": "src/data/index.ts",
+    "kind": "sell-faq",
+    "content": "question: 独占ライセンスとは何ですか？\nanswer: 特定の購入者や企業が、一定期間その記憶商品の利用権を独占する契約です。提供者にも静かな制約が残ることがあります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "collection": "faqsSell",
+      "index": 4
+    }
+  },
+  {
+    "id": "page:aboutpage",
+    "title": "AboutPage",
+    "url": "https://novamnesis-laboratories.vercel.app/about",
+    "source_path": "src/pages/AboutPage.tsx",
+    "kind": "page-source-text",
+    "content": "ABOUT US\n記憶体験を設計する、架空の研究企業。\nNEURAMNESIA は、経験できなかった恋愛、選ばなかった人生、行けなかった旅、味わえなかった成功や挫折を、記憶体験として設計する研究企業です。人生をやり直すのではなく、あなたの中にもうひとつの過去を増やします。\nMission\n私たちが目指すこと。\n経験の格差をなくす\n生まれた場所、時代、環境によって体験できる人生は限られます。NEURAMNESIA は、誰もが望んだ経験を記憶として持ち帰れる世界を構想しています。\n記憶を安全に流通させる\n記憶は個人の最も繊細な資産です。同意、匿名化、境界タグ、倫理審査を経て、安全に体験商品として届けるインフラを構築します。\n現実を壊さない\n購入した記憶が日常を侵食しないよう、体験前後の境界設計と認知安定プロトコルを全セッションに組み込みます。\n提供者を守る\n記憶を売る側の権利と安全を最優先に設計します。本人同意なしの抽出は禁止、匿名化は自動、独占契約の影響も事前に説明します。\nCompany\n会社情報。\n社名の由来\nNEURAMNESIA\nは、\nNeuro（神経）\nAmnesia（記憶喪失）\nを組み合わせた造語です。\n記憶を失うのではなく、新しい記憶を神経レベルで獲得する。失われた過去を取り戻すのではなく、経験できなかった過去を創造する。そんな逆説的な意味を込めています。\n社名\nNEURAMNESIA Inc.\n設立\n2029年4月\n所在地\n東京都港区虎ノ門 4-1-1（架空）\n代表\nDr. Rei Kurosawa（架空）\n事業内容\n記憶体験の設計・販売・査定、記憶安全基準の策定、記憶資産マーケットプレイスの運営\n従業員数\n約120名（架空）\n資本金\n48億円（架空）",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "route_path": "/about"
+    }
+  },
+  {
+    "id": "page:bookingpage",
+    "title": "BookingPage",
+    "url": "https://novamnesis-laboratories.vercel.app/booking",
+    "source_path": "src/pages/BookingPage.tsx",
+    "kind": "page-source-text",
+    "content": "memoryType\n弱め\n10:00 初回確認\nオンライン説明を受ける\nja-JP\nnumeric\nlong\nshort\n未選択\nemotionLevel\nvisitDate\nvisitTime\nbriefing\nname\nemail\nnotes\nsmooth\nRESERVE SESSION\n体験内容を確認して、日時を予約します。\nここでは、体験したい記憶の種類、感情の強さ、希望日時、来館前説明の方法を確認します。長い人生記憶は1回で完了させず、スタッフによる事前確認後に必要なセッション回数を提案します。\nSTEP\nTransmitting Request\n予約内容を送信しています。\n希望日時、記憶タイプ、来館前説明の内容を Novamnesis 予約プロトコルに登録しています。\n予約内容の検証\n境界タグの仮登録\n来館前説明の割り当て\nこの送信中表示はデモ演出です。実際の外部送信やメール送信は行われません。\nReservation Received\n予約内容を送信しました。\nお客様\n様、Novamnesis Laboratories へのご予約ありがとうございます。後日のご来館を心よりお待ちしております。\n来館予定\n記憶タイプ\n感情の強さ\n来館前説明\n連絡先\n未入力\n事前メモ\n別のメニューを見る\n予約内容を修正する\nこの送信結果はデモ表示です。実際の予約受付、メール送信、医療行為、記憶操作サービスは行われません。\n標準\n強め\n希望日\n希望時間\n13:00 初回確認\n16:00 初回確認\n19:00 初回確認\n当日、施設で説明を受ける\n施設見学を先に予約する\nお名前\n名前を入力してください\nメールアドレス\nexample@novamnesis.test\n事前に伝えておきたいこと\n避けたい記憶、苦手な感覚、当日不安なことなど\n予約後にスタッフが内容を確認し、必要に応じて体験内容を調整することに同意します。\n送信中...\n予約内容を送信する\nsecondary\n体験内容を見直す\nこの予約フォームはデモです。実際の医療行為や記憶操作サービスではありません。送信後は入力内容をもとにした予約確認表示へ切り替わります。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "route_path": "/booking"
+    }
+  },
+  {
+    "id": "page:catalogpage",
+    "title": "CatalogPage",
+    "url": "https://novamnesis-laboratories.vercel.app/catalog",
+    "source_path": "src/pages/CatalogPage.tsx",
+    "kind": "page-source-text",
+    "content": "Purchase Categories\n人生メニューのカテゴリ。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "route_path": "/catalog"
+    }
+  },
+  {
+    "id": "page:companypage",
+    "title": "CompanyPage",
+    "url": "https://novamnesis-laboratories.vercel.app/company",
+    "source_path": "src/pages/CompanyPage.tsx",
+    "kind": "page-source-text",
+    "content": "corporate\nLIFE MEMORY LABORATORY\n経験したかった人生を、記憶として購入する。\nNovamnesis Laboratories は、経験できなかった恋愛、選ばなかった人生、行けなかった旅、味わえなかった成功や挫折を、記憶体験として設計する架空の研究企業です。人生をやり直すのではなく、あなたの中にもうひとつの過去を増やします。\nCONSENT\n100%\nANONYMIZE\nL4\nBOUNDARY TAG\nACTIVE\nAudit Terminal\nLIVE\nMEMORY SOURCE\nCONSENT VERIFIED\nTHIRD PARTY DATA\nREMOVED\nREALITY DRIFT\n0.08\nETHICS REVIEW\nPASSED\nOperating Principles\n本人同意に基づく記憶登録\n匿名化と第三者情報の除去\n境界タグによる現実復帰支援\n高リスク記憶の段階的審査\nFor Buyers\n記憶を買う前に、会社が保証すること。\nNovamnesis Laboratories の主役は、記憶を購入する体験者です。欲しかった人生を選ぶ前に、内容の調整、境界タグ、安全確認、体験後ケアを会社として明確にします。\nCurated Catalog\n恋愛、成功、旅行、人生分岐、物語記憶を、購入前に内容・強度・余韻で比較できます。\nBoundary Design\n購入した記憶が現実の経歴と混ざりすぎないよう、体験前に境界タグを設計します。\nAftercare\n体験後は日付、現在地、購入記憶であることを確認し、必要に応じて認知安定セッションを行います。\nPurchase Categories\n購入できる記憶カテゴリ。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "route_path": "/company"
+    }
+  },
+  {
+    "id": "page:contactpage",
+    "title": "ContactPage",
+    "url": "https://novamnesis-laboratories.vercel.app/contact",
+    "source_path": "src/pages/ContactPage.tsx",
+    "kind": "page-source-text",
+    "content": "smooth\nCONTACT\nお問い合わせ。\n記憶体験に関するご質問、売却のご相談、施設見学のご希望など、お気軽にお問い合わせください。通常2営業日以内にご返信いたします。\n連絡先情報\n所在地\n東京都港区虎ノ門 4-1-1 NOVAMNESIS Tower 12F（架空）\nメール\ncontact@novamnesis.test\n電話\n03-XXXX-XXXX（架空）\n営業時間\n平日 10:00 - 19:00\nMessage Sent\nお問い合わせを受け付けました。\n内容を確認のうえ、担当者よりご連絡いたします。通常2営業日以内にご返信いたします。\nこのフォームはデモです。実際の送信やメール配信は行われません。\nお名前\n名前を入力してください\nメールアドレス\nexample@novamnesis.test\nお問い合わせ種別\n記憶体験について\n記憶の売却について\n施設見学について\n安全基準について\n法人・パートナーシップ\nその他\nお問い合わせ内容\nご質問やご相談の内容をご記入ください\n送信する\nこのお問い合わせフォームはデモです。実際の送信やメール配信は行われません。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "route_path": "/contact"
+    }
+  },
+  {
+    "id": "page:episodedetailpage",
+    "title": "EpisodeDetailPage",
+    "url": "https://novamnesis-laboratories.vercel.app/episode/:slug",
+    "source_path": "src/pages/EpisodeDetailPage.tsx",
+    "kind": "page-source-text",
+    "content": "Short Memories に戻る\nこの思い出を予約する\nsecondary\n感情強度を調整する\nEpisode Spec\nスパン\n感情\n由来\n形式\n短編記憶は、一生分の経歴ではなく、数十分から数日だけの濃い場面を体験する商品です。購入後は「自分が本当に経験した過去」ではなく「購入した記憶」として認識できる境界タグが付与されます。\nStory Timeline\n体験中に流れるストーリー。\n購入前に、どんな順番で記憶が展開されるかを確認できます。\nSCENE\n体験内容の詳細\n残る感覚\nBefore Purchase\n購入前に確認すること。\n他の短編記憶を見る",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "route_path": "/episode/:slug"
+    }
+  },
+  {
+    "id": "page:experiencestartpage",
+    "title": "ExperienceStartPage",
+    "url": "https://novamnesis-laboratories.vercel.app/experience",
+    "source_path": "src/pages/ExperienceStartPage.tsx",
+    "kind": "page-source-text",
+    "content": "START EXPERIENCE\n体験したい記憶を、ここから選びます。\n初回は、記憶の種類と感情の強さを確認しながら進めます。いきなり定着に入るのではなく、体験したい過去、避けたい場面、終了後に残したい余韻を一つずつ整理します。\nFirst Session\n初回確認\n体験時間\n定着強度\n中断\nこのページは体験の入口です。購入や予約を確定する前に、記憶の内容と安全確認を整理できます。\nChoose Memory\nまずは、体験したい記憶のタイプを選びます。\nここでは大まかな記憶タイプだけを選びます。短い場面の記憶は1回の体験で扱えますが、数年分の人生記憶は複数回のセッションに分けて定着させます。\nborder-cyanline/70 bg-cyanline/10 shadow-glow\n記憶内の期間\ntext-cyanline\ntext-slate-500\n選択中\nクリックして選択\nIntake Check\n体験前に確認すること。\n記憶定着は、希望を聞いてすぐ始めるものではありません。心地よく持ち帰れる記憶にするため、以下の項目を確認します。\n01\nまず、体験したい記憶の方向性を確認します。ここで選ぶのは大枠です。具体的な記憶メニューは予約後の説明で調整できます。\n02\n次に、残したい余韻や避けたい感情を確認します。不安な場面がある場合は、右側のフォームで複数選択できます。\n03\n最後に、予約ページで日時と来館前説明の方法を選びます。長い人生記憶は、初回確認後に必要な回数を提案します。\n体験したい記憶\n感情の強さ\n弱めに始めたい\n標準で体験したい\n強めの余韻を残したい\n重点的に確認したいこと\n避けたい場面\n例: 大きな音、強い喪失感、暗い場所\n体験内容を確認して予約へ進む",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "route_path": "/experience"
+    }
+  },
+  {
+    "id": "page:facilitypage",
+    "title": "FacilityPage",
+    "url": "https://novamnesis-laboratories.vercel.app/facility",
+    "source_path": "src/pages/FacilityPage.tsx",
+    "kind": "page-source-text",
+    "content": "MEMORY FIXATION ROOM\n記憶定着の流れを、事前に確認できます。\n体験者が最初に知りたいのは、技術の名前よりも、自分がどこに座り、何を頭に付けられ、どんな感覚の中で記憶が入ってくるのかです。Novamnesis の施設は、その不安を減らすために公開されています。\nSESSION\n60 MIN\nSTAFF\n2名常駐\nSTOP\n音声中断可\nLocations\n全国3拠点で記憶定着セッションを実施\n記憶の購入はオンラインで完結しますが、実際の記憶定着セッションは専用施設で行います。日時を予約いただければ、記憶の選択は来館時でも可能です。カウンセリングを受けながら、その場で最適な記憶を選べます。\n東京ラボ\n東京都港区虎ノ門 4-1-1\n大阪ラボ\n大阪府大阪市北区梅田 2-5-8\n福岡ラボ\n福岡県福岡市中央区天神 1-10-3\n（架空）\nRoom Tour\n安心して体験に入れる、静かな空間です。\n施設の安心感は、説明の丁寧さだけでなく、入った瞬間に身体がどう反応するかで決まります。体験前後の部屋を分け、記憶と現実が急に混ざらない動線にしています。\nSession Flow\n来館からお帰りまでの流れをご案内します。\n体験者は眠らされるのではなく、浅い睡眠に近い状態へ誘導されます。スタッフ、機械、本人の停止合図が同時にセッションを見守ります。\nSTEP\nDuring Fixation\n記憶定着は、リラックスした状態で行われます。\n目を閉じ、呼吸はゆっくりになり、時々指先や表情だけが反応します。中では記憶が再生されているのではなく、感情と感覚の順番が本人の中に結び直されています。\n高級マッサージチェアに近い姿勢で、柔らかいニューロクラウンを装着します。身体を拘束せず、スタッフが離れた端末から状態を見守ります。\nAftercare\n体験後は、ゆっくり日常へ戻ります。\n体験後は、購入した記憶を否定せず、現実の履歴とも混ぜすぎない時間を置きます。水を飲む、日付を見る、短い会話をする。その小さな手順が、記憶を安心して持ち帰るための最後の設備です。\nよくある質問へ",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "route_path": "/facility"
+    }
+  },
+  {
+    "id": "page:safetypage",
+    "title": "SafetyPage",
+    "url": "https://novamnesis-laboratories.vercel.app/safety",
+    "source_path": "src/pages/SafetyPage.tsx",
+    "kind": "page-source-text",
+    "content": "corporate\nMEMORY EXPERIENCE SAFETY\n記憶を買う前に、安全基準を確認する。\nNovamnesis Laboratories は、購入した記憶が日常へ戻る力を壊さないよう、体験前、体験中、体験後の各段階で境界タグ、感情強度、現実混同リスクを管理します。\nPre-Session Gate\nConsent\n必須\nBoundary Tag\n自動付与\nReality Drift\n事前評価\nAftercare\n全体験に付属\nSafety Controls\n体験前後の安全管理。\n安全基準は購入前の判断材料です。どの記憶を選ぶ場合でも、体験内容より先に確認できる独立ページとして公開しています。\nEthical Protocol\n倫理プロトコル。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "route_path": "/safety"
+    }
+  },
+  {
+    "id": "page:sellpage",
+    "title": "SellPage",
+    "url": "https://novamnesis-laboratories.vercel.app/sell",
+    "source_path": "src/pages/SellPage.tsx",
+    "kind": "page-source-text",
+    "content": "corporate\nSELL YOUR MEMORY\nあなたの記憶を、誰かの体験したかった人生へ。\n売却ページでは、提供者向けに記憶の査定、匿名化、ライセンス、掲載までの流れを案内します。購入者向けの会社情報とは分けて、記憶を提供する人が確認すべき条件だけを整理しています。\n査定基準を見る\nsecondary\n売却プロセスを見る\nVALUATION PREVIEW\nJPY 428,000 - 910,000\n通常売却では、提供者自身の記憶は失われません。独占ライセンス契約では、契約範囲に応じて一部アクセス制限が発生する場合があります。\nMemory Valuation\n記憶資産の査定基準。\n初恋、成功、挫折、旅、勝負の瞬間。Novamnesis Laboratories は、提供者の同意に基づいて記憶を匿名化し、感情強度・希少性・没入度・安全性を評価します。\nProcess\n記憶を売る流れ。\nSTEP",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "route_path": "/sell"
+    }
+  },
+  {
+    "id": "page:templatedetailpage",
+    "title": "TemplateDetailPage",
+    "url": "https://novamnesis-laboratories.vercel.app/template/:slug",
+    "source_path": "src/pages/TemplateDetailPage.tsx",
+    "kind": "page-source-text",
+    "content": "Catalog に戻る\nTemplate Detail\nこの人生を予約する\nsecondary\n境界タグを確認する\nMemory Spec\n体験時間\n記憶内期間\nリスク\n構成\n体験後には、現実の経歴ではなく「記憶として経験した人生」として境界タグが付与されます。強い憧れを伴うテンプレートでは、数日間の余韻が残る場合があります。\nMemory Chapters\nこのテンプレートに含まれる記憶章。\n単なるハイライトではなく、成功する前の退屈、失敗、身体の違和感まで含めて再構成されます。\nCHAPTER\n残る感覚情報\n購入前プロトコル\n1. 願望適合スキャンで、憧れと現実復帰耐性を確認します。\n2. 記憶内の役割、成功度、失敗度、恋愛要素、危険度を調整します。\n3. 境界タグを付与し、体験後に「これは購入した記憶である」と認識できる状態を保ちます。\n4. 高リスクテンプレートでは、体験直後に認知安定セッションを行います。\nRecommended Plans\nこのテンプレートに近い記憶商品。",
+    "metadata": {
+      "generated_at": "2026-05-07T12:01:01.269Z",
+      "route_path": "/template/:slug"
+    }
+  }
+]
