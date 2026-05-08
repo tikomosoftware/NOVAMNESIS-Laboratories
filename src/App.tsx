@@ -12,6 +12,7 @@ import SafetyPage from "./pages/SafetyPage";
 import FaqPage from "./pages/FaqPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import MemoryBuybackCampaignPage from "./pages/MemoryBuybackCampaignPage";
 import FloatingChatWidget from "./components/FloatingChatWidget";
 
 export default function App() {
@@ -45,6 +46,10 @@ export default function App() {
 
   if (path === "/sell") {
     return withChat(<SellPage />);
+  }
+
+  if (path === "/campaign/memory-buyback") {
+    return withChat(<MemoryBuybackCampaignPage />);
   }
 
   if (path === "/safety") {
