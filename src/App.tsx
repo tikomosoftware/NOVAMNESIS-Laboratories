@@ -14,14 +14,15 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import MemoryBuybackCampaignPage from "./pages/MemoryBuybackCampaignPage";
 import FloatingChatWidget from "./components/FloatingChatWidget";
+import { I18nProvider } from "./i18n";
 
 export default function App() {
   const path = window.location.pathname;
   const withChat = (page: React.ReactNode) => (
-    <>
+    <I18nProvider>
       {page}
       <FloatingChatWidget />
-    </>
+    </I18nProvider>
   );
 
   if (path.startsWith("/template/")) {

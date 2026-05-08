@@ -5,3 +5,6 @@ dist/
 *.local
 *.tsbuildinfo
 remove_logos.py
+playwright-report/
+test-results/
+visual-snapshots/

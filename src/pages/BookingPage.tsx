@@ -139,7 +139,7 @@ export default function BookingPage() {
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
                   href="/catalog"
-                  className="rounded-full bg-gradient-to-r from-cyanline via-violetsignal to-magentapulse px-6 py-3 text-sm font-semibold text-obsidian shadow-glow transition duration-300 hover:-translate-y-0.5"
+                  className="rounded-full border border-cyanline/30 bg-cyanline px-6 py-3 text-sm font-semibold text-obsidian shadow-[0_0_24px_rgba(88,244,255,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-white"
                 >
                   別のメニューを見る
                 </a>
@@ -228,7 +228,7 @@ export default function BookingPage() {
                 </label>
                 <div className="flex flex-wrap gap-4 pt-2">
                   <button
-                    className="rounded-full bg-gradient-to-r from-cyanline via-violetsignal to-magentapulse px-6 py-3 text-sm font-semibold text-obsidian shadow-glow transition duration-300 hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-cyanline focus:ring-offset-2 focus:ring-offset-obsidian"
+                    className="rounded-full border border-cyanline/30 bg-cyanline px-6 py-3 text-sm font-semibold text-obsidian shadow-[0_0_24px_rgba(88,244,255,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-white disabled:cursor-wait disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-cyanline focus:ring-offset-2 focus:ring-offset-obsidian"
                     disabled={isSending}
                     onClick={showBookingConfirmation}
                     type="button"

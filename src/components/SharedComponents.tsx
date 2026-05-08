@@ -1,6 +1,7 @@
 import React from "react";
 import { Tone, SimpleCard, Review, Faq } from "../types";
 import { plans, reviews, faqs, faqsSell, sellSteps, roomZones, sessionSteps, bodyStates, experienceEntryOptions, safetyItems, ethics, valuation, categories, purchaseUseCases, experienceMenus, memoryEpisodes, landingNavItems } from "../data";
+import { Language, useI18n } from "../i18n";
 
 export function notify(message: string) {
   window.alert(`${message}\n\nNovamnesis Laboratories は架空のデモサイトです。`);
@@ -15,11 +16,13 @@ export function SectionHeader({
   title: string;
   description?: string;
 }) {
+  const { t } = useI18n();
+
   return (
     <div className="mx-auto mb-12 max-w-3xl text-center">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">{eyebrow}</p>
-      <h2 className="text-3xl font-semibold text-white sm:text-4xl">{title}</h2>
-      {description && <p className="mt-5 text-base leading-8 text-slate-300">{description}</p>}
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">{t(eyebrow)}</p>
+      <h2 className="text-3xl font-semibold text-white sm:text-4xl">{t(title)}</h2>
+      {description && <p className="mt-5 text-base leading-8 text-slate-300">{t(description)}</p>}
     </div>
   );
 }
@@ -35,6 +38,7 @@ export function Button({
   tone?: Tone;
   href?: string;
 }) {
+  const { t } = useI18n();
   const classes =
     tone === "corporate"
       ? variant === "primary"
@@ -45,7 +49,7 @@ export function Button({
           ? "bg-slate-950 text-white shadow-sm hover:-translate-y-0.5 hover:bg-slate-800"
           : "border border-slate-300 bg-white text-slate-800 hover:border-slate-500 hover:bg-slate-50"
         : variant === "primary"
-          ? "bg-gradient-to-r from-cyanline via-violetsignal to-magentapulse text-obsidian shadow-glow hover:-translate-y-0.5"
+          ? "border border-cyanline/30 bg-cyanline text-obsidian shadow-[0_0_24px_rgba(88,244,255,0.16)] hover:-translate-y-0.5 hover:bg-white"
           : "border border-white/15 bg-white/5 text-white hover:border-cyanline/60 hover:bg-white/10";
 
   const className = `rounded-full px-6 py-3 text-sm font-semibold transition duration-300 focus:outline-none focus:ring-2 ${tone === "light" ? "focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-white" : "focus:ring-cyanline focus:ring-offset-2 focus:ring-offset-obsidian"
@@ -54,14 +58,14 @@ export function Button({
   if (href) {
     return (
       <a href={href} className={className}>
-        {children}
+        {t(children)}
       </a>
     );
   }
 
   return (
     <button className={className} onClick={() => notify(children)} type="button">
-      {children}
+      {t(children)}
     </button>
   );
 }
@@ -102,6 +106,43 @@ export function BrandLockup({ tone = "dark" }: { tone?: Tone }) {
   );
 }
 
+function LanguageToggle({ tone }: { tone: Tone }) {
+  const { language, setLanguage, t } = useI18n();
+  const options: Array<{ value: Language; label: string }> = [
+    { value: "ja", label: "日本語" },
+    { value: "en", label: "English" },
+  ];
+
+  return (
+    <div
+      className={`flex items-center gap-1 rounded-full border p-1 ${tone === "light" ? "border-slate-300 bg-white text-slate-700" : "border-white/15 bg-white/5 text-slate-200"}`}
+      aria-label={t("言語")}
+    >
+      {options.map((option) => {
+        const isActive = language === option.value;
+        return (
+          <button
+            key={option.value}
+            type="button"
+            className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${isActive
+              ? tone === "light"
+                ? "bg-slate-950 text-white"
+                : "bg-cyanline text-obsidian"
+              : tone === "light"
+                ? "text-slate-500 hover:text-slate-950"
+                : "text-slate-400 hover:text-white"
+              }`}
+            aria-pressed={isActive}
+            onClick={() => setLanguage(option.value)}
+          >
+            {option.value === "ja" ? "JP" : "EN"}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 export function Header({
   items,
   cta,
@@ -113,6 +154,8 @@ export function Header({
   tone?: Tone;
   ctaHref?: string;
 }) {
+  const { t } = useI18n();
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl ${tone === "light" ? "border-slate-200 bg-white/90" : "border-white/10 bg-obsidian/80"
@@ -129,23 +172,26 @@ export function Header({
               href={item.href}
               className={`text-sm transition ${tone === "light" ? "text-slate-600 hover:text-slate-950" : "text-cyanline/85 hover:text-cyanline hover:drop-shadow-[0_0_6px_rgba(88,244,255,0.42)]"}`}
             >
-              {item.label}
+              {t(item.label)}
             </a>
           ))}
         </div>
-        {cta && ctaHref ? (
-          <a
-            href={ctaHref}
-            className={`rounded-full px-6 py-3 text-sm font-semibold transition duration-300 focus:outline-none focus:ring-2 focus:ring-cyanline focus:ring-offset-2 ${tone === "light"
-              ? "bg-slate-950 text-white hover:-translate-y-0.5 focus:ring-offset-white"
-              : "bg-gradient-to-r from-cyanline via-violetsignal to-magentapulse text-obsidian shadow-glow hover:-translate-y-0.5 focus:ring-offset-obsidian"
-              }`}
-          >
-            {cta}
-          </a>
-        ) : cta ? (
-          <Button tone={tone}>{cta}</Button>
-        ) : null}
+        <div className="flex items-center gap-3">
+          <LanguageToggle tone={tone} />
+          {cta && ctaHref ? (
+            <a
+              href={ctaHref}
+              className={`hidden rounded-full px-6 py-3 text-sm font-semibold transition duration-300 focus:outline-none focus:ring-2 focus:ring-cyanline focus:ring-offset-2 sm:inline-flex ${tone === "light"
+                ? "bg-slate-950 text-white hover:-translate-y-0.5 focus:ring-offset-white"
+                : "border border-cyanline/30 bg-cyanline text-obsidian shadow-[0_0_24px_rgba(88,244,255,0.16)] hover:-translate-y-0.5 hover:bg-white focus:ring-offset-obsidian"
+                }`}
+            >
+              {t(cta)}
+            </a>
+          ) : cta ? (
+            <Button tone={tone}>{cta}</Button>
+          ) : null}
+        </div>
       </nav>
     </header>
   );
@@ -183,20 +229,22 @@ export function HeroVisual() {
 }
 
 export function Hero() {
+  const { t } = useI18n();
+
   return (
     <section id="top" className="relative overflow-hidden pt-32">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(88,244,255,0.15),transparent_30%),radial-gradient(circle_at_75%_10%,rgba(255,79,216,0.14),transparent_28%),linear-gradient(180deg,#060711_0%,#0c1020_65%,#060711_100%)]" />
       <div className="absolute inset-0 -z-10 novamnesis-grid opacity-40" />
       <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-14 px-5 pb-24 lg:grid-cols-[1.03fr_0.97fr]">
         <div className="animate-fadeIn">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-cyanline">Neuramnesia — Memory Experience Marketplace</p>
-          <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl lg:text-7xl">あなたが本当に欲しかった人生を、記憶から始めよう。</h1>
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-cyanline">Neuramnesia — {t("記憶体験マーケットプレイス")}</p>
+          <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl lg:text-7xl">{t("あなたが本当に欲しかった人生を、記憶から始めよう。")}</h1>
           <p className="mt-7 max-w-2xl text-lg leading-9 text-slate-300">
-            Neuramnesia は、恋愛、成功、旅行、結婚、挫折、性別を入れ替えた人生まで、経験できなかった過去を記憶として購入できるマーケットプレイスです。
+            {t("Neuramnesia は、恋愛、成功、旅行、結婚、挫折、性別を入れ替えた人生まで、経験できなかった過去を記憶として購入できるマーケットプレイスです。")}
           </p>
           <div className="mt-10 grid gap-4 text-sm text-slate-300 sm:grid-cols-2">
-            <p className="glass-panel">青春の恋も、行けなかった旅も、選ばなかった結婚も。</p>
-            <p className="glass-panel">幸せな記憶も、挫折の記憶も、人生の厚みとして手に入れる。</p>
+            <p className="glass-panel">{t("青春の恋も、行けなかった旅も、選ばなかった結婚も。")}</p>
+            <p className="glass-panel">{t("幸せな記憶も、挫折の記憶も、人生の厚みとして手に入れる。")}</p>
           </div>
         </div>
         <HeroVisual />
@@ -206,6 +254,8 @@ export function Hero() {
 }
 
 export function CatalogHero() {
+  const { t } = useI18n();
+
   return (
     <section id="top" className="relative overflow-hidden pt-32">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_10%,rgba(255,79,216,0.18),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(88,244,255,0.18),transparent_32%),linear-gradient(180deg,#060711_0%,#0c1020_70%,#060711_100%)]" />
@@ -213,10 +263,10 @@ export function CatalogHero() {
       <div className="mx-auto max-w-7xl px-5 pb-20 pt-20 text-center">
         <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-cyanline">Neuramnesia Catalog</p>
         <h1 className="mx-auto max-w-5xl text-5xl font-semibold leading-tight text-white sm:text-6xl">
-          買いたくなる過去を、記憶メニューから選ぶ。
+          {t("買いたくなる過去を、記憶メニューから選ぶ。")}
         </h1>
         <p className="mx-auto mt-7 max-w-3xl text-lg leading-9 text-slate-300">
-          ここでは、購入可能な記憶体験を一覧できます。短い思い出から、選ばなかった人生、物語性の強い記憶まで、体験したい過去を選べます。
+          {t("ここでは、購入可能な記憶体験を一覧できます。短い思い出から、選ばなかった人生、物語性の強い記憶まで、体験したい過去を選べます。")}
         </p>
       </div>
     </section>
@@ -224,6 +274,7 @@ export function CatalogHero() {
 }
 
 export function Problem() {
+  const { t } = useI18n();
   const points = [
     "毎日同じ通勤、同じ仕事、同じ夜。",
     "本当に欲しかった人生は、まだ体験できていない。",
@@ -237,7 +288,7 @@ export function Problem() {
       <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-2">
         {points.map((point) => (
           <div key={point} className="glass-card text-lg leading-8 text-slate-200">
-            {point}
+            {t(point)}
           </div>
         ))}
       </div>
@@ -246,6 +297,8 @@ export function Problem() {
 }
 
 export function PurchaseUseCases() {
+  const { t } = useI18n();
+
   return (
     <section id="use-cases" className="section">
       <SectionHeader
@@ -258,17 +311,17 @@ export function PurchaseUseCases() {
           <article key={item.title} className="plan-card">
             <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
               <span className="rounded-full border border-cyanline/25 bg-cyanline/10 px-3 py-1 text-xs font-semibold text-cyanline">
-                {item.label}
+                {t(item.label)}
               </span>
-              <span className="text-xs text-slate-500">{item.startingPrice}</span>
+              <span className="text-xs text-slate-500">{t(item.startingPrice)}</span>
             </div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-magentapulse">{item.desire}</p>
-            <h3 className="mt-4 text-2xl font-semibold leading-8 text-white">{item.title}</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-300">{item.description}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-magentapulse">{t(item.desire)}</p>
+            <h3 className="mt-4 text-2xl font-semibold leading-8 text-white">{t(item.title)}</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-300">{t(item.description)}</p>
             <div className="mt-6 grid gap-2">
               {item.examples.map((example) => (
                 <p key={example} className="rounded-2xl border border-white/10 bg-obsidian/60 px-4 py-3 text-sm leading-6 text-slate-300">
-                  {example}
+                  {t(example)}
                 </p>
               ))}
             </div>
@@ -285,6 +338,7 @@ export function PurchaseUseCases() {
 }
 
 export function Service() {
+  const { t } = useI18n();
   const items = [
     "人工記憶や編集済みの実体験記憶によって、特別な人生を記憶として体験できます。",
     "体験は数十分でも、記憶上は数日・数週間の冒険として残ります。",
@@ -305,7 +359,7 @@ export function Service() {
           {items.map((item, index) => (
             <div key={item} className="rounded-2xl border border-white/10 bg-obsidian/60 p-5">
               <span className="text-xs text-cyanline">0{index + 1}</span>
-              <p className="mt-4 text-sm leading-7 text-slate-300">{item}</p>
+              <p className="mt-4 text-sm leading-7 text-slate-300">{t(item)}</p>
             </div>
           ))}
         </div>
@@ -315,6 +369,8 @@ export function Service() {
 }
 
 export function FacilityTeaser() {
+  const { t } = useI18n();
+
   return (
     <section className="section pt-4">
       <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.92fr_1.08fr]">
@@ -334,15 +390,15 @@ export function FacilityTeaser() {
           <div className="mt-7 flex flex-wrap gap-4">
             <a
               href="/facility"
-              className="rounded-full bg-gradient-to-r from-cyanline via-violetsignal to-magentapulse px-6 py-3 text-sm font-semibold text-obsidian shadow-glow transition duration-300 hover:-translate-y-0.5"
+              className="rounded-full border border-cyanline/30 bg-cyanline px-6 py-3 text-sm font-semibold text-obsidian shadow-[0_0_24px_rgba(88,244,255,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-white"
             >
-              施設と体験の流れを見る
+              {t("施設と体験の流れを見る")}
             </a>
             <a
               href="/safety"
               className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-cyanline/60 hover:bg-white/10"
             >
-              安全基準を見る
+              {t("安全基準を見る")}
             </a>
           </div>
         </div>
@@ -352,6 +408,8 @@ export function FacilityTeaser() {
 }
 
 export function Marketplace() {
+  const { t } = useI18n();
+
   return (
     <section id="marketplace" className="section">
       <SectionHeader
@@ -367,7 +425,7 @@ export function Marketplace() {
         ].map(([title, text]) => (
           <div key={title} className="glass-card">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-magentapulse">{title}</p>
-            <p className="mt-5 text-base leading-8 text-slate-300">{text}</p>
+            <p className="mt-5 text-base leading-8 text-slate-300">{t(text)}</p>
           </div>
         ))}
       </div>
@@ -381,6 +439,8 @@ export function Marketplace() {
 }
 
 export function CatalogTeaser() {
+  const { t } = useI18n();
+
   return (
     <section className="section">
       <SectionHeader
@@ -395,9 +455,9 @@ export function CatalogTeaser() {
         <div className="mt-8">
           <a
             href="/catalog"
-            className="inline-flex rounded-full bg-gradient-to-r from-cyanline via-violetsignal to-magentapulse px-6 py-3 text-sm font-semibold text-obsidian shadow-glow transition duration-300 hover:-translate-y-0.5"
+            className="inline-flex rounded-full border border-cyanline/30 bg-cyanline px-6 py-3 text-sm font-semibold text-obsidian shadow-[0_0_24px_rgba(88,244,255,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-white"
           >
-            人生メニューを見る
+            {t("人生メニューを見る")}
           </a>
         </div>
       </div>
@@ -406,6 +466,8 @@ export function CatalogTeaser() {
 }
 
 export function Plans() {
+  const { t } = useI18n();
+
   return (
     <section id="templates" className="section">
       <SectionHeader
@@ -417,7 +479,7 @@ export function Plans() {
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-magentapulse">Life Templates</p>
-            <h3 className="mt-2 text-2xl font-semibold text-white">長編テンプレート</h3>
+            <h3 className="mt-2 text-2xl font-semibold text-white">{t("長編テンプレート")}</h3>
           </div>
         </div>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -426,10 +488,10 @@ export function Plans() {
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-cyanline/25 bg-cyanline/10 text-sm font-semibold text-cyanline">
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <h3 className="text-xl font-semibold text-white">{menu.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-slate-300">{menu.description}</p>
+              <h3 className="text-xl font-semibold text-white">{t(menu.title)}</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-300">{t(menu.description)}</p>
               <a className="mt-6 inline-flex text-sm font-semibold text-cyanline transition hover:text-white" href={`/template/${menu.slug}`}>
-                テンプレートを見る
+                {t("テンプレートを見る")}
               </a>
             </article>
           ))}
@@ -440,6 +502,8 @@ export function Plans() {
 }
 
 export function MemoryEpisodes() {
+  const { t } = useI18n();
+
   return (
     <section id="episodes" className="section">
       <SectionHeader
@@ -450,9 +514,9 @@ export function MemoryEpisodes() {
       <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-4">
         {memoryEpisodes.map((episode) => (
           <article key={episode.title} className="plan-card">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-magentapulse">{episode.tag}</p>
-            <h3 className="text-lg font-semibold leading-7 text-white">{episode.title}</h3>
-            <p className="mt-4 min-h-24 text-sm leading-7 text-slate-300">{episode.description}</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-magentapulse">{t(episode.tag)}</p>
+            <h3 className="text-lg font-semibold leading-7 text-white">{t(episode.title)}</h3>
+            <p className="mt-4 min-h-24 text-sm leading-7 text-slate-300">{t(episode.description)}</p>
             <dl className="mt-6 grid gap-3 text-sm">
               <Info label="スパン" value={episode.period} />
               <Info label="感情" value={episode.intensity} />
@@ -463,7 +527,7 @@ export function MemoryEpisodes() {
                 href={`/episode/${episode.slug}`}
                 className="inline-flex text-sm font-semibold text-cyanline transition hover:text-white"
               >
-                体験内容を確認する
+                {t("体験内容を確認する")}
               </a>
             </div>
           </article>
@@ -474,15 +538,19 @@ export function MemoryEpisodes() {
 }
 
 export function Info({ label, value, wide = false }: { label: string; value: string; wide?: boolean }) {
+  const { t } = useI18n();
+
   return (
     <div className={`rounded-2xl bg-white/[0.04] p-3 ${wide ? "col-span-2" : ""}`}>
-      <dt className="text-xs text-slate-500">{label}</dt>
-      <dd className="mt-1 text-slate-200">{value}</dd>
+      <dt className="text-xs text-slate-500">{t(label)}</dt>
+      <dd className="mt-1 text-slate-200">{t(value)}</dd>
     </div>
   );
 }
 
 export function SellMemory() {
+  const { t } = useI18n();
+
   return (
     <section id="sell" className="section">
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -509,7 +577,7 @@ export function SellMemory() {
           {valuation.slice(0, 4).map((item, index) => (
             <div key={item.title} className="mb-5">
               <div className="mb-2 flex justify-between text-sm">
-                <span className="text-slate-300">{item.title}</span>
+                <span className="text-slate-300">{t(item.title)}</span>
                 <span className="text-slate-500">{72 + index * 6}%</span>
               </div>
               <div className="h-2 overflow-hidden rounded-full bg-white/10">
@@ -524,14 +592,16 @@ export function SellMemory() {
 }
 
 export function CardGrid({ eyebrow, title, items }: { eyebrow: string; title: string; items: SimpleCard[] }) {
+  const { t } = useI18n();
+
   return (
     <section className="section">
       <SectionHeader eyebrow={eyebrow} title={title} />
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <div key={item.title} className="glass-card">
-            <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-300">{item.description}</p>
+            <h3 className="text-lg font-semibold text-white">{t(item.title)}</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-300">{t(item.description)}</p>
           </div>
         ))}
       </div>
@@ -540,6 +610,8 @@ export function CardGrid({ eyebrow, title, items }: { eyebrow: string; title: st
 }
 
 export function Process() {
+  const { t } = useI18n();
+
   return (
     <section className="section">
       <SectionHeader eyebrow="Process" title="記憶を売る流れ。" />
@@ -547,7 +619,7 @@ export function Process() {
         {sellSteps.map((step, index) => (
           <div key={step} className="relative rounded-3xl border border-white/10 bg-white/[0.04] p-5">
             <span className="text-xs text-cyanline">STEP {String(index + 1).padStart(2, "0")}</span>
-            <p className="mt-4 font-medium text-white">{step}</p>
+            <p className="mt-4 font-medium text-white">{t(step)}</p>
           </div>
         ))}
       </div>
@@ -556,6 +628,8 @@ export function Process() {
 }
 
 export function Safety() {
+  const { t } = useI18n();
+
   return (
     <section id="safety" className="section">
       <SectionHeader
@@ -569,7 +643,7 @@ export function Safety() {
           <div className="mt-6 grid gap-3">
             {safetyItems.map((item) => (
               <p key={item} className="rounded-2xl border border-white/10 bg-obsidian/60 px-4 py-3 text-sm text-slate-300">
-                {item}
+                {t(item)}
               </p>
             ))}
           </div>
@@ -579,7 +653,7 @@ export function Safety() {
           <div className="mt-6 space-y-3">
             {ethics.map((item) => (
               <p key={item} className="border-l border-cyanline/40 pl-4 text-sm leading-7 text-slate-300">
-                {item}
+                {t(item)}
               </p>
             ))}
           </div>
@@ -590,6 +664,8 @@ export function Safety() {
 }
 
 export function Reviews() {
+  const { t } = useI18n();
+
   return (
     <section className="section">
       <SectionHeader
@@ -602,14 +678,14 @@ export function Reviews() {
           <figure key={`${review.memory}-${review.participant}`} className="glass-card">
             <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
               <span className="rounded-full border border-magentapulse/25 bg-magentapulse/10 px-3 py-1 text-xs font-semibold text-magentapulse">
-                {review.effect}
+                {t(review.effect)}
               </span>
               <span className="text-xs text-slate-500">#{2031 + index}</span>
             </div>
-            <blockquote className="text-base leading-8 text-slate-200">“{review.quote}”</blockquote>
+            <blockquote className="text-base leading-8 text-slate-200">“{t(review.quote)}”</blockquote>
             <figcaption className="mt-6 text-sm text-slate-500">
-              <span className="block text-slate-300">{review.memory}</span>
-              <span className="mt-1 block">{review.participant}</span>
+              <span className="block text-slate-300">{t(review.memory)}</span>
+              <span className="mt-1 block">{t(review.participant)}</span>
             </figcaption>
           </figure>
         ))}
@@ -619,38 +695,40 @@ export function Reviews() {
 }
 
 export function FAQ() {
+  const { t } = useI18n();
+
   return (
     <section id="faq" className="section">
       <SectionHeader eyebrow="FAQ" title="よくある質問。" />
       <div className="mx-auto max-w-5xl">
         <div className="mb-10">
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-cyanline">記憶を購入する方へ</p>
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-cyanline">{t("記憶を購入する方へ")}</p>
           <div className="grid gap-4">
             {faqs.map((faq) => (
               <details key={faq.question} className="group rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl">
                 <summary className="cursor-pointer list-none text-lg font-medium text-white">
                   <span className="inline-flex w-full items-center justify-between gap-4">
-                    {faq.question}
+                    {t(faq.question)}
                     <span className="text-cyanline transition group-open:rotate-45">+</span>
                   </span>
                 </summary>
-                <p className="mt-4 text-sm leading-7 text-slate-300">{faq.answer}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-300">{t(faq.answer)}</p>
               </details>
             ))}
           </div>
         </div>
         <div>
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-magentapulse">記憶を売る方へ</p>
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-magentapulse">{t("記憶を売る方へ")}</p>
           <div className="grid gap-4">
             {faqsSell.map((faq) => (
               <details key={faq.question} className="group rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl">
                 <summary className="cursor-pointer list-none text-lg font-medium text-white">
                   <span className="inline-flex w-full items-center justify-between gap-4">
-                    {faq.question}
+                    {t(faq.question)}
                     <span className="text-cyanline transition group-open:rotate-45">+</span>
                   </span>
                 </summary>
-                <p className="mt-4 text-sm leading-7 text-slate-300">{faq.answer}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-300">{t(faq.answer)}</p>
               </details>
             ))}
           </div>
@@ -661,13 +739,15 @@ export function FAQ() {
 }
 
 export function FinalCta() {
+  const { t } = useI18n();
+
   return (
     <section className="px-5 py-24">
       <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-cyanline/20 bg-[radial-gradient(circle_at_15%_20%,rgba(88,244,255,0.18),transparent_28%),radial-gradient(circle_at_85%_40%,rgba(255,79,216,0.16),transparent_30%),rgba(255,255,255,0.04)] p-8 text-center shadow-glow md:p-16">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">Begin Again</p>
-        <h2 className="mx-auto max-w-3xl text-4xl font-semibold leading-tight text-white">経験したかった人生を、記憶として購入する。</h2>
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">{t("Begin Again")}</p>
+        <h2 className="mx-auto max-w-3xl text-4xl font-semibold leading-tight text-white">{t("経験したかった人生を、記憶として購入する。")}</h2>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300">
-          体験するか、提供するか。Novamnesis Laboratories は、あなたの過去と未来に新しい選択肢を与えます。
+          {t("体験するか、提供するか。Novamnesis Laboratories は、あなたの過去と未来に新しい選択肢を与えます。")}
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-4">
           <Button href="/booking">記憶を購入する</Button>
@@ -679,12 +759,14 @@ export function FinalCta() {
 
 
 export function Footer({ items = landingNavItems, tone = "dark" }: { items?: { label: string; href: string }[]; tone?: Tone }) {
+  const { t } = useI18n();
+
   return (
     <footer className={`border-t px-5 py-10 ${tone === "light" ? "border-slate-200 bg-white text-slate-700" : "border-white/10"}`}>
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-5xl rounded-[2rem] border border-magentapulse/20 bg-magentapulse/5 p-6 text-center backdrop-blur-xl">
           <p className="text-sm leading-7 text-slate-300">
-            本サイトおよび NEURAMNESIA は架空の企業・サービスです。実在する医療・金融・記憶操作サービスではありません。
+            {t("本サイトおよび NEURAMNESIA は架空の企業・サービスです。実在する医療・金融・記憶操作サービスではありません。")}
           </p>
         </div>
         <div className={`mt-8 border-t pt-6 text-center text-sm ${tone === "light" ? "border-slate-200 text-slate-500" : "border-white/10 text-slate-500"}`}>
