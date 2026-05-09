@@ -6,6 +6,7 @@ export const siteNavItems = [
   { label: "Booking", href: "/booking" },
   { label: "Facility", href: "/facility" },
   { label: "Safety", href: "/safety" },
+  { label: "Research", href: "/research" },
   { label: "Sell Memory", href: "/sell" },
   { label: "FAQ", href: "/faq" },
   { label: "About", href: "/about" },

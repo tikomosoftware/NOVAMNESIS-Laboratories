@@ -9,6 +9,7 @@ import TemplateDetailPage from "./pages/TemplateDetailPage";
 import EpisodeDetailPage from "./pages/EpisodeDetailPage";
 import SellPage from "./pages/SellPage";
 import SafetyPage from "./pages/SafetyPage";
+import ResearchPage from "./pages/ResearchPage";
 import FaqPage from "./pages/FaqPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
@@ -55,6 +56,10 @@ export default function App() {
 
   if (path === "/safety") {
     return withChat(<SafetyPage />);
+  }
+
+  if (path === "/research") {
+    return withChat(<ResearchPage />);
   }
 
   if (path === "/faq") {
