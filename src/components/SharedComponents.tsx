@@ -155,6 +155,8 @@ export function Header({
   ctaHref?: string;
 }) {
   const { t } = useI18n();
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const menuButtonLabel = isMenuOpen ? "メニューを閉じる" : "メニューを開く";
 
   return (
     <header
@@ -189,10 +191,93 @@ export function Header({
               {t(cta)}
             </a>
           ) : cta ? (
-            <Button tone={tone}>{cta}</Button>
+            <span className="hidden sm:inline-flex">
+              <Button tone={tone}>{cta}</Button>
+            </span>
           ) : null}
+          <button
+            type="button"
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition md:hidden ${
+              tone === "light"
+                ? "border-slate-300 bg-white text-slate-950 hover:border-slate-500"
+                : "border-white/15 bg-white/5 text-cyanline hover:border-cyanline/60 hover:bg-white/10"
+            }`}
+            aria-label={menuButtonLabel}
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((current) => !current)}
+          >
+            <span className="relative h-4 w-5" aria-hidden="true">
+              <span
+                className={`absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition ${
+                  isMenuOpen ? "translate-y-[7px] rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-[7px] h-0.5 w-5 rounded-full bg-current transition ${
+                  isMenuOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`absolute bottom-0 left-0 h-0.5 w-5 rounded-full bg-current transition ${
+                  isMenuOpen ? "-translate-y-[7px] -rotate-45" : ""
+                }`}
+              />
+            </span>
+          </button>
         </div>
       </nav>
+      {isMenuOpen && (
+        <div
+          className={`border-t px-5 pb-5 pt-2 md:hidden ${
+            tone === "light" ? "border-slate-200 bg-white/95" : "border-white/10 bg-obsidian/95"
+          }`}
+        >
+          <div className="mx-auto grid max-w-7xl gap-2">
+            {items.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className={`rounded-2xl px-4 py-3 text-sm font-medium transition ${
+                  tone === "light"
+                    ? "text-slate-700 hover:bg-slate-100 hover:text-slate-950"
+                    : "text-slate-200 hover:bg-white/[0.06] hover:text-cyanline"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t(item.label)}
+              </a>
+            ))}
+            {cta && ctaHref ? (
+              <a
+                href={ctaHref}
+                className={`mt-2 rounded-full px-5 py-3 text-center text-sm font-semibold transition ${
+                  tone === "light"
+                    ? "bg-slate-950 text-white hover:bg-slate-800"
+                    : "border border-cyanline/30 bg-cyanline text-obsidian shadow-[0_0_24px_rgba(88,244,255,0.16)] hover:bg-white"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t(cta)}
+              </a>
+            ) : cta ? (
+              <button
+                type="button"
+                className={`mt-2 rounded-full px-5 py-3 text-center text-sm font-semibold transition ${
+                  tone === "light"
+                    ? "bg-slate-950 text-white hover:bg-slate-800"
+                    : "border border-cyanline/30 bg-cyanline text-obsidian shadow-[0_0_24px_rgba(88,244,255,0.16)] hover:bg-white"
+                }`}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  notify(cta);
+                }}
+              >
+                {t(cta)}
+              </button>
+            ) : null}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
