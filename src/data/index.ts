@@ -1,18 +1,23 @@
 import { Plan, ExperienceTemplate, MemoryEpisode, PurchaseUseCase, Review, SimpleCard, Faq } from "../types";
 
-export const siteNavItems = [
+export const primaryNavItems = [
   { label: "Catalog", href: "/catalog" },
   { label: "Experience", href: "/experience" },
   { label: "Booking", href: "/booking" },
-  { label: "Facility", href: "/facility" },
   { label: "Safety", href: "/safety" },
-  { label: "Research", href: "/research" },
   { label: "Sell Memory", href: "/sell" },
+];
+
+export const supportNavItems = [
+  { label: "Facility", href: "/facility" },
+  { label: "Research", href: "/research" },
   { label: "FAQ", href: "/faq" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
+export const siteNavItems = primaryNavItems;
+export const footerNavItems = [...primaryNavItems, ...supportNavItems];
 export const landingNavItems = siteNavItems;
 export const catalogNavItems = siteNavItems;
 export const companyNavItems = siteNavItems;
@@ -592,7 +597,7 @@ export const reviews: Review[] = [
 export const faqs: Faq[] = [
   {
     question: "これは夢ですか？",
-    answer: "夢ではありません。Novamnesis Laboratories は体験後に残る記憶印象を設計する架空のサービスです。目覚めたあとも、記憶は静かに日常へ重なります。",
+    answer: "夢ではありません。NEURAMNESIA は体験後に残る記憶印象を設計する架空のサービスです。目覚めたあとも、記憶は静かに日常へ重なります。",
   },
   {
     question: "記憶は消せますか？",

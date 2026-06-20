@@ -28,7 +28,7 @@ export default function FacilityPage() {
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-cyanline">MEMORY FIXATION ROOM</p>
             <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white sm:text-6xl">記憶定着の流れを、事前に確認できます。</h1>
             <p className="mt-7 max-w-3xl text-lg leading-9 text-slate-300">
-              体験者が最初に知りたいのは、技術の名前よりも、自分がどこに座り、何を頭に付けられ、どんな感覚の中で記憶が入ってくるのかです。Novamnesis の施設は、その不安を減らすために公開されています。
+              体験者が最初に知りたいのは、技術の名前よりも、自分がどこに座り、何を頭に付けられ、どんな感覚の中で記憶が入ってくるのかです。NEURAMNESIA の施設は、その不安を減らすために公開されています。
             </p>
             <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
               {[

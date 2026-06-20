@@ -1,10 +1,10 @@
 import React from "react";
 import { Tone, SimpleCard, Review, Faq } from "../types";
-import { plans, reviews, faqs, faqsSell, sellSteps, roomZones, sessionSteps, bodyStates, experienceEntryOptions, safetyItems, ethics, valuation, categories, purchaseUseCases, experienceMenus, memoryEpisodes, landingNavItems } from "../data";
+import { plans, reviews, faqs, faqsSell, sellSteps, roomZones, sessionSteps, bodyStates, experienceEntryOptions, safetyItems, ethics, valuation, categories, purchaseUseCases, experienceMenus, memoryEpisodes, landingNavItems, footerNavItems } from "../data";
 import { Language, useI18n } from "../i18n";
 
 export function notify(message: string) {
-  window.alert(`${message}\n\nNovamnesis Laboratories は架空のデモサイトです。`);
+  window.alert(`${message}\n\nNEURAMNESIA は架空のデモサイトです。`);
 }
 
 export function SectionHeader({
@@ -76,7 +76,7 @@ export function LogoMark({ tone = "dark", className = "h-10 w-10" }: { tone?: To
   const pulse = tone === "light" ? "#475569" : "#ff4fd8";
 
   return (
-    <svg className={`${className} ${shell}`} viewBox="0 0 64 64" role="img" aria-label="Novamnesis Laboratories logo mark">
+    <svg className={`${className} ${shell}`} viewBox="0 0 64 64" role="img" aria-label="NEURAMNESIA logo mark">
       <path
         d="M32 4 54 16.5v31L32 60 10 47.5v-31L32 4Z"
         fill="currentColor"
@@ -94,11 +94,11 @@ export function LogoMark({ tone = "dark", className = "h-10 w-10" }: { tone?: To
 
 export function BrandLockup({ tone = "dark" }: { tone?: Tone }) {
   return (
-    <div className="flex items-center gap-4">
-      <LogoMark tone={tone} className="h-12 w-12" />
-      <div>
-        <div className={`text-lg font-semibold tracking-[0.18em] sm:text-xl ${tone === "light" ? "text-slate-950" : "text-white"}`}>NEURAMNESIA</div>
-        <div className={`text-xs transition ${tone === "light" ? "text-slate-500 group-hover:text-slate-800" : "text-slate-400 group-hover:text-cyanline"}`}>
+    <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+      <LogoMark tone={tone} className="h-10 w-10 shrink-0 sm:h-12 sm:w-12" />
+      <div className="min-w-0">
+        <div className={`truncate text-base font-semibold tracking-[0.18em] sm:text-xl ${tone === "light" ? "text-slate-950" : "text-white"}`}>NEURAMNESIA</div>
+        <div className={`hidden text-xs transition min-[360px]:block ${tone === "light" ? "text-slate-500 group-hover:text-slate-800" : "text-slate-400 group-hover:text-cyanline"}`}>
           Memory Experience Marketplace
         </div>
       </div>
@@ -163,8 +163,8 @@ export function Header({
       className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl ${tone === "light" ? "border-slate-200 bg-white/90" : "border-white/10 bg-obsidian/80"
         }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-        <a href="/" className="group">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-5">
+        <a href="/" className="group min-w-0">
           <BrandLockup tone={tone} />
         </a>
         <div className="hidden items-center gap-6 md:flex">
@@ -178,8 +178,10 @@ export function Header({
             </a>
           ))}
         </div>
-        <div className="flex items-center gap-3">
-          <LanguageToggle tone={tone} />
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <div className="hidden sm:block">
+            <LanguageToggle tone={tone} />
+          </div>
           {cta && ctaHref ? (
             <a
               href={ctaHref}
@@ -197,7 +199,7 @@ export function Header({
           ) : null}
           <button
             type="button"
-            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition md:hidden ${
+            className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition md:hidden ${
               tone === "light"
                 ? "border-slate-300 bg-white text-slate-950 hover:border-slate-500"
                 : "border-white/15 bg-white/5 text-cyanline hover:border-cyanline/60 hover:bg-white/10"
@@ -233,6 +235,9 @@ export function Header({
           }`}
         >
           <div className="mx-auto grid max-w-7xl gap-2">
+            <div className="mb-2 sm:hidden">
+              <LanguageToggle tone={tone} />
+            </div>
             {items.map((item) => (
               <a
                 key={item.href}
@@ -389,7 +394,7 @@ export function PurchaseUseCases() {
       <SectionHeader
         eyebrow="Purchase Motives"
         title="買う理由は、後悔だけではない。"
-        description="Novamnesis Laboratories は「なかったことを埋める」だけのサービスではありません。恋愛、成功、旅行、結婚、性別、挫折。人生の手触りを増やすために、欲しい記憶を選べます。"
+        description="NEURAMNESIA は「なかったことを埋める」だけのサービスではありません。恋愛、成功、旅行、結婚、性別、挫折。人生の手触りを増やすために、欲しい記憶を選べます。"
       />
       <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-3">
         {purchaseUseCases.map((item) => (
@@ -535,7 +540,7 @@ export function CatalogTeaser() {
       />
       <div className="mx-auto max-w-4xl rounded-[2rem] border border-cyanline/20 bg-white/[0.04] p-8 text-center shadow-glow backdrop-blur-xl">
         <p className="text-lg leading-8 text-slate-200">
-          他人の記憶を覗くのではなく、あなたの中に「体験済みの過去」として残す。Novamnesis Catalog では、そのための人生テンプレートを購買導線として整理しています。
+          他人の記憶を覗くのではなく、あなたの中に「体験済みの過去」として残す。NEURAMNESIA Catalog では、そのための人生テンプレートを購買導線として整理しています。
         </p>
         <div className="mt-8">
           <a
@@ -594,7 +599,7 @@ export function MemoryEpisodes() {
       <SectionHeader
         eyebrow="Short Memories"
         title="一生ではなく、あの数時間を買う。"
-        description="青春、部活、恋愛、幼少期、敗北、達成。Novamnesis Laboratories では、一生分ではない短い記憶エピソードも選べます。"
+        description="青春、部活、恋愛、幼少期、敗北、達成。NEURAMNESIA では、一生分ではない短い記憶エピソードも選べます。"
       />
       <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-4">
         {memoryEpisodes.map((episode) => (
@@ -644,7 +649,7 @@ export function SellMemory() {
           <h2 className="text-4xl font-semibold leading-tight text-white">あなたの記憶には、まだ価値がある。</h2>
           <p className="mt-6 text-base leading-8 text-slate-300">
             初恋、成功、挫折、旅、勝負の瞬間。あなたにとっては過去でも、誰かにとっては体験したかった人生かもしれません。
-            Novamnesis Laboratories は、あなたの記憶を匿名化し、感情強度・希少性・没入度を評価したうえで、記憶体験として再構成します。
+            NEURAMNESIA は、あなたの記憶を匿名化し、感情強度・希少性・没入度を評価したうえで、記憶体験として再構成します。
           </p>
           <p className="mt-5 rounded-2xl border border-magentapulse/20 bg-magentapulse/5 p-4 text-sm leading-7 text-slate-300">
             通常売却では、あなた自身の記憶は失われません。ただし、独占ライセンス契約では、一部の記憶アクセスに制限が発生する場合があります。
@@ -720,7 +725,7 @@ export function Safety() {
       <SectionHeader
         eyebrow="Safety"
         title="安全とは、忘れないための設計です。"
-        description="Novamnesis Laboratories は体験前、体験中、体験後の各段階で、現実と記憶の境界を保つための架空プロトコルを実行します。"
+        description="NEURAMNESIA は体験前、体験中、体験後の各段階で、現実と記憶の境界を保つための架空プロトコルを実行します。"
       />
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
         <div className="glass-card">
@@ -832,7 +837,7 @@ export function FinalCta() {
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">{t("Begin Again")}</p>
         <h2 className="mx-auto max-w-3xl text-4xl font-semibold leading-tight text-white">{t("経験したかった人生を、記憶として購入する。")}</h2>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300">
-          {t("体験するか、提供するか。Novamnesis Laboratories は、あなたの過去と未来に新しい選択肢を与えます。")}
+          {t("体験するか、提供するか。NEURAMNESIA は、あなたの過去と未来に新しい選択肢を与えます。")}
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-4">
           <Button href="/booking">記憶を購入する</Button>
@@ -854,6 +859,17 @@ export function Footer({ items = landingNavItems, tone = "dark" }: { items?: { l
             {t("本サイトおよび NEURAMNESIA は架空の企業・サービスです。実在する医療・金融・記憶操作サービスではありません。")}
           </p>
         </div>
+        <nav className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-3 text-sm" aria-label={t("フッターナビゲーション")}>
+          {footerNavItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className={tone === "light" ? "text-slate-500 transition hover:text-slate-950" : "text-slate-400 transition hover:text-cyanline"}
+            >
+              {t(item.label)}
+            </a>
+          ))}
+        </nav>
         <div className={`mt-8 border-t pt-6 text-center text-sm ${tone === "light" ? "border-slate-200 text-slate-500" : "border-white/10 text-slate-500"}`}>
           <p>&copy; {new Date().getFullYear()} NEURAMNESIA. All rights reserved.</p>
         </div>

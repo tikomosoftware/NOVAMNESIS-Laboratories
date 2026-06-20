@@ -31,7 +31,7 @@ const initialMessages: ChatMessage[] = [
   {
     id: "welcome",
     role: "assistant",
-    content: "こんにちは！Novamnesisについて、体験メニュー・予約・安全性・FAQなど何でも聞いてください。",
+    content: "こんにちは！NEURAMNESIAについて、体験メニュー・予約・安全性・FAQなど何でも聞いてください。",
   },
 ];
 

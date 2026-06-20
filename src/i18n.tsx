@@ -36,8 +36,8 @@ const translations: Record<string, string> = {
   "記憶は、消えていくものではなく、保存され、編集され、流通する資産になりつつある。":
     "Memory is becoming an asset that can be preserved, edited, and circulated.",
   "買う理由は、後悔だけではない。": "People buy memories for more than regret.",
-  "Novamnesis Laboratories は「なかったことを埋める」だけのサービスではありません。恋愛、成功、旅行、結婚、性別、挫折。人生の手触りを増やすために、欲しい記憶を選べます。":
-    "Novamnesis Laboratories is not only a service for filling what never happened. Choose memories that add texture to your life: romance, success, travel, marriage, identity, and failure.",
+  "NEURAMNESIA は「なかったことを埋める」だけのサービスではありません。恋愛、成功、旅行、結婚、性別、挫折。人生の手触りを増やすために、欲しい記憶を選べます。":
+    "NEURAMNESIA is not only a service for filling what never happened. Choose memories that add texture to your life: romance, success, travel, marriage, identity, and failure.",
   "買いたくなる過去を、記憶メニューから選ぶ。": "Choose a past worth buying from the memory menu.",
   "ここでは、購入可能な記憶体験を一覧できます。短い思い出から、選ばなかった人生、物語性の強い記憶まで、体験したい過去を選べます。":
     "Browse purchasable memory experiences, from short recollections to unlived lives and story-rich memories.",
@@ -46,11 +46,11 @@ const translations: Record<string, string> = {
     "Athlete, artist, virtual hero, otherworld rebirth. Start with a life template, then move into specific memory products.",
   "長編テンプレート": "Long-form Templates",
   "一生ではなく、あの数時間を買う。": "Buy those few hours, not an entire life.",
-  "青春、部活、恋愛、幼少期、敗北、達成。Novamnesis Laboratories では、一生分ではない短い記憶エピソードも選べます。":
-    "Youth, club activities, romance, childhood, defeat, achievement. Novamnesis Laboratories also offers short memory episodes.",
+  "青春、部活、恋愛、幼少期、敗北、達成。NEURAMNESIA では、一生分ではない短い記憶エピソードも選べます。":
+    "Youth, club activities, romance, childhood, defeat, achievement. NEURAMNESIA also offers short memory episodes.",
   "経験したかった人生を、記憶として購入する。": "Purchase the life you wanted to experience as a memory.",
-  "体験するか、提供するか。Novamnesis Laboratories は、あなたの過去と未来に新しい選択肢を与えます。":
-    "Experience or provide. Novamnesis Laboratories gives your past and future new choices.",
+  "体験するか、提供するか。NEURAMNESIA は、あなたの過去と未来に新しい選択肢を与えます。":
+    "Experience or provide. NEURAMNESIA gives your past and future new choices.",
   "本サイトおよび NEURAMNESIA は架空の企業・サービスです。実在する医療・金融・記憶操作サービスではありません。":
     "This website and NEURAMNESIA are fictional. They are not real medical, financial, or memory manipulation services.",
   "記憶を購入する方へ": "For Memory Buyers",
@@ -59,8 +59,8 @@ const translations: Record<string, string> = {
   "感情": "Emotion",
   "由来": "Source",
   "予約内容を送信しています。": "Sending your reservation.",
-  "希望日時、記憶タイプ、来館前説明の内容を Novamnesis 予約プロトコルに登録しています。":
-    "Registering your preferred date, memory type, and pre-visit briefing with the Novamnesis reservation protocol.",
+  "希望日時、記憶タイプ、来館前説明の内容を NEURAMNESIA 予約プロトコルに登録しています。":
+    "Registering your preferred date, memory type, and pre-visit briefing with the NEURAMNESIA reservation protocol.",
   "予約内容の検証": "Validating reservation details",
   "境界タグの仮登録": "Pre-registering boundary tags",
   "来館前説明の割り当て": "Assigning pre-visit briefing",
@@ -211,8 +211,8 @@ const translations: Record<string, string> = {
   "通常売却では、提供者自身の記憶は失われません。独占ライセンス契約では、契約範囲に応じて一部アクセス制限が発生する場合があります。":
     "In a standard sale, the provider does not lose their own memory. Exclusive licenses may create partial access limits depending on the contract scope.",
   "記憶資産の査定基準。": "Valuation criteria for memory assets.",
-  "初恋、成功、挫折、旅、勝負の瞬間。Novamnesis Laboratories は、提供者の同意に基づいて記憶を匿名化し、感情強度・希少性・没入度・安全性を評価します。":
-    "First love, success, failure, travel, decisive moments. Novamnesis Laboratories anonymizes memories with provider consent and evaluates emotional intensity, rarity, immersion, and safety.",
+  "初恋、成功、挫折、旅、勝負の瞬間。NEURAMNESIA は、提供者の同意に基づいて記憶を匿名化し、感情強度・希少性・没入度・安全性を評価します。":
+    "First love, success, failure, travel, decisive moments. NEURAMNESIA anonymizes memories with provider consent and evaluates emotional intensity, rarity, immersion, and safety.",
   "歓喜、喪失、緊張、安堵など、記憶に残る感情の深さを測定します。":
     "Measures the depth of memorable emotions such as joy, loss, tension, and relief.",
   "一般的には体験困難な状況、職能、場所、人生局面ほど高く評価されます。":
@@ -237,8 +237,8 @@ const translations: Record<string, string> = {
   "ライセンス契約": "License contract",
   "マーケットプレイス掲載": "Marketplace listing",
   "記憶を買う前に、安全基準を確認する。": "Review safety standards before buying a memory.",
-  "Novamnesis Laboratories は、購入した記憶が日常へ戻る力を壊さないよう、体験前、体験中、体験後の各段階で境界タグ、感情強度、現実混同リスクを管理します。":
-    "Novamnesis Laboratories manages boundary tags, emotional intensity, and reality-confusion risk before, during, and after each experience so purchased memories do not damage your return to daily life.",
+  "NEURAMNESIA は、購入した記憶が日常へ戻る力を壊さないよう、体験前、体験中、体験後の各段階で境界タグ、感情強度、現実混同リスクを管理します。":
+    "NEURAMNESIA manages boundary tags, emotional intensity, and reality-confusion risk before, during, and after each experience so purchased memories do not damage your return to daily life.",
   "必須": "Required",
   "自動付与": "Auto-applied",
   "事前評価": "Pre-assessed",
@@ -264,8 +264,8 @@ const translations: Record<string, string> = {
   "購入者には、体験後の現実復帰ガイダンスを提供する":
     "Buyers receive post-experience guidance for returning to reality",
   "記憶定着の流れを、事前に確認できます。": "You can review the memory fixation flow in advance.",
-  "体験者が最初に知りたいのは、技術の名前よりも、自分がどこに座り、何を頭に付けられ、どんな感覚の中で記憶が入ってくるのかです。Novamnesis の施設は、その不安を減らすために公開されています。":
-    "What visitors first want to know is not the name of the technology, but where they sit, what is placed on their head, and what it feels like as the memory enters. The Novamnesis facility is shown to reduce that uncertainty.",
+  "体験者が最初に知りたいのは、技術の名前よりも、自分がどこに座り、何を頭に付けられ、どんな感覚の中で記憶が入ってくるのかです。NEURAMNESIA の施設は、その不安を減らすために公開されています。":
+    "What visitors first want to know is not the name of the technology, but where they sit, what is placed on their head, and what it feels like as the memory enters. The NEURAMNESIA facility is shown to reduce that uncertainty.",
   "2名常駐": "Two staff onsite",
   "音声中断可": "Voice interruption available",
   "全国3拠点で記憶定着セッションを実施": "Memory fixation sessions available at three locations nationwide",
@@ -351,7 +351,7 @@ const translations: Record<string, string> = {
   "記憶体験に関するご質問、売却のご相談、施設見学のご希望など、お気軽にお問い合わせください。通常2営業日以内にご返信いたします。":
     "Contact us with questions about memory experiences, selling memories, or facility tours. We usually reply within two business days.",
   "連絡先情報": "Contact Information",
-  "東京都港区虎ノ門 4-1-1 NOVAMNESIS Tower 12F（架空）": "NOVAMNESIS Tower 12F, 4-1-1 Toranomon, Minato-ku, Tokyo (fictional)",
+  "東京都港区虎ノ門 4-1-1 NEURAMNESIA Tower 12F（架空）": "NEURAMNESIA Tower 12F, 4-1-1 Toranomon, Minato-ku, Tokyo (fictional)",
   "メール": "Email",
   "電話": "Phone",
   "03-XXXX-XXXX（架空）": "03-XXXX-XXXX (fictional)",
@@ -470,8 +470,8 @@ const translations: Record<string, string> = {
     "Purchasing a memory is completed online, but fixation takes place at a physical facility. Once you reserve a time, memory selection can also happen onsite.",
   "このLPでは、まず記憶体験の世界観を紹介します。具体的なスポーツ選手、アーティスト、ヒーロー、異世界転生などの購入メニューは、専用カタログで選べます。":
     "This landing page introduces the world of memory experiences. Specific purchase menus such as athlete, artist, hero, and isekai lives can be selected in the catalog.",
-  "他人の記憶を覗くのではなく、あなたの中に「体験済みの過去」として残す。Novamnesis Catalog では、そのための人生テンプレートを購買導線として整理しています。":
-    "Rather than peeking into someone else's memory, it remains inside you as an experienced past. The Novamnesis Catalog organizes life templates for that purchase journey.",
+  "他人の記憶を覗くのではなく、あなたの中に「体験済みの過去」として残す。NEURAMNESIA Catalog では、そのための人生テンプレートを購買導線として整理しています。":
+    "Rather than peeking into someone else's memory, it remains inside you as an experienced past. The NEURAMNESIA Catalog organizes life templates for that purchase journey.",
   "購入者が持ち帰ったのは、派手な夢ではなく、日常の見え方を少し変える記憶でした。":
     "What buyers took home was not a flashy dream, but a memory that slightly changed how everyday life looks.",
   "“放課後の教室で告白した記憶を買いました。現実の高校時代は何もなかったのに、駅のホームで夕方の匂いがすると、ちゃんと好きだった人がいた気がします。”":
@@ -627,6 +627,7 @@ const translations: Record<string, string> = {
   "体験内容を確認する": "Review Experience",
   "人生メニューのカテゴリ。": "Life menu categories.",
   "言語": "Language",
+  "フッターナビゲーション": "Footer navigation",
   "日本語": "Japanese",
   "英語": "English",
 };

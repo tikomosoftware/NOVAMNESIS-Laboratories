@@ -18,7 +18,7 @@ export default function SafetyPage() {
               記憶を買う前に、安全基準を確認する。
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-9 text-slate-300">
-              Novamnesis Laboratories は、購入した記憶が日常へ戻る力を壊さないよう、体験前、体験中、体験後の各段階で境界タグ、感情強度、現実混同リスクを管理します。
+              NEURAMNESIA は、購入した記憶が日常へ戻る力を壊さないよう、体験前、体験中、体験後の各段階で境界タグ、感情強度、現実混同リスクを管理します。
             </p>
           </div>
           <div className="relative overflow-hidden rounded-[1.75rem] border border-cyanline/20 bg-white/[0.045] p-6 shadow-glow backdrop-blur-xl">

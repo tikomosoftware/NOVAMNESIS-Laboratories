@@ -19,7 +19,7 @@ export default function CompanyPage() {
               経験したかった人生を、記憶として購入する。
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-9 text-slate-300">
-              Novamnesis Laboratories は、経験できなかった恋愛、選ばなかった人生、行けなかった旅、味わえなかった成功や挫折を、記憶体験として設計する架空の研究企業です。人生をやり直すのではなく、あなたの中にもうひとつの過去を増やします。
+              NEURAMNESIA は、経験できなかった恋愛、選ばなかった人生、行けなかった旅、味わえなかった成功や挫折を、記憶体験として設計する架空の研究企業です。人生をやり直すのではなく、あなたの中にもうひとつの過去を増やします。
             </p>
             <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
               {[
@@ -71,7 +71,7 @@ export default function CompanyPage() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-cyanline">For Buyers</p>
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">記憶を買う前に、会社が保証すること。</h2>
           <p className="mt-5 text-base leading-8 text-slate-300">
-            Novamnesis Laboratories の主役は、記憶を購入する体験者です。欲しかった人生を選ぶ前に、内容の調整、境界タグ、安全確認、体験後ケアを会社として明確にします。
+            NEURAMNESIA の主役は、記憶を購入する体験者です。欲しかった人生を選ぶ前に、内容の調整、境界タグ、安全確認、体験後ケアを会社として明確にします。
           </p>
         </div>
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">

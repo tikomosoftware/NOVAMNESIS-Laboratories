@@ -48,15 +48,6 @@ export default function BookingPage() {
     }, 1800);
   }
 
-  function showBookingConfirmation() {
-    setIsSending(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    window.setTimeout(() => {
-      setIsSending(false);
-      setSubmitted(true);
-    }, 1800);
-  }
-
   return (
     <main className="min-h-screen bg-obsidian text-slate-100">
       <Header items={landingNavItems} />
@@ -89,7 +80,7 @@ export default function BookingPage() {
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">Transmitting Request</p>
               <h2 className="text-3xl font-semibold leading-tight text-white">予約内容を送信しています。</h2>
               <p className="mt-5 text-base leading-8 text-slate-300">
-                希望日時、記憶タイプ、来館前説明の内容を Novamnesis 予約プロトコルに登録しています。
+                希望日時、記憶タイプ、来館前説明の内容を NEURAMNESIA 予約プロトコルに登録しています。
               </p>
               <div className="mt-8 grid gap-4">
                 {["予約内容の検証", "境界タグの仮登録", "来館前説明の割り当て"].map((item, index) => (
@@ -115,7 +106,7 @@ export default function BookingPage() {
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-cyanline">Reservation Received</p>
               <h2 className="text-3xl font-semibold leading-tight text-white">予約内容を送信しました。</h2>
               <p className="mt-5 text-base leading-8 text-slate-300">
-                {name || "お客様"}様、Novamnesis Laboratories へのご予約ありがとうございます。後日のご来館を心よりお待ちしております。
+                {name || "お客様"}様、NEURAMNESIA へのご予約ありがとうございます。後日のご来館を心よりお待ちしております。
               </p>
               <div className="mt-8 grid gap-4">
                 <div className="rounded-2xl border border-white/10 bg-obsidian/70 p-4">
@@ -209,7 +200,7 @@ export default function BookingPage() {
                   </label>
                   <label className="grid gap-2 text-sm font-semibold text-slate-200">
                     メールアドレス
-                    <input type="email" name="email" value={email} onChange={(event) => setEmail(event.target.value)} required className="rounded-2xl border border-white/10 bg-obsidian/80 px-4 py-3 text-sm font-normal text-slate-200 outline-none focus:border-cyanline" placeholder="example@novamnesis.test" />
+                    <input type="email" name="email" value={email} onChange={(event) => setEmail(event.target.value)} required className="rounded-2xl border border-white/10 bg-obsidian/80 px-4 py-3 text-sm font-normal text-slate-200 outline-none focus:border-cyanline" placeholder="example@neuramnesia.test" />
                   </label>
                 </div>
                 <label className="grid gap-2 text-sm font-semibold text-slate-200">
@@ -223,15 +214,14 @@ export default function BookingPage() {
                   />
                 </label>
                 <label className="flex items-start gap-3 rounded-2xl border border-white/10 bg-obsidian/70 p-4 text-sm leading-7 text-slate-300">
-                  <input type="checkbox" checked={agreed} onChange={(event) => setAgreed(event.target.checked)} className="mt-1 h-4 w-4 accent-cyanline" />
+                  <input type="checkbox" name="agreed" checked={agreed} onChange={(event) => setAgreed(event.target.checked)} required className="mt-1 h-4 w-4 accent-cyanline" />
                   <span>予約後にスタッフが内容を確認し、必要に応じて体験内容を調整することに同意します。</span>
                 </label>
                 <div className="flex flex-wrap gap-4 pt-2">
                   <button
-                    className="rounded-full border border-cyanline/30 bg-cyanline px-6 py-3 text-sm font-semibold text-obsidian shadow-[0_0_24px_rgba(88,244,255,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-white disabled:cursor-wait disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-cyanline focus:ring-offset-2 focus:ring-offset-obsidian"
-                    disabled={isSending}
-                    onClick={showBookingConfirmation}
-                    type="button"
+                    className="rounded-full border border-cyanline/30 bg-cyanline px-6 py-3 text-sm font-semibold text-obsidian shadow-[0_0_24px_rgba(88,244,255,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-white disabled:cursor-not-allowed disabled:opacity-55 focus:outline-none focus:ring-2 focus:ring-cyanline focus:ring-offset-2 focus:ring-offset-obsidian"
+                    disabled={isSending || !agreed}
+                    type="submit"
                   >
                     {isSending ? "送信中..." : "予約内容を送信する"}
                   </button>

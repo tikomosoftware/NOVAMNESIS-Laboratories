@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { landingNavItems } from "../data";
-import { Header, Footer, notify } from "../components/SharedComponents";
+import { Header, Footer } from "../components/SharedComponents";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -34,8 +34,8 @@ export default function ContactPage() {
             <h2 className="text-2xl font-semibold text-white">連絡先情報</h2>
             <dl className="mt-8 grid gap-6">
               {[
-                ["所在地", "東京都港区虎ノ門 4-1-1 NOVAMNESIS Tower 12F（架空）"],
-                ["メール", "contact@novamnesis.test"],
+                ["所在地", "東京都港区虎ノ門 4-1-1 NEURAMNESIA Tower 12F（架空）"],
+                ["メール", "contact@neuramnesia.test"],
                 ["電話", "03-XXXX-XXXX（架空）"],
                 ["営業時間", "平日 10:00 - 19:00"],
               ].map(([label, value]) => (
@@ -79,7 +79,7 @@ export default function ContactPage() {
                       type="email"
                       required
                       className="rounded-2xl border border-white/10 bg-obsidian/80 px-4 py-3 text-sm font-normal text-slate-200 outline-none focus:border-cyanline"
-                      placeholder="example@novamnesis.test"
+                      placeholder="example@neuramnesia.test"
                     />
                   </label>
                 </div>

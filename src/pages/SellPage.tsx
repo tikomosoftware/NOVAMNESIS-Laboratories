@@ -54,7 +54,7 @@ export default function SellPage() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-cyanline">Memory Valuation</p>
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">記憶資産の査定基準。</h2>
           <p className="mt-5 text-base leading-8 text-slate-300">
-            初恋、成功、挫折、旅、勝負の瞬間。Novamnesis Laboratories は、提供者の同意に基づいて記憶を匿名化し、感情強度・希少性・没入度・安全性を評価します。
+            初恋、成功、挫折、旅、勝負の瞬間。NEURAMNESIA は、提供者の同意に基づいて記憶を匿名化し、感情強度・希少性・没入度・安全性を評価します。
           </p>
         </div>
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2 lg:grid-cols-3">
