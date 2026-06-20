@@ -1,5 +1,5 @@
 import React from "react";
-import { Tone, SimpleCard, Review, Faq } from "../types";
+import { Tone, SimpleCard, Review, Faq, ExperienceTemplate, MemoryEpisode } from "../types";
 import { plans, reviews, faqs, faqsSell, sellSteps, roomZones, sessionSteps, bodyStates, experienceEntryOptions, safetyItems, ethics, valuation, categories, purchaseUseCases, experienceMenus, memoryEpisodes, landingNavItems, footerNavItems } from "../data";
 import { Language, useI18n } from "../i18n";
 
@@ -167,7 +167,7 @@ export function Header({
         <a href="/" className="group min-w-0">
           <BrandLockup tone={tone} />
         </a>
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           {items.map((item) => (
             <a
               key={item.href}
@@ -199,7 +199,7 @@ export function Header({
           ) : null}
           <button
             type="button"
-            className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition md:hidden ${
+            className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition lg:hidden ${
               tone === "light"
                 ? "border-slate-300 bg-white text-slate-950 hover:border-slate-500"
                 : "border-white/15 bg-white/5 text-cyanline hover:border-cyanline/60 hover:bg-white/10"
@@ -230,7 +230,7 @@ export function Header({
       </nav>
       {isMenuOpen && (
         <div
-          className={`border-t px-5 pb-5 pt-2 md:hidden ${
+          className={`border-t px-5 pb-5 pt-2 lg:hidden ${
             tone === "light" ? "border-slate-200 bg-white/95" : "border-white/10 bg-obsidian/95"
           }`}
         >
@@ -360,6 +360,141 @@ export function CatalogHero() {
         </p>
       </div>
     </section>
+  );
+}
+
+type CatalogVisual = {
+  image: string;
+  code: string;
+  gradient: string;
+  imagePosition?: string;
+};
+
+const episodeVisuals: Record<string, CatalogVisual> = {
+  "after-school-confession": {
+    image: "/images/memory-fixation-session.png",
+    code: "ROMANCE / 03H",
+    gradient: "from-rose-400/65 via-magentapulse/35 to-cyanline/35",
+    imagePosition: "50% 45%",
+  },
+  "koshien-bench-summer": {
+    image: "/images/facility-hero.png",
+    code: "BENCH / 09D",
+    gradient: "from-amber-300/55 via-cyanline/25 to-emerald-300/35",
+    imagePosition: "45% 52%",
+  },
+  "national-sports-final": {
+    image: "/images/memory-research-lab.png",
+    code: "FINAL / 02D",
+    gradient: "from-cyanline/55 via-violetsignal/35 to-white/10",
+    imagePosition: "50% 50%",
+  },
+  "after-olympics-airport": {
+    image: "/images/memory-fixation-session-japanese-backup.png",
+    code: "AFTERGLOW / 36H",
+    gradient: "from-slate-200/35 via-cyanline/25 to-violetsignal/40",
+    imagePosition: "52% 46%",
+  },
+  "kindergarten-way-home": {
+    image: "/images/facility-hero.png",
+    code: "ORIGIN / 40M",
+    gradient: "from-emerald-200/40 via-cyanline/20 to-amber-200/35",
+    imagePosition: "40% 48%",
+  },
+  "praised-in-art-room": {
+    image: "/images/memory-research-lab.png",
+    code: "TALENT / 01W",
+    gradient: "from-violetsignal/50 via-magentapulse/30 to-cyanline/25",
+    imagePosition: "55% 48%",
+  },
+  "first-school-festival-lead": {
+    image: "/images/memory-fixation-session.png",
+    code: "STAGE / 14D",
+    gradient: "from-magentapulse/50 via-amber-200/25 to-cyanline/25",
+    imagePosition: "50% 42%",
+  },
+  "bus-after-prefectural-loss": {
+    image: "/images/memory-fixation-session-japanese-backup.png",
+    code: "DEFEAT / 06H",
+    gradient: "from-slate-500/45 via-cyanline/25 to-magentapulse/25",
+    imagePosition: "48% 50%",
+  },
+};
+
+const templateVisuals: Record<string, CatalogVisual> = {
+  "sports-athlete": {
+    image: "/images/facility-hero.png",
+    code: "ATHLETE / 18Y",
+    gradient: "from-cyanline/55 via-emerald-300/25 to-amber-200/30",
+    imagePosition: "45% 50%",
+  },
+  "artist-life": {
+    image: "/images/memory-fixation-session.png",
+    code: "ARTIST / 14Y",
+    gradient: "from-magentapulse/50 via-violetsignal/35 to-cyanline/25",
+    imagePosition: "50% 44%",
+  },
+  "professional-mastery": {
+    image: "/images/memory-research-lab.png",
+    code: "MASTERY / 25Y",
+    gradient: "from-cyanline/45 via-white/10 to-emerald-300/30",
+    imagePosition: "54% 48%",
+  },
+  "virtual-hero": {
+    image: "/images/memory-fixation-session-japanese-backup.png",
+    code: "HERO / 30D",
+    gradient: "from-cyanline/55 via-violetsignal/35 to-magentapulse/30",
+    imagePosition: "50% 46%",
+  },
+  "virtual-heroine": {
+    image: "/images/memory-research-lab.png",
+    code: "HEROINE / 45D",
+    gradient: "from-magentapulse/55 via-violetsignal/35 to-cyanline/25",
+    imagePosition: "52% 48%",
+  },
+  "isekai-rebirth": {
+    image: "/images/facility-hero.png",
+    code: "RE:BIRTH / 03Y",
+    gradient: "from-violetsignal/55 via-cyanline/25 to-amber-200/30",
+    imagePosition: "48% 50%",
+  },
+};
+
+function getEpisodeVisual(episode: MemoryEpisode, index: number) {
+  const fallback = Object.values(episodeVisuals)[index % Object.values(episodeVisuals).length];
+  return episodeVisuals[episode.slug] || fallback;
+}
+
+function getTemplateVisual(template: ExperienceTemplate, index: number) {
+  const fallback = Object.values(templateVisuals)[index % Object.values(templateVisuals).length];
+  return templateVisuals[template.slug] || fallback;
+}
+
+function CatalogThumbnail({
+  label,
+  visual,
+}: {
+  label: string;
+  visual: CatalogVisual;
+}) {
+  return (
+    <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-obsidian shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]" aria-hidden="true">
+      <img
+        src={visual.image}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover opacity-60 saturate-125 transition duration-500 group-hover:scale-[1.04]"
+        style={{ objectPosition: visual.imagePosition || "50% 50%" }}
+      />
+      <div className={`absolute inset-0 bg-gradient-to-br ${visual.gradient}`} />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,7,17,0.12)_0%,rgba(6,7,17,0.28)_45%,rgba(6,7,17,0.82)_100%)]" />
+      <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-obsidian/60 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-100 backdrop-blur-md">
+        {visual.code}
+      </div>
+      <div className="absolute bottom-4 left-4 right-4">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-cyanline">{label}</p>
+      </div>
+    </div>
   );
 }
 
@@ -574,7 +709,8 @@ export function Plans() {
         </div>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {experienceMenus.map((menu, index) => (
-            <article key={menu.title} className="glass-card hover:-translate-y-1 hover:border-cyanline/30 hover:shadow-glow">
+            <article key={menu.title} className="glass-card group hover:-translate-y-1 hover:border-cyanline/30 hover:shadow-glow">
+              <CatalogThumbnail label="LIFE TEMPLATE" visual={getTemplateVisual(menu, index)} />
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-cyanline/25 bg-cyanline/10 text-sm font-semibold text-cyanline">
                 {String(index + 1).padStart(2, "0")}
               </div>
@@ -602,8 +738,9 @@ export function MemoryEpisodes() {
         description="青春、部活、恋愛、幼少期、敗北、達成。NEURAMNESIA では、一生分ではない短い記憶エピソードも選べます。"
       />
       <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-4">
-        {memoryEpisodes.map((episode) => (
-          <article key={episode.title} className="plan-card">
+        {memoryEpisodes.map((episode, index) => (
+          <article key={episode.title} className="plan-card group">
+            <CatalogThumbnail label="SHORT MEMORY" visual={getEpisodeVisual(episode, index)} />
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-magentapulse">{t(episode.tag)}</p>
             <h3 className="text-lg font-semibold leading-7 text-white">{t(episode.title)}</h3>
             <p className="mt-4 min-h-24 text-sm leading-7 text-slate-300">{t(episode.description)}</p>

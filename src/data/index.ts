@@ -3,14 +3,14 @@ import { Plan, ExperienceTemplate, MemoryEpisode, PurchaseUseCase, Review, Simpl
 export const primaryNavItems = [
   { label: "Catalog", href: "/catalog" },
   { label: "Experience", href: "/experience" },
+  { label: "Facility", href: "/facility" },
+  { label: "Research", href: "/research" },
   { label: "Booking", href: "/booking" },
   { label: "Safety", href: "/safety" },
   { label: "Sell Memory", href: "/sell" },
 ];
 
 export const supportNavItems = [
-  { label: "Facility", href: "/facility" },
-  { label: "Research", href: "/research" },
   { label: "FAQ", href: "/faq" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
