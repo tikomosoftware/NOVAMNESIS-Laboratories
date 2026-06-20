@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS knowledge_chunks (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  record_id VARCHAR(191) NOT NULL,
+  chunk_id VARCHAR(191) NOT NULL,
+  title VARCHAR(512) NOT NULL,
+  content TEXT NOT NULL,
+  url VARCHAR(1024),
+  kind VARCHAR(128),
+  source_path VARCHAR(512),
+  chunk_index INT NOT NULL DEFAULT 0,
+  metadata JSON,
+  content_hash CHAR(64) NOT NULL,
+  embedding VECTOR(1536),
+  embedding_model VARCHAR(128),
+  embedding_dimensions INT,
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  UNIQUE KEY uk_knowledge_chunks_chunk_id (chunk_id),
+  KEY idx_knowledge_chunks_record_id (record_id),
+  KEY idx_knowledge_chunks_kind (kind),
+  KEY idx_knowledge_chunks_active_updated (is_active, updated_at)
+);

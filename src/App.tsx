@@ -14,6 +14,7 @@ import FaqPage from "./pages/FaqPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import MemoryBuybackCampaignPage from "./pages/MemoryBuybackCampaignPage";
+import ChatLabPage from "./pages/ChatLabPage";
 import FloatingChatWidget from "./components/FloatingChatWidget";
 import { I18nProvider } from "./i18n";
 
@@ -25,6 +26,14 @@ export default function App() {
       <FloatingChatWidget />
     </I18nProvider>
   );
+
+  if (path === "/chat-lab") {
+    return (
+      <I18nProvider>
+        <ChatLabPage />
+      </I18nProvider>
+    );
+  }
 
   if (path.startsWith("/template/")) {
     const slug = decodeURIComponent(path.replace("/template/", ""));

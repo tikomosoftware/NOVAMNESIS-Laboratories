@@ -1,0 +1,51 @@
+{
+  "args": {
+    "provider": "groq",
+    "rounds": 1,
+    "modeIds": [
+      "tidb-keyword"
+    ],
+    "questionIds": [
+      "booking-flow"
+    ]
+  },
+  "startedAt": "2026-06-20T09:07:58.637Z",
+  "finishedAt": "2026-06-20T09:08:00.232Z",
+  "summary": [
+    {
+      "modeId": "tidb-keyword",
+      "mode": "TiDB Keyword",
+      "runs": 1,
+      "avgMs": 1594,
+      "p50Ms": 1594,
+      "p95Ms": 1594,
+      "sourceHitRate": 1,
+      "topSourceHitRate": 1,
+      "fallbackCount": 0
+    }
+  ],
+  "results": [
+    {
+      "questionId": "booking-flow",
+      "question": "予約の流れを短く教えてください",
+      "modeId": "tidb-keyword",
+      "mode": "TiDB Keyword",
+      "round": 1,
+      "status": 200,
+      "elapsedMs": 1594,
+      "retrievalMode": "tidb-keyword",
+      "requestedTidbSearchMode": "keyword",
+      "requestedEmbeddingProvider": null,
+      "sourceCount": 5,
+      "topSource": "BookingPage (https://novamnesis-laboratories.vercel.app/booking)",
+      "sourceHit": true,
+      "topSourceHit": true,
+      "expected": "BookingPage / bookingSteps / /booking",
+      "errorCode": null,
+      "error": null,
+      "responsePreview": "予約の流れは以下の通りです。 1. 体験したい記憶の種類、感情の強さ、希望日時、来館前説明の方法を確認します。 2. 希望日時を選択します。 3. 予約内容を送信し、予約を確定します。 4. 予約後、スタッフが内容を確認し、必要に応じて体験内容を調整します。 詳しくは、Novam",
+      "action": "SEARCH(tidb-keyword): 予約の流れを短く教えてください",
+      "fallback": ""
+    }
+  ]
+}

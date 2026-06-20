@@ -9,10 +9,16 @@
     "test:visual": "playwright test -c playwright.visual.config.ts",
     "test:visual:update-browsers": "playwright install chromium",
     "rag": "node scripts/generate-rag-data.mjs",
+    "rag:tidb:dry-run": "node scripts/tidb-import-rag-data.mjs --dry-run",
+    "rag:tidb:import": "node scripts/tidb-import-rag-data.mjs",
+    "rag:tidb:import-local-vector": "node scripts/tidb-import-rag-data.mjs --local-embeddings",
+    "rag:tidb:fulltext-index": "node scripts/tidb-import-rag-data.mjs --schema-only --apply-fulltext-index",
+    "rag:benchmark": "node scripts/benchmark-rag-chat.mjs",
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.4",
+    "mysql2": "^3.22.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "typescript": "^5.9.2",
