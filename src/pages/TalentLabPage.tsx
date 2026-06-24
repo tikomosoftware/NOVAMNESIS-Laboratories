@@ -1,4 +1,4 @@
-import React, { FormEvent, useMemo, useRef, useState } from "react";
+import React, { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 
 type ChatRole = "user" | "assistant";
 type ExtractionProvider = "local" | "auto" | "groq" | "openai";
@@ -55,6 +55,7 @@ type IntakeResponse = {
   storage?: {
     tidbConfigured?: boolean;
     defaultMode?: string;
+    demoReadOnly?: boolean;
   };
   error?: string;
   errorCode?: string;
@@ -62,6 +63,7 @@ type IntakeResponse = {
 
 type SaveResponse = {
   saved?: boolean;
+  demoReadOnly?: boolean;
   profileUid?: string;
   storageMode?: string;
   factCount?: number;
@@ -99,6 +101,7 @@ type SearchResult = {
 type SearchResponse = {
   results?: SearchResult[];
   storageMode?: string;
+  demoReadOnly?: boolean;
   match?: {
     mode?: string;
     provider?: string;
@@ -114,6 +117,7 @@ type SeedTarget = "memory" | "tidb";
 
 type SeedResponse = {
   seeded?: number;
+  demoReadOnly?: boolean;
   storageMode?: string;
   requestedStorageMode?: string;
   profiles?: Array<{
@@ -124,6 +128,23 @@ type SeedResponse = {
     storageMode?: string;
   }>;
   note?: string;
+  warning?: string | null;
+  error?: string;
+};
+
+type ProfileSummary = {
+  profileUid: string;
+  displayName?: string;
+  headline?: string;
+  narrative?: string;
+  factCount?: number;
+  storageMode?: string;
+};
+
+type ListResponse = {
+  profiles?: ProfileSummary[];
+  storageMode?: string;
+  demoReadOnly?: boolean;
   warning?: string | null;
   error?: string;
 };
@@ -163,6 +184,12 @@ const missingLabels: Record<string, string> = {
   strengths: "強み",
 };
 
+const clientDemoReadOnly =
+  import.meta.env.VITE_TALENT_DEMO_READONLY === "true" ||
+  import.meta.env.VITE_TALENT_DEMO_READONLY === "1" ||
+  (typeof window !== "undefined" &&
+    ["true", "1"].includes(new URLSearchParams(window.location.search).get("demoReadOnly") || ""));
+
 function makeId(prefix: string) {
   return `${prefix}-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 }
@@ -197,6 +224,10 @@ export default function TalentLabPage() {
   const [seedingTarget, setSeedingTarget] = useState<SeedTarget | null>(null);
   const [seedResult, setSeedResult] = useState<SeedResponse | null>(null);
   const [selectedResult, setSelectedResult] = useState<SearchResult | null>(null);
+  const [profiles, setProfiles] = useState<ProfileSummary[]>([]);
+  const [profilesStatus, setProfilesStatus] = useState("--");
+  const [isDemoReadOnly, setIsDemoReadOnly] = useState(clientDemoReadOnly);
+  const [demoDialog, setDemoDialog] = useState("");
   const transcriptRef = useRef<HTMLDivElement>(null);
 
   const factsByType = useMemo(() => {
@@ -223,6 +254,31 @@ export default function TalentLabPage() {
   const canSave = Boolean(draft?.narrative && !isSaving);
   const readiness = draft?.readinessScore ?? 0;
   const isSeeding = Boolean(seedingTarget);
+
+  const loadProfiles = async () => {
+    try {
+      const response = await fetch("/api/talent-intake", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "list", limit: 20 }),
+      });
+      const data = (await response.json()) as ListResponse;
+      if (!response.ok || data.error) throw new Error(data.error || "Talent list request failed.");
+      setProfiles(data.profiles || []);
+      setStorageMode(data.storageMode || "--");
+      setProfilesStatus(
+        `${data.storageMode || "unknown"} / ${data.profiles?.length || 0}${data.demoReadOnly ? " / read-only" : ""}`,
+      );
+      setIsDemoReadOnly(Boolean(data.demoReadOnly || clientDemoReadOnly));
+    } catch (error) {
+      setProfilesStatus("error");
+      setApiError(error instanceof Error ? error.message : "Unexpected error");
+    }
+  };
+
+  useEffect(() => {
+    void loadProfiles();
+  }, []);
 
   const updateDraftField = (field: "displayName" | "headline" | "narrative", value: string) => {
     setDraft((current) => (current ? { ...current, [field]: value } : current));
@@ -266,6 +322,7 @@ export default function TalentLabPage() {
 
       setDraft(data.draft || null);
       setStorageMode(data.storage?.defaultMode || "--");
+      setIsDemoReadOnly(Boolean(data.storage?.demoReadOnly || clientDemoReadOnly));
       setExtractionStatus(
         data.extraction
           ? `${data.extraction.mode || "--"} / ${data.extraction.provider || "--"}${
@@ -302,6 +359,10 @@ export default function TalentLabPage() {
 
   const saveDraft = async () => {
     if (!draft || isSaving) return;
+    if (isDemoReadOnly) {
+      setDemoDialog("デモ環境では保存機能を無効にしています。入力内容はTiDBに保存されません。固定のサンプルプロフィールだけを検索できます。");
+      return;
+    }
     setIsSaving(true);
     setApiError("");
     setSaveResult(null);
@@ -317,9 +378,16 @@ export default function TalentLabPage() {
         }),
       });
       const data = (await response.json()) as SaveResponse;
-      if (!response.ok || data.error) throw new Error(data.error || "Talent save request failed.");
+      if (!response.ok || data.error) {
+        if (data.demoReadOnly) {
+          setDemoDialog(data.error || "デモ環境では保存機能を無効にしています。");
+          return;
+        }
+        throw new Error(data.error || "Talent save request failed.");
+      }
       setSaveResult(data);
       if (data.draft) setDraft(data.draft);
+      void loadProfiles();
     } catch (error) {
       setApiError(error instanceof Error ? error.message : "Unexpected error");
     } finally {
@@ -351,6 +419,7 @@ export default function TalentLabPage() {
       if (!response.ok || data.error) throw new Error(data.error || "Talent search request failed.");
       setSearchResults(data.results || []);
       setSelectedResult(null);
+      setIsDemoReadOnly(Boolean(data.demoReadOnly || clientDemoReadOnly || isDemoReadOnly));
       setSearchStatus(
         `${data.storageMode || "unknown"} / match ${data.match?.provider || matchProvider}${
           data.warning || data.match?.fallbackUsed ? " / fallback" : ""
@@ -379,7 +448,10 @@ export default function TalentLabPage() {
       const data = (await response.json()) as SeedResponse;
       if (!response.ok || data.error) throw new Error(data.error || "Talent seed request failed.");
       setSeedResult(data);
+      setProfiles(data.profiles || []);
+      setIsDemoReadOnly(Boolean(data.demoReadOnly || clientDemoReadOnly || isDemoReadOnly));
       setSearchStatus(`${data.storageMode || "memory"} / seeded ${data.seeded || 0}${data.warning ? " / fallback" : ""}`);
+      void loadProfiles();
     } catch (error) {
       setApiError(error instanceof Error ? error.message : "Unexpected error");
     } finally {
@@ -432,9 +504,31 @@ export default function TalentLabPage() {
           </div>
         )}
 
-        <div className="grid flex-1 gap-4 py-4 lg:grid-cols-[minmax(0,1fr)_420px]">
-          <section className="flex min-h-[620px] flex-col overflow-hidden rounded border border-white/10 bg-[#0e1118]">
-            <div ref={transcriptRef} className="flex-1 overflow-y-auto px-4 py-5 sm:px-5">
+        {isDemoReadOnly && (
+          <div className="mt-4 rounded border border-cyan-200/30 bg-cyan-200/10 px-3 py-2 text-sm leading-6 text-cyan-50">
+            Demo read-only: 保存機能は無効です。固定のサンプルプロフィールだけを検索できます。
+          </div>
+        )}
+
+        {demoDialog && (
+          <div className="fixed inset-0 z-50 grid place-items-center bg-black/65 px-4">
+            <div className="w-full max-w-md rounded border border-cyan-200/30 bg-[#0e1118] p-5 shadow-2xl shadow-black/50">
+              <p className="text-sm font-bold text-white">保存は無効です</p>
+              <p className="mt-3 text-sm leading-7 text-slate-300">{demoDialog}</p>
+              <button
+                type="button"
+                onClick={() => setDemoDialog("")}
+                className="mt-5 h-10 w-full rounded bg-cyan-200 px-4 text-sm font-bold text-[#06100f] transition hover:bg-white"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        )}
+
+        <div className="grid flex-1 items-start gap-4 py-4 lg:grid-cols-[minmax(0,1fr)_420px]">
+          <section className="flex flex-col overflow-hidden rounded border border-white/10 bg-[#0e1118]">
+            <div ref={transcriptRef} className="max-h-[56vh] overflow-y-auto px-4 py-5 sm:px-5">
               <div className="flex flex-col gap-4">
                 {messages.map((message) => (
                   <article key={message.id} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
@@ -513,6 +607,12 @@ export default function TalentLabPage() {
                 <div className="mt-3 rounded border border-emerald-300/30 bg-emerald-300/10 px-3 py-2 text-xs leading-5 text-emerald-100">
                   saved: {saveResult.profileUid} / {saveResult.storageMode} / facts {saveResult.factCount}
                   {saveResult.warning ? ` / ${saveResult.warning}` : ""}
+                </div>
+              )}
+
+              {isDemoReadOnly && (
+                <div className="mt-3 rounded border border-rose-300/35 bg-rose-300/10 px-3 py-2 text-xs leading-5 text-rose-100">
+                  Demo read-only: Saveを押してもTiDBには保存されません。固定のサンプルプロフィールのみ検索できます。
                 </div>
               )}
 
@@ -605,6 +705,44 @@ export default function TalentLabPage() {
 
             <section className="rounded border border-white/10 bg-[#0e1118] p-4">
               <div className="flex items-center justify-between gap-3">
+                <h2 className="text-sm font-bold text-white">Registered Profiles</h2>
+                <span className="text-xs font-semibold text-slate-400">{profilesStatus}</span>
+              </div>
+              <div className="mt-3 max-h-72 space-y-2 overflow-auto pr-1">
+                {profiles.length ? (
+                  profiles.map((profile) => (
+                    <button
+                      key={profile.profileUid}
+                      type="button"
+                      onClick={() =>
+                        setSearchQuery(
+                          `${profile.headline || profile.displayName || "候補者"}に近い人材、またはこの人に合いそうな案件`,
+                        )
+                      }
+                      className="w-full rounded border border-white/10 bg-[#171923] px-3 py-2 text-left transition hover:border-cyan-200/40 hover:bg-[#1b202c]"
+                    >
+                      <div className="flex items-center justify-between gap-3">
+                        <p className="truncate text-sm font-bold text-white">{profile.displayName || "No name"}</p>
+                        <span className="shrink-0 text-[11px] font-semibold text-slate-400">
+                          facts {profile.factCount ?? 0}
+                        </span>
+                      </div>
+                      <p className="mt-1 truncate text-xs font-semibold text-cyan-100">
+                        {profile.headline || profile.profileUid}
+                      </p>
+                      {profile.narrative ? (
+                        <p className="mt-1 line-clamp-2 text-xs leading-5 text-slate-400">{profile.narrative}</p>
+                      ) : null}
+                    </button>
+                  ))
+                ) : (
+                  <p className="rounded border border-white/10 bg-[#171923] px-3 py-2 text-xs text-slate-500">--</p>
+                )}
+              </div>
+            </section>
+
+            <section className="rounded border border-white/10 bg-[#0e1118] p-4">
+              <div className="flex items-center justify-between gap-3">
                 <h2 className="text-sm font-bold text-white">Match Search</h2>
                 <span className="text-xs font-semibold text-slate-400">{searchStatus}</span>
               </div>
@@ -632,11 +770,15 @@ export default function TalentLabPage() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => seedDemoProfiles("tidb")}
+                  onClick={() =>
+                    isDemoReadOnly
+                      ? setDemoDialog("デモ環境ではTiDBへのseed書き込みを無効にしています。固定のサンプルプロフィールは一覧と検索で利用できます。")
+                      : seedDemoProfiles("tidb")
+                  }
                   disabled={isSeeding}
                   className="h-10 rounded border border-cyan-200/30 bg-cyan-200/10 px-3 text-xs font-bold uppercase tracking-[0.12em] text-cyan-100 transition hover:border-cyan-200/60 hover:bg-cyan-200/15 disabled:cursor-not-allowed disabled:opacity-45"
                 >
-                  {seedingTarget === "tidb" ? "Seeding..." : "Seed TiDB"}
+                  {seedingTarget === "tidb" ? "Seeding..." : isDemoReadOnly ? "TiDB Locked" : "Seed TiDB"}
                 </button>
               </div>
               {seedResult?.profiles?.length ? (

@@ -19,6 +19,10 @@ const memoryProfiles = new Map();
 let pool = null;
 let schemaReady = false;
 
+function isDemoReadOnly() {
+  return process.env.TALENT_DEMO_READONLY === "true" || process.env.TALENT_DEMO_READONLY === "1";
+}
+
 const roleCatalog = [
   { label: "フロントエンドエンジニア", aliases: ["フロントエンド", "frontend", "front-end"] },
   { label: "バックエンドエンジニア", aliases: ["バックエンド", "backend", "back-end", "サーバーサイド"] },
@@ -157,6 +161,31 @@ const demoTalentProfiles = [
     profileUid: "demo-se-fullstack-tanaka",
     displayName: "田中 航",
     text: "名前は田中航です。フルスタックエンジニア兼テックリードです。React、TypeScript、Node.js、PostgreSQL、TiDBを5年ほど使っています。B2B SaaSの新規プロダクト開発で、認証、管理画面、API、DB設計、若手メンバーのレビューを担当しました。仕様が曖昧な段階から形にするのが得意です。技術選定から入れる案件を希望しています。",
+  },
+  {
+    profileUid: "demo-se-embedded-kondo",
+    displayName: "近藤 真",
+    text: "名前は近藤真です。組み込み / 制御系エンジニアです。C、C++、RTOS、CAN通信を6年ほど使っています。車載ECUの制御ソフト開発で、ファームウェア改善、性能評価、不具合解析を担当しました。仕様書を読み解いて安全側に設計を詰めるのが得意です。車載やロボティクス寄りの案件を希望しています。",
+  },
+  {
+    profileUid: "demo-se-pm-yamada",
+    displayName: "山田 美咲",
+    text: "名前は山田美咲です。PMとして人材系SaaSと業務システム開発をリードしました。要件整理、顧客折衝、スケジュール調整、受け入れテスト設計を5年ほど担当しています。エンジニアとビジネス側の間に入って仕様を整理するのが得意です。リモート中心で、上流から関われる案件を希望しています。",
+  },
+  {
+    profileUid: "demo-se-qa-ishikawa",
+    displayName: "石川 直人",
+    text: "名前は石川直人です。QAエンジニアです。Webサービスとモバイルアプリのテスト設計、自動テスト、Playwright、GitHub Actionsを4年ほど使っています。ECサービスのリグレッションテスト自動化と品質改善プロジェクトを担当しました。開発チームと一緒に品質基準を作るのが得意です。",
+  },
+  {
+    profileUid: "demo-se-ml-fujii",
+    displayName: "藤井 莉子",
+    text: "名前は藤井莉子です。機械学習エンジニアです。Python、SQL、機械学習、データ前処理、モデル評価を3年ほど担当しています。需要予測とレコメンド改善のプロジェクトで、特徴量設計、評価指標の整理、推論バッチの改善を行いました。事業側にモデルの限界を説明しながら改善するのが得意です。",
+  },
+  {
+    profileUid: "demo-se-designer-ogawa",
+    displayName: "小川 由衣",
+    text: "名前は小川由衣です。UI/UXデザイナーです。Figmaを使った管理画面、SaaS、業務アプリの情報設計とプロトタイピングを5年ほど担当しています。ユーザーインタビュー、導線整理、デザインシステム整備が得意です。エンジニアと近い距離でUI改善を進める案件を希望しています。",
   },
 ];
 
@@ -1091,6 +1120,25 @@ function saveTalentDraftToMemory(draft, { confirmed = false, warning = null } = 
   };
 }
 
+function createDemoTalentDraft(profile) {
+  const draft = createDraft([{ role: "user", content: profile.text }], {
+    profileUid: profile.profileUid,
+    displayName: profile.displayName,
+  });
+  return normalizedDraft({
+    ...draft,
+    profileUid: profile.profileUid,
+    displayName: profile.displayName,
+  });
+}
+
+function ensureDemoTalentProfilesInMemory() {
+  for (const profile of demoTalentProfiles) {
+    const normalized = createDemoTalentDraft(profile);
+    saveTalentDraftToMemory(normalized, { confirmed: true });
+  }
+}
+
 async function saveTalentDraft(input, options) {
   const draft = normalizedDraft(input);
   if (!draft.narrative) {
@@ -1121,20 +1169,12 @@ async function saveTalentDraft(input, options) {
 }
 
 async function seedDemoTalentProfiles(options = {}) {
-  const requestedStorageMode = options.storageMode === "tidb" ? "tidb" : "memory";
+  const requestedStorageMode = isDemoReadOnly() ? "memory" : options.storageMode === "tidb" ? "tidb" : "memory";
   let warning = null;
 
   const profiles = [];
   for (const profile of demoTalentProfiles) {
-    const draft = createDraft([{ role: "user", content: profile.text }], {
-      profileUid: profile.profileUid,
-      displayName: profile.displayName,
-    });
-    const normalized = normalizedDraft({
-      ...draft,
-      profileUid: profile.profileUid,
-      displayName: profile.displayName,
-    });
+    const normalized = createDemoTalentDraft(profile);
 
     let saved = null;
     if (requestedStorageMode === "tidb") {
@@ -1174,7 +1214,10 @@ async function seedDemoTalentProfiles(options = {}) {
     note:
       storageMode === "tidb"
         ? "Demo profiles were seeded to TiDB and mirrored to in-memory prototype storage."
+        : isDemoReadOnly()
+          ? "Demo read-only mode is enabled. Demo profiles are available in memory and writes to TiDB are disabled."
         : "Demo profiles were seeded to in-memory prototype storage.",
+    demoReadOnly: isDemoReadOnly(),
   };
 }
 
@@ -1231,6 +1274,84 @@ function rowToSearchResult(row, score, mode) {
     score,
     matchMode: mode,
   };
+}
+
+function profileSummaryFromRecord(record, storageMode) {
+  return {
+    profileUid: record.profileUid,
+    displayName: record.displayName || "",
+    headline: record.headline || "",
+    narrative: record.narrative || "",
+    factCount: Array.isArray(record.structuredFacts) ? record.structuredFacts.length : 0,
+    storageMode,
+  };
+}
+
+function profileSummaryFromRow(row) {
+  const structured = parseJson(row.structured);
+  return {
+    profileUid: row.profile_uid,
+    displayName: row.display_name || structured?.displayName || "",
+    headline: row.headline || structured?.headline || "",
+    narrative: row.narrative || structured?.narrative || "",
+    factCount: Array.isArray(structured?.structuredFacts) ? structured.structuredFacts.length : 0,
+    storageMode: "tidb",
+  };
+}
+
+function listTalentMemoryProfiles(limit) {
+  return [...memoryProfiles.values()]
+    .sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")))
+    .slice(0, safeLimit(limit || 20))
+    .map((profile) => profileSummaryFromRecord(profile, profile.storageMode || "memory"));
+}
+
+async function listTalentProfiles(options = {}) {
+  const limit = Math.min(safeLimit(options.limit || 20), 50);
+  if (isDemoReadOnly()) {
+    ensureDemoTalentProfilesInMemory();
+    return {
+      profiles: listTalentMemoryProfiles(limit),
+      storageMode: "memory",
+      demoReadOnly: true,
+      warning: null,
+    };
+  }
+
+  const db = getPool();
+  if (!db) {
+    return {
+      profiles: listTalentMemoryProfiles(limit),
+      storageMode: "memory",
+      demoReadOnly: false,
+      warning: "TiDB connection env is not configured. Listing in-memory prototype storage.",
+    };
+  }
+
+  try {
+    await ensureTalentSchema(db);
+    const [rows] = await db.execute(
+      `
+        SELECT profile_uid, display_name, headline, narrative, structured
+        FROM talent_profiles
+        ORDER BY updated_at DESC
+        LIMIT ${limit}
+      `,
+    );
+    return {
+      profiles: rows.map(profileSummaryFromRow),
+      storageMode: "tidb",
+      demoReadOnly: false,
+      warning: null,
+    };
+  } catch (error) {
+    return {
+      profiles: listTalentMemoryProfiles(limit),
+      storageMode: "memory",
+      demoReadOnly: false,
+      warning: error instanceof Error ? error.message : "unknown TiDB list error",
+    };
+  }
 }
 
 function combineResults(groups, topK) {
@@ -1596,11 +1717,32 @@ export async function createTalentIntakeResponse(body) {
     };
   }
 
-  const action = body.action === "save" || body.action === "search" || body.action === "seed" ? body.action : "interview";
+  const action =
+    body.action === "save" || body.action === "search" || body.action === "seed" || body.action === "list"
+      ? body.action
+      : "interview";
 
   if (action === "save") {
+    if (isDemoReadOnly()) {
+      return {
+        status: 403,
+        body: {
+          saved: false,
+          demoReadOnly: true,
+          error: "デモ環境では保存機能を無効にしています。入力内容はTiDBに保存されません。",
+          errorCode: "DEMO_READ_ONLY",
+        },
+      };
+    }
     const result = await saveTalentDraft(body.draft, { confirmed: Boolean(body.confirmed) });
     return { status: result.status, body: result.body };
+  }
+
+  if (action === "list") {
+    return {
+      status: 200,
+      body: await listTalentProfiles({ limit: body.limit }),
+    };
   }
 
   if (action === "seed") {
@@ -1619,6 +1761,24 @@ export async function createTalentIntakeResponse(body) {
       };
     }
     const matchProviderRequest = body.matchProvider || process.env.TALENT_MATCH_PROVIDER || "local";
+    if (isDemoReadOnly()) {
+      ensureDemoTalentProfilesInMemory();
+      const explained = await explainTalentMatches(
+        query,
+        searchTalentMemory(query, body.topK),
+        matchProviderRequest,
+      );
+      return {
+        status: 200,
+        body: {
+          query,
+          ...explained,
+          storageMode: "memory",
+          warning: null,
+          demoReadOnly: true,
+        },
+      };
+    }
     if (body.storageMode === "memory") {
       const explained = await explainTalentMatches(
         query,
@@ -1659,6 +1819,7 @@ export async function createTalentIntakeResponse(body) {
       storage: {
         tidbConfigured: isTidbConfigured(),
         defaultMode: isTidbConfigured() ? "tidb" : "memory",
+        demoReadOnly: isDemoReadOnly(),
       },
     },
   };
