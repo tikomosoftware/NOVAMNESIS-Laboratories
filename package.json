@@ -14,6 +14,7 @@
     "rag:tidb:import-local-vector": "node scripts/tidb-import-rag-data.mjs --local-embeddings",
     "rag:tidb:fulltext-index": "node scripts/tidb-import-rag-data.mjs --schema-only --apply-fulltext-index",
     "rag:benchmark": "node scripts/benchmark-rag-chat.mjs",
+    "taxonomy:tech": "node scripts/update-tech-taxonomy.mjs",
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {

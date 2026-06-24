@@ -15,6 +15,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import MemoryBuybackCampaignPage from "./pages/MemoryBuybackCampaignPage";
 import ChatLabPage from "./pages/ChatLabPage";
+import TalentLabPage from "./pages/TalentLabPage";
 import FloatingChatWidget from "./components/FloatingChatWidget";
 import { I18nProvider } from "./i18n";
 
@@ -31,6 +32,14 @@ export default function App() {
     return (
       <I18nProvider>
         <ChatLabPage />
+      </I18nProvider>
+    );
+  }
+
+  if (path === "/talent-lab") {
+    return (
+      <I18nProvider>
+        <TalentLabPage />
       </I18nProvider>
     );
   }
