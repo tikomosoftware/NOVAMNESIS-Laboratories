@@ -184,9 +184,10 @@ const missingLabels: Record<string, string> = {
   strengths: "強み",
 };
 
+const clientDemoReadOnlyFlag = String(import.meta.env.VITE_TALENT_DEMO_READONLY || "").toLowerCase();
 const clientDemoReadOnly =
-  import.meta.env.VITE_TALENT_DEMO_READONLY === "true" ||
-  import.meta.env.VITE_TALENT_DEMO_READONLY === "1" ||
+  ["true", "1"].includes(clientDemoReadOnlyFlag) ||
+  (!["false", "0"].includes(clientDemoReadOnlyFlag) && import.meta.env.PROD) ||
   (typeof window !== "undefined" &&
     ["true", "1"].includes(new URLSearchParams(window.location.search).get("demoReadOnly") || ""));
 
@@ -435,6 +436,10 @@ export default function TalentLabPage() {
 
   const seedDemoProfiles = async (target: SeedTarget) => {
     if (isSeeding) return;
+    if (isDemoReadOnly) {
+      setDemoDialog("デモ環境ではサンプル登録機能を無効にしています。TiDBには保存されません。固定のサンプルプロフィールだけを検索できます。");
+      return;
+    }
     setSeedingTarget(target);
     setApiError("");
     setSeedResult(null);
@@ -763,7 +768,7 @@ export default function TalentLabPage() {
                 <button
                   type="button"
                   onClick={() => seedDemoProfiles("memory")}
-                  disabled={isSeeding}
+                  disabled={isSeeding || isDemoReadOnly}
                   className="h-10 rounded border border-emerald-200/30 bg-emerald-200/10 px-3 text-xs font-bold uppercase tracking-[0.12em] text-emerald-100 transition hover:border-emerald-200/60 hover:bg-emerald-200/15 disabled:cursor-not-allowed disabled:opacity-45"
                 >
                   {seedingTarget === "memory" ? "Seeding..." : "Seed Memory"}
@@ -775,7 +780,7 @@ export default function TalentLabPage() {
                       ? setDemoDialog("デモ環境ではTiDBへのseed書き込みを無効にしています。固定のサンプルプロフィールは一覧と検索で利用できます。")
                       : seedDemoProfiles("tidb")
                   }
-                  disabled={isSeeding}
+                  disabled={isSeeding || isDemoReadOnly}
                   className="h-10 rounded border border-cyan-200/30 bg-cyan-200/10 px-3 text-xs font-bold uppercase tracking-[0.12em] text-cyan-100 transition hover:border-cyan-200/60 hover:bg-cyan-200/15 disabled:cursor-not-allowed disabled:opacity-45"
                 >
                   {seedingTarget === "tidb" ? "Seeding..." : isDemoReadOnly ? "TiDB Locked" : "Seed TiDB"}

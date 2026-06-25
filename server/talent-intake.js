@@ -20,7 +20,9 @@ let pool = null;
 let schemaReady = false;
 
 function isDemoReadOnly() {
-  return process.env.TALENT_DEMO_READONLY === "true" || process.env.TALENT_DEMO_READONLY === "1";
+  if (process.env.TALENT_DEMO_READONLY === "false" || process.env.TALENT_DEMO_READONLY === "0") return false;
+  if (process.env.TALENT_DEMO_READONLY === "true" || process.env.TALENT_DEMO_READONLY === "1") return true;
+  return process.env.VERCEL === "1" || process.env.NODE_ENV === "production";
 }
 
 const roleCatalog = [
@@ -1746,6 +1748,21 @@ export async function createTalentIntakeResponse(body) {
   }
 
   if (action === "seed") {
+    if (isDemoReadOnly()) {
+      ensureDemoTalentProfilesInMemory();
+      return {
+        status: 200,
+        body: {
+          seeded: demoTalentProfiles.length,
+          storageMode: "memory",
+          requestedStorageMode: body.storageMode,
+          profiles: listTalentMemoryProfiles(Math.min(safeLimit(body.topK || 20), 50)),
+          demoReadOnly: true,
+          warning: null,
+          note: "Demo read-only mode is enabled. Sample profiles were kept in memory and TiDB was not modified.",
+        },
+      };
+    }
     return {
       status: 200,
       body: await seedDemoTalentProfiles({ storageMode: body.storageMode }),
